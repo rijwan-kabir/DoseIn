@@ -1,0 +1,51 @@
+/* signup.css */
+
+/* Root pane font */
+.signup-root {
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* Left panel background */
+.signup-left-pane {
+    -fx-background-color: #00594E;
+}
+
+/* App title on left */
+.signup-app-title {
+    -fx-font-size: 36px;
+    -fx-text-fill: white;
+    -fx-padding: 20 0 0 0;
+}
+
+/* “Sign Up” heading */
+.signup-form-title {
+    -fx-font-size: 28px;
+    -fx-text-fill: #00594E;
+}
+
+/* Input fields */
+.signup-field {
+    -fx-background-color: #C4E3D4;
+    -fx-pref-width: 300px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-padding: 0 10px;
+}
+
+/* Sign Up button */
+.signup-button {
+    -fx-background-color: #00594E;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 5px;
+}
+
+/* Link back to Sign In */
+.signup-link {
+    -fx-text-fill: #00594E;
+    -fx-underline: true;
+    -fx-cursor: hand;
+}

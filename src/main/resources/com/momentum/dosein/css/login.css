@@ -1,0 +1,51 @@
+/* login.css */
+
+/* Root pane font */
+.login-root {
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* Left panel background */
+.login-left-pane {
+    -fx-background-color: #00594E;
+}
+
+/* App title on left */
+.login-app-title {
+    -fx-font-size: 36px;
+    -fx-text-fill: white;
+    -fx-padding: 20 0 0 0;
+}
+
+/* “Sign In” heading */
+.login-form-title {
+    -fx-font-size: 28px;
+    -fx-text-fill: #00594E;
+}
+
+/* TextField & PasswordField */
+.login-field {
+    -fx-background-color: #C4E3D4;
+    -fx-pref-width: 300px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-padding: 0 10px;
+}
+
+/* Sign In button */
+.login-button {
+    -fx-background-color: #00594E;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 5px;
+}
+
+/* Sign Up link styling */
+.login-link {
+    -fx-text-fill: #00594E;
+    -fx-underline: true;
+    -fx-cursor: hand;
+}

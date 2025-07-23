@@ -1,0 +1,112 @@
+/* Root & fonts */
+.dashboard-root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #E0F2E9;
+}
+
+/* NAVIGATION BAR */
+.nav-bar {
+    -fx-background-color: #00594E;
+    -fx-padding: 10;
+}
+.nav-header {
+    -fx-padding: 0 0 10 0;
+}
+.nav-logo {
+    -fx-font-size: 24px;
+    -fx-text-fill: white;
+}
+.nav-button {
+    -fx-background-color: #00796B;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-pref-width: 180px;
+    -fx-background-radius: 5px;
+}
+.nav-item {
+    -fx-background-color: #80CBC4;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-pref-width: 180px;
+    -fx-background-radius: 5px;
+}
+.nav-item:hover {
+    -fx-background-color: #4DB6AC;
+}
+.nav-signout {
+    -fx-background-color: #E57373;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-pref-width: 180px;
+    -fx-background-radius: 5px;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    -fx-padding: 20;
+}
+
+/* WELCOME BANNER */
+.welcome-banner {
+    -fx-background-color: #C4E3D4;
+    -fx-padding: 10;
+    -fx-background-radius: 5px;
+}
+.welcome-text {
+    -fx-font-size: 18px;
+    -fx-text-fill: #00594E;
+}
+.welcome-slogan {
+    -fx-font-size: 12px;
+    -fx-text-fill: #00594E;
+}
+
+/* CLOCK */
+.time-label {
+    -fx-background-color: #00594E;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 5 10;
+    -fx-background-radius: 5px;
+}
+
+/* SCHEDULE HEADER */
+.schedule-header {
+    -fx-font-size: 20px;
+    -fx-text-fill: #00594E;
+}
+.schedule-button {
+    -fx-background-color: #00594E;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 5 10;
+    -fx-background-radius: 5px;
+}
+
+/* SCHEDULE LIST & CARDS */
+.schedule-scroll {
+    -fx-background: transparent;
+}
+.schedule-list {
+    -fx-padding: 10 0 0 0;
+}
+.schedule-card {
+    -fx-background-color: #00594E;
+    -fx-background-radius: 5px;
+    -fx-padding: 10;
+}
+.schedule-time {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+.schedule-title {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+.schedule-note {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-style: italic;
+}
