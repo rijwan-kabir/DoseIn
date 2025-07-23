@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -7,11 +8,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
 
 <BorderPane xmlns="http://javafx.com/javafx/17"
             xmlns:fx="http://javafx.com/fxml/1"
+            fx:id="rootPane"
             fx:controller="com.momentum.dosein.controller.DashboardController"
             stylesheets="@../css/dashboard.css"
             styleClass="dashboard-root"
@@ -20,7 +20,13 @@
     <!-- LEFT NAVIGATION -->
     <left>
         <VBox styleClass="nav-bar" spacing="10" prefWidth="200" >
-            <HBox styleClass="nav-header" alignment="CENTER_LEFT" spacing="10" prefHeight="60">
+            <!-- make the logo/header clickable -->
+            <HBox fx:id="navHeader"
+                  styleClass="nav-header"
+                  alignment="CENTER_LEFT"
+                  spacing="10"
+                  prefHeight="60"
+                  onMouseClicked="#handleDashboard">
                 <ImageView fitWidth="30" fitHeight="30" preserveRatio="true">
                     <image>
                         <Image url="@../images/logo.png"/>

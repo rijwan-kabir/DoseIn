@@ -8,8 +8,15 @@ public class ReminderService {
     private final FileStorageService<MedicineReminder> storage =
             new FileStorageService<>();
 
-    /** Load all reminders (today’s filtering can be added later). */
+    /** Load all reminders */
     public List<MedicineReminder> getAllReminders() {
         return storage.loadData(REMINDER_FILE);
+    }
+
+    /** Add a single reminder and persist */
+    public void addReminder(MedicineReminder reminder) {
+        List<MedicineReminder> all = storage.loadData(REMINDER_FILE);
+        all.add(reminder);
+        storage.saveData(REMINDER_FILE, all);
     }
 }

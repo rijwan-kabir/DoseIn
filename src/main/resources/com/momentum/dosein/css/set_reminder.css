@@ -1,0 +1,80 @@
+/* set_reminder.css */
+
+.reminder-root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #E0F2E9;
+}
+
+/* Nav bar (copied from dashboard.css) */
+.nav-bar {
+    -fx-background-color: #00594E;
+    -fx-padding: 10;
+}
+.nav-header {
+    -fx-padding: 0 0 10 0;
+}
+.nav-logo {
+    -fx-font-size: 24px;
+    -fx-text-fill: white;
+}
+.nav-button {
+    -fx-background-color: #00796B;
+    -fx-text-fill: white;
+    -fx-pref-width: 180px;
+    -fx-background-radius: 5px;
+}
+.nav-item {
+    -fx-background-color: #80CBC4;
+    -fx-text-fill: white;
+    -fx-pref-width: 180px;
+    -fx-background-radius: 5px;
+}
+.nav-signout {
+    -fx-background-color: #E57373;
+    -fx-text-fill: white;
+    -fx-pref-width: 180px;
+    -fx-background-radius: 5px;
+}
+
+/* Form styling */
+.reminder-content {
+    -fx-padding: 20;
+}
+.reminder-title {
+    -fx-font-size: 20px;
+    -fx-text-fill: #00594E;
+}
+.reminder-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #00594E;
+}
+.reminder-field {
+    -fx-pref-width: 200px;
+    -fx-pref-height: 30px;
+    -fx-background-color: #C4E3D4;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-padding: 0 5px;
+}
+.reminder-section-title {
+    -fx-font-size: 16px;
+    -fx-text-fill: #00594E;
+}
+.reminder-list {
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+.reminder-small-button {
+    -fx-background-color: #00594E;
+    -fx-text-fill: white;
+    -fx-pref-width: 80px;
+    -fx-background-radius: 5px;
+}
+.reminder-button {
+    -fx-background-color: #00594E;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-pref-width: 120px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 5px;
+}

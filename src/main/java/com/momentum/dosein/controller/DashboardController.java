@@ -10,8 +10,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
-import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -76,13 +76,38 @@ public class DashboardController {
         }
     }
 
-    // --- Navigation stubs ---
-    @FXML private void handleDashboard(ActionEvent e)     { /* already here */ }
-    @FXML private void handleManageSchedule(ActionEvent e){ /* TODO */ }
+    @FXML private void handleDashboard(ActionEvent e) {
+        try {
+            Parent dash = FXMLLoader.load(
+                    getClass().getResource("/com/momentum/dosein/fxml/dashboard.fxml")
+            );
+            Scene scene = ((Node)e.getSource()).getScene();
+            scene.setRoot(dash);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @FXML private void handleManageSchedule(ActionEvent e) { /* TODO */ }
     @FXML private void handleDoctorContacts(ActionEvent e){ /* TODO */ }
     @FXML private void handleEmergency(ActionEvent e)     { /* TODO */ }
     @FXML private void handleAboutUs(ActionEvent e)       { /* TODO */ }
-    @FXML private void handleSetReminder(ActionEvent e)   { /* TODO */ }
+
+    @FXML
+    private void handleSetReminder(ActionEvent e) {
+        try {
+            Parent rem = FXMLLoader.load(
+                    getClass().getResource("/com/momentum/dosein/fxml/set_reminder.fxml")
+            );
+            Scene scene = ((Node)e.getSource()).getScene();
+            scene.setRoot(rem);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            new Alert(Alert.AlertType.ERROR,
+                    "Could not load Set Reminder screen.")
+                    .showAndWait();
+        }
+    }
 
     @FXML
     private void handleSignOut(ActionEvent event) {
