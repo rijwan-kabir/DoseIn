@@ -12,7 +12,7 @@ public class DoseInApp extends Application {
         Parent root = FXMLLoader.load(
                 getClass().getResource("/com/momentum/dosein/fxml/login.fxml")
         );
-        primaryStage.setTitle("DoseIn – Sign In");
+        primaryStage.setTitle("DoseIn");
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
     }
