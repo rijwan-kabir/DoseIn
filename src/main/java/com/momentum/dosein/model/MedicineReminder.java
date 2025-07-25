@@ -1,35 +1,65 @@
 package com.momentum.dosein.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class MedicineReminder implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private String    medicineName;
-    private String    dosage;
-    private LocalTime time;
-    private String    note;
+    private final String medicineName;
+    private final String dosage;
+    private final LocalDate startDate;
+    private final LocalDate endDate;
+    private final LocalTime time;
+    private final String note;
 
-    public MedicineReminder() {}
-
-    public MedicineReminder(String medicineName, String dosage,
-                            LocalTime time, String note) {
+    public MedicineReminder(String medicineName,
+                            String dosage,
+                            LocalDate startDate,
+                            LocalDate endDate,
+                            LocalTime time,
+                            String note) {
         this.medicineName = medicineName;
-        this.dosage       = dosage;
-        this.time         = time;
-        this.note         = note;
+        this.dosage      = dosage;
+        this.startDate   = startDate;
+        this.endDate     = endDate;
+        this.time        = time;
+        this.note        = note;
     }
 
-    public String getMedicineName() { return medicineName; }
-    public void setMedicineName(String m) { this.medicineName = m; }
+    // Convenience constructor if you want to omit dates (e.g. older code)
+    public MedicineReminder(String medicineName,
+                            String dosage,
+                            LocalTime time,
+                            String note) {
+        this(medicineName, dosage,
+                LocalDate.now(),       // default start = today
+                LocalDate.now().plusDays(1), // default end = tomorrow
+                time, note);
+    }
 
-    public String getDosage() { return dosage; }
-    public void setDosage(String d) { this.dosage = d; }
+    public String getMedicineName() {
+        return medicineName;
+    }
 
-    public LocalTime getTime() { return time; }
-    public void setTime(LocalTime t) { this.time = t; }
+    public String getDosage() {
+        return dosage;
+    }
 
-    public String getNote() { return note; }
-    public void setNote(String n) { this.note = n; }
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public LocalTime getTime() {
+        return time;
+    }
+
+    public String getNote() {
+        return note;
+    }
 }

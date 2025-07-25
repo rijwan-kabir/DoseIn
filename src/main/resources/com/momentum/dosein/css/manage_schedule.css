@@ -1,0 +1,83 @@
+/* manage_schedule.css */
+
+/* TITLE & SUBTITLE */
+.manage-title {
+    -fx-font-size: 20px;
+    -fx-text-fill: #00594E;
+}
+.manage-slogan {
+    -fx-font-size: 12px;
+    -fx-text-fill: #00594E;
+    -fx-padding: 5 10;
+    -fx-background-color: #C4E3D4;
+    -fx-background-radius: 5px;
+}
+
+/* SECTION HEADER */
+.manage-section-title {
+    -fx-font-size: 20px;
+    -fx-text-fill: #00594E;
+    -fx-padding: 0 0 5 0;
+}
+
+/* ACTIVE ALERTS PANE */
+.manage-alerts-pane {
+    -fx-background-color: #C4E3D4;
+    -fx-background-radius: 5px;
+    -fx-padding: 10;
+}
+.manage-listview {
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+/* MEDICINE INFO PANEL */
+.manage-info-pane {
+    -fx-background-color: #80CBC4;
+    -fx-background-radius: 5px;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+}
+
+/* PANEL TITLE */
+.manage-panel-title {
+    -fx-font-size: 18px;
+    -fx-text-fill: #00594E;
+    -fx-padding: 0 0 10 0;
+}
+
+/* LABELS & VALUES */
+.manage-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #00594E;
+}
+.manage-value {
+    -fx-font-size: 14px;
+    -fx-text-fill: #00594E;
+}
+
+/* ALERT TIMES BOX */
+.manage-times-box {
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+    -fx-padding: 10;
+    -fx-spacing: 10;
+}
+.manage-times-box .button {
+    -fx-background-color: #00594E;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+    -fx-font-size: 14px;
+    -fx-pref-width: 80px;
+    -fx-pref-height: 40px;
+}
+
+/* DELETE BUTTON */
+.manage-info-pane > Button {
+    -fx-background-color: #E57373;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 5px;
+}
