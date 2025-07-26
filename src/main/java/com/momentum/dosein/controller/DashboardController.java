@@ -103,7 +103,7 @@ public class DashboardController {
 
     @FXML
     private void handleEmergency(ActionEvent e) {
-        // TODO: implement when emergency.fxml is available
+        swapRoot("/com/momentum/dosein/fxml/emergency.fxml", e);
     }
 
     @FXML

@@ -1,0 +1,39 @@
+/* emergency.css */
+
+/* Highlight the active nav button */
+.nav-button-active {
+    -fx-background-color: #003D35;  /* slightly darker */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-pref-width: 180px;
+    -fx-background-radius: 5px;
+}
+
+/* Emergency cards */
+.emergency-card {
+    -fx-background-color: #00594E;
+    -fx-background-radius: 5px;
+    -fx-padding: 10;
+}
+
+/* Card titles (e.g. “National Emergency Service”) */
+.emergency-card-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+/* Region headings (e.g. “Dhaka”) */
+.emergency-region-title {
+    -fx-font-size: 12px;
+    -fx-font-style: italic;
+    -fx-text-fill: white;
+    -fx-padding: 5 0 0 0;
+}
+
+/* Bullet items */
+.emergency-card-item {
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -fx-padding: 0 0 0 10;
+}
