@@ -1,0 +1,66 @@
+/* doctor_contacts.css */
+
+/* Header */
+.contact-title {
+    -fx-font-size: 20px;
+    -fx-text-fill: #00594E;
+}
+.contact-slogan {
+    -fx-font-size: 12px;
+    -fx-text-fill: #00594E;
+    -fx-padding: 5 10;
+    -fx-background-color: #C4E3D4;
+    -fx-background-radius: 5px;
+}
+
+/* Pane Titles */
+.manage-section-title {
+    -fx-font-size: 20px;
+    -fx-text-fill: #00594E;
+}
+
+/* Saved Entries Pane */
+.contacts-pane {
+    -fx-background-color: #C4E3D4;
+    -fx-background-radius: 5px;
+    -fx-padding: 10;
+}
+.contacts-pane .list-view {
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+.add-button {
+    -fx-background-color: #00594E;
+    -fx-text-fill: white;
+    -fx-pref-width: 80px;
+    -fx-background-radius: 5px;
+}
+
+/* Info Pane */
+.contacts-info-pane {
+    -fx-background-color: #80CBC4;
+    -fx-background-radius: 5px;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+}
+.manage-panel-title {
+    -fx-font-size: 18px;
+    -fx-text-fill: #00594E;
+}
+.manage-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #00594E;
+}
+.manage-value {
+    -fx-font-size: 14px;
+    -fx-text-fill: #00594E;
+}
+
+/* Delete Button */
+.delete-button {
+    -fx-background-color: #E57373;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-pref-width: 100px;
+    -fx-background-radius: 5px;
+}

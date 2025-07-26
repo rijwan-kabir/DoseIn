@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:id="rootPane"
+            fx:controller="com.momentum.dosein.controller.DoctorContactsController"
+            stylesheets="@../css/dashboard.css,@../css/doctor_contacts.css"
+            styleClass="dashboard-root"
+            prefWidth="800" prefHeight="600">
+
+    <!-- LEFT NAVIGATION: copy from dashboard.fxml -->
+    <left>
+        <VBox styleClass="nav-bar" spacing="10" prefWidth="200">
+            <HBox styleClass="nav-header"
+                  alignment="CENTER_LEFT" spacing="10" prefHeight="60"
+                  onMouseClicked="#handleDashboard">
+                <ImageView fitWidth="30" fitHeight="30" preserveRatio="true">
+                    <image><Image url="@../images/logo.png"/></image>
+                </ImageView>
+                <Label text="DoseIn" styleClass="nav-logo"/>
+            </HBox>
+            <Button text="Dashboard"        onAction="#handleDashboard"       styleClass="nav-button"/>
+            <Button text="Manage Schedule"  onAction="#handleManageSchedule"  styleClass="nav-item"/>
+            <Button text="Doctor Contacts"  onAction="#handleDoctorContacts"  styleClass="nav-item"/>
+            <Button text="Emergency"        onAction="#handleEmergency"       styleClass="nav-item"/>
+            <Button text="About Us"         onAction="#handleAboutUs"         styleClass="nav-item"/>
+            <Region VBox.vgrow="ALWAYS"/>
+            <Button text="Sign Out"         onAction="#handleSignOut"         styleClass="nav-signout"/>
+        </VBox>
+    </left>
+
+    <!-- CENTER CONTENT -->
+    <center>
+        <VBox spacing="20" styleClass="main-content">
+
+            <!-- Header -->
+            <HBox styleClass="welcome-banner" spacing="10" alignment="CENTER_LEFT">
+                <Label text="Doctor Contacts" styleClass="contact-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="Manage your personal healthcare contacts" styleClass="contact-slogan"/>
+            </HBox>
+
+            <HBox spacing="20" alignment="TOP_LEFT">
+                <!-- Saved Entries -->
+                <VBox spacing="10" styleClass="contacts-pane">
+                    <Label text="Saved Entries" styleClass="manage-section-title"/>
+                    <ListView fx:id="contactsList" styleClass="manage-listview"
+                              prefWidth="200" prefHeight="300"/>
+                    <Button text="Add"
+                            onAction="#handleAdd"
+                            styleClass="add-button"/>
+                </VBox>
+
+                <!-- Doctor Information -->
+                <VBox spacing="10" styleClass="contacts-info-pane">
+                    <Label text="Doctor Information" styleClass="manage-panel-title"/>
+
+                    <GridPane hgap="10" vgap="10">
+                        <Label text="Name :" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="manage-label"/>
+                        <Label fx:id="nameLabel" GridPane.rowIndex="0" GridPane.columnIndex="1" styleClass="manage-value"/>
+
+                        <Label text="Speciality :" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="manage-label"/>
+                        <Label fx:id="specialtyLabel" GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="manage-value"/>
+
+                        <Label text="Phone :" GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass="manage-label"/>
+                        <Label fx:id="phoneLabel" GridPane.rowIndex="2" GridPane.columnIndex="1" styleClass="manage-value"/>
+
+                        <Label text="Email :" GridPane.rowIndex="3" GridPane.columnIndex="0" styleClass="manage-label"/>
+                        <Label fx:id="emailLabel" GridPane.rowIndex="3" GridPane.columnIndex="1" styleClass="manage-value"/>
+
+                        <Label text="Location :" GridPane.rowIndex="4" GridPane.columnIndex="0" styleClass="manage-label"/>
+                        <Label fx:id="locationLabel" GridPane.rowIndex="4" GridPane.columnIndex="1" styleClass="manage-value"/>
+
+                        <Label text="Additional Information :" GridPane.rowIndex="5" GridPane.columnIndex="0" styleClass="manage-label"/>
+                        <Label fx:id="noteLabel" GridPane.rowIndex="5" GridPane.columnIndex="1" styleClass="manage-value"/>
+                    </GridPane>
+
+                    <Region VBox.vgrow="ALWAYS"/>
+                    <Button text="Delete"
+                            onAction="#handleDelete"
+                            styleClass="delete-button"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

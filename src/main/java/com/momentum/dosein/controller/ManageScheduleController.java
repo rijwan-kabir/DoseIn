@@ -19,9 +19,12 @@ import java.util.*;
 
 public class ManageScheduleController {
 
-    @FXML private ListView<String> alertsList;
-    @FXML private Label nameLabel, startDateLabel, endDateLabel, noteLabel;
-    @FXML private HBox timesBox;
+    @FXML
+    private ListView<String> alertsList;
+    @FXML
+    private Label nameLabel, startDateLabel, endDateLabel, noteLabel;
+    @FXML
+    private HBox timesBox;
 
     private final ReminderService service = new ReminderService();
     private final DateTimeFormatter dateFmt = DateTimeFormatter.ofPattern("dd/MM/yy");
@@ -54,8 +57,8 @@ public class ManageScheduleController {
         MedicineReminder r0 = items.get(0);
         nameLabel.setText(r0.getMedicineName() + " " + r0.getDosage());
         startDateLabel.setText(r0.getStartDate().format(dateFmt));
-        endDateLabel  .setText(r0.getEndDate().format(dateFmt));
-        noteLabel     .setText(r0.getNote());
+        endDateLabel.setText(r0.getEndDate().format(dateFmt));
+        noteLabel.setText(r0.getNote());
 
         timesBox.getChildren().clear();
         for (MedicineReminder r : items) {
@@ -82,10 +85,19 @@ public class ManageScheduleController {
         navigate("/com/momentum/dosein/fxml/dashboard.fxml", e);
     }
 
-    @FXML private void handleManageSchedule(ActionEvent e) { /* noop */ }
-    @FXML private void handleDoctorContacts(ActionEvent e) { /* TODO */ }
-    @FXML private void handleEmergency(ActionEvent e)    { /* TODO */ }
-    @FXML private void handleAboutUs(ActionEvent e)      { /* TODO */ }
+    @FXML
+    private void handleManageSchedule(ActionEvent e) { /* noop */ }
+
+    @FXML
+    private void handleDoctorContacts(ActionEvent e) {
+        navigate("/com/momentum/dosein/fxml/doctor_contacts.fxml", e);
+    }
+
+    @FXML
+    private void handleEmergency(ActionEvent e) { /* TODO */ }
+
+    @FXML
+    private void handleAboutUs(ActionEvent e) { /* TODO */ }
 
     @FXML
     private void handleSignOut(ActionEvent e) {
@@ -96,7 +108,7 @@ public class ManageScheduleController {
     private void navigate(String fxmlPath, ActionEvent e) {
         try {
             Parent p = FXMLLoader.load(getClass().getResource(fxmlPath));
-            Scene s = ((Node)e.getSource()).getScene();
+            Scene s = ((Node) e.getSource()).getScene();
             s.setRoot(p);
         } catch (IOException ex) {
             ex.printStackTrace();

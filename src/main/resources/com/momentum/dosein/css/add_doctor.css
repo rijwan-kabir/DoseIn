@@ -1,0 +1,46 @@
+/* add_doctor.css */
+
+/* Form container */
+.reminder-content {
+    -fx-padding: 20;
+}
+
+/* Title */
+.reminder-title {
+    -fx-font-size: 20px;
+    -fx-text-fill: #00594E;
+}
+
+/* Labels */
+.reminder-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #00594E;
+}
+
+/* Text fields & textarea */
+.reminder-field {
+    -fx-pref-width: 200px;
+    -fx-pref-height: 30px;
+    -fx-background-color: #C4E3D4;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-padding: 0 5px;
+}
+
+/* Cancel button */
+.delete-button {
+    -fx-background-color: #E57373;
+    -fx-text-fill: white;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 5px;
+}
+
+/* Add Entry button */
+.add-button {
+    -fx-background-color: #00594E;
+    -fx-text-fill: white;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 5px;
+}

@@ -87,7 +87,18 @@ public class DashboardController {
 
     @FXML
     private void handleDoctorContacts(ActionEvent e) {
-        // TODO: implement when doctor_contacts.fxml is available
+        try {
+            Parent contacts = FXMLLoader.load(
+                    getClass().getResource("/com/momentum/dosein/fxml/doctor_contacts.fxml")
+            );
+            Scene scene = ((Node)e.getSource()).getScene();
+            scene.setRoot(contacts);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            new Alert(Alert.AlertType.ERROR,
+                    "Could not load Doctor Contacts screen.")
+                    .showAndWait();
+        }
     }
 
     @FXML
