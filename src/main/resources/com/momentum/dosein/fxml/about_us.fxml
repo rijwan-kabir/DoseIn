@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="rootPane" prefHeight="600" prefWidth="800" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/about_us.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.AboutUsController">
+
+    <!-- LEFT NAVIGATION -->
+    <left>
+        <VBox prefWidth="200" spacing="10" styleClass="nav-bar">
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#handleDashboard" prefHeight="60" spacing="10" styleClass="nav-header">
+                <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
+                    <image><Image url="@../images/logo.png" /></image>
+                </ImageView>
+                <Label styleClass="nav-logo" text="DoseIn" />
+            </HBox>
+
+            <Button onAction="#handleDashboard" styleClass="nav-button" text="Dashboard" />
+            <Button onAction="#handleManageSchedule" styleClass="nav-item" text="Manage Schedule" />
+            <Button onAction="#handleDoctorContacts" styleClass="nav-item" text="Doctor Contacts" />
+            <Button onAction="#handleEmergency" styleClass="nav-item" text="Emergency" />
+            <Button onAction="#handleAboutUs" text="About Us">
+                <styleClass>
+                    <String fx:value="nav-button" />
+                    <String fx:value="nav-button-active" />
+                </styleClass>
+            </Button>
+
+            <Region VBox.vgrow="ALWAYS" />
+            <Button onAction="#handleSignOut" styleClass="nav-signout" text="Sign Out" />
+        </VBox>
+    </left>
+
+    <!-- CENTER CONTENT -->
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="20" styleClass="main-content">
+
+            <!-- Title Banner -->
+            <HBox alignment="CENTER_LEFT" spacing="10" styleClass="welcome-banner">
+                <Label styleClass="schedule-header" text="About Us" />
+                <Region HBox.hgrow="ALWAYS" />
+            </HBox>
+
+            <!-- Team Card -->
+            <VBox alignment="CENTER" spacing="15" styleClass="about-card">
+                <Label styleClass="about-heading" text="TEAM MOMENTUM" />
+
+                <ImageView fitWidth="300" preserveRatio="true">
+                    <image><Image url="@../images/team.png" /></image>
+                </ImageView>
+
+                <Label maxWidth="500" styleClass="about-text" text="Md. Majharul Islam || Md. Rijwan Kabir || Md. Obeduzzaman || Banna Rani Sarkar || Md. A. Barik Sarkar" wrapText="true" />
+
+                <Label styleClass="about-text" text="Contact us at:" />
+                <Label styleClass="about-email" text="teammomentum@gmail.com" />
+
+                <!-- Department and University on separate lines -->
+                <Label alignment="CENTER" maxWidth="500" styleClass="about-text" text="Department of Computer Science &amp; Engineering&#10;Daffodil International University, Bangladesh" wrapText="true" />
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

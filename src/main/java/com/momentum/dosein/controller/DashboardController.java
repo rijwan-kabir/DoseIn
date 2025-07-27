@@ -108,7 +108,7 @@ public class DashboardController {
 
     @FXML
     private void handleAboutUs(ActionEvent e) {
-        // TODO: implement when about_us.fxml is available
+        swapRoot("/com/momentum/dosein/fxml/about_us.fxml", e);
     }
 
     @FXML
