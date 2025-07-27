@@ -1,0 +1,37 @@
+/* about_us.css */
+
+/* Card container */
+.about-card {
+    -fx-background-color: #C4E3D4;
+    -fx-background-radius: 5px;
+    -fx-padding: 20;
+    -fx-alignment: center;
+}
+
+/* Team heading */
+.about-heading {
+    -fx-font-size: 20px;
+    -fx-text-fill: #00594E;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-alignment: center;   /* center the heading */
+}
+
+/* Paragraph text (including dept/university) */
+.about-text {
+    -fx-font-size: 18px;
+    -fx-text-fill: #00594E;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+    -fx-alignment: center;   /* center each Label node */
+}
+
+/* Email standout */
+.about-email {
+    -fx-font-size: 14px;
+    -fx-text-fill: #00594E;
+    -fx-font-weight: bold;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+    -fx-alignment: center;   /* center the email Label */
+}
