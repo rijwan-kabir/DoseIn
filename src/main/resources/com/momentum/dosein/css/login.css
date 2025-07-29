@@ -3,6 +3,7 @@
 /* Root pane font */
 .login-root {
     -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #C4E3D4;
 }
 
 /* Left panel background */
@@ -15,24 +16,44 @@
     -fx-font-size: 36px;
     -fx-text-fill: white;
     -fx-padding: 20 0 0 0;
+    -fx-font-weight: bold;
 }
 
 /* “Sign In” heading */
 .login-form-title {
     -fx-font-size: 28px;
     -fx-text-fill: #00594E;
+    -fx-font-weight: bold;
 }
-
+/*vbox2*/
+.vbox-two{
+    -fx-background-radius: 15;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.2, 8, 8);
+}
 /* TextField & PasswordField */
 .login-field {
     -fx-background-color: #C4E3D4;
-    -fx-pref-width: 300px;
-    -fx-pref-height: 40px;
-    -fx-background-radius: 5px;
-    -fx-border-radius: 5px;
-    -fx-padding: 0 10px;
+    -fx-pref-width: 180px;         /* reduced width to match image */
+    -fx-pref-height: 50px;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+   -fx-padding: 0 10 0 10;
+    -fx-font-size: 20;
+
+}
+.my-hbox {
+    -fx-alignment: TOP_LEFT;       /* আপনি TOP_CENTER, TOP_RIGHT, BOTTOM_* ইত্যাদি দিতে পারেন */
+    -fx-spacing: 10px;             /* optional: চাইল্ডগুলোর মাঝে দূরত্ব */
+    -fx-padding: 0 0 0 0;          /* HBox এর চারদিকের ইনসেট (উপর, ডান, নিচ, বাম) */
 }
 
+
+.login-field:hover{
+    -fx-border-width: 2px;
+    -fx-border-color: #00594E;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.2, 8, 8);
+}
 /* Sign In button */
 .login-button {
     -fx-background-color: #00594E;
@@ -40,9 +61,17 @@
     -fx-font-size: 16px;
     -fx-pref-width: 150px;
     -fx-pref-height: 40px;
+    -fx-border-radius: 5px;
     -fx-background-radius: 5px;
 }
+.login-button:hover{
+    -fx-background-color: #C4E3D4;
+    -fx-border-color: #00594E;
+    -fx-border-width: 2px;
 
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.2, 8, 8);
+}
 /* Sign Up link styling */
 .login-link {
     -fx-text-fill: #00594E;

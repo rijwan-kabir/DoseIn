@@ -1,103 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:id="rootPane"
-            fx:controller="com.momentum.dosein.controller.SetReminderController"
-            stylesheets="@../css/dashboard.css,@../css/set_reminder.css"
-            styleClass="dashboard-root"
-            prefWidth="800" prefHeight="600">
+<BorderPane fx:id="rootPane" prefHeight="600" prefWidth="900" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/set_reminder.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.SetReminderController">
 
-    <!-- LEFT NAVIGATION: identical to dashboard.fxml -->
+    <!-- Left Navigation -->
     <left>
-        <VBox styleClass="nav-bar" spacing="10" prefWidth="200">
-            <HBox styleClass="nav-header"
-                  alignment="CENTER_LEFT"
-                  spacing="10"
-                  prefHeight="60"
-                  onMouseClicked="#handleDashboard">
-                <ImageView fitWidth="30" fitHeight="30" preserveRatio="true">
-                    <image><Image url="@../images/logo.png"/></image>
+        <VBox prefWidth="220" spacing="10" styleClass="nav-bar">
+            <HBox alignment="CENTER_LEFT" prefHeight="60" spacing="10" styleClass="nav-header">
+                <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
+                    <image><Image url="@../images/logo.png" /></image>
                 </ImageView>
-                <Label text="DoseIn" styleClass="nav-logo"/>
+                <Label styleClass="nav-logo" text="DoseIn" />
             </HBox>
-            <Button text="Dashboard"        onAction="#handleDashboard"       styleClass="nav-button"/>
-            <Button text="Manage Schedule"  onAction="#handleManageSchedule"  styleClass="nav-item"/>
-            <Button text="Doctor Contacts"  onAction="#handleDoctorContacts"  styleClass="nav-item"/>
-            <Button text="Emergency"        onAction="#handleEmergency"       styleClass="nav-item"/>
-            <Button text="About Us"         onAction="#handleAboutUs"         styleClass="nav-item"/>
-            <Region VBox.vgrow="ALWAYS"/>
-            <Button text="Sign Out"         onAction="#handleSignOut"         styleClass="nav-signout"/>
+            <Button onAction="#handleDashboard" styleClass="nav-button" text="Dashboard" />
+            <Button onAction="#handleManageSchedule" styleClass="nav-item" text="Manage Schedule" />
+            <Button onAction="#handleDoctorContacts" styleClass="nav-item" text="Doctor Contacts" />
+            <Button onAction="#handleEmergency" styleClass="nav-item" text="Emergency" />
+            <Button onAction="#handleAboutUs" styleClass="nav-item" text="About Us" />
+            <Region VBox.vgrow="ALWAYS" />
+            <Button onAction="#handleSignOut" styleClass="nav-signout" text="Sign Out" />
         </VBox>
     </left>
 
-    <!-- CENTER: the reminder form, matching dashboard padding -->
     <center>
-        <VBox spacing="20" styleClass="main-content">
+        <VBox alignment="CENTER" spacing="0" styleClass="reminder-root">
+            <VBox fx:id="cardBox" alignment="TOP_CENTER" maxWidth="576.0" prefHeight="583.0" prefWidth="532.0" spacing="24" styleClass="reminder-card" stylesheets="@../css/set_reminder.css">
+                <padding>
+                    <Insets bottom="35" left="35" right="35" top="35" />
+                </padding>
 
-            <Label text="Add Medicine Information" styleClass="reminder-title"/>
+                <!-- Title -->
+                <Label styleClass="set-reminder-title" stylesheets="@../css/set_reminder.css" text="Add Medicine Information" />
 
-            <HBox spacing="10" alignment="CENTER_LEFT">
-                <Label text="Name:" styleClass="reminder-label"/>
-                <TextField fx:id="nameField" styleClass="reminder-field"/>
-            </HBox>
+                <!-- Name & Dates (compact form) -->
+                <GridPane hgap="15" styleClass="time-date" stylesheets="@../css/set_reminder.css" vgap="15">
+                    <children>
+                        <Label styleClass="reminder-level" stylesheets="@../css/set_reminder.css" text="Name :" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="nameField" prefHeight="62.0" prefWidth="175.0" styleClass="reminder-field" stylesheets="@../css/set_reminder.css" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-            <HBox spacing="20" alignment="CENTER_LEFT">
-                <Label text="Start Date:" styleClass="reminder-label"/>
-                <DatePicker fx:id="startDatePicker" styleClass="reminder-field"/>
-                <Label text="End Date:" styleClass="reminder-label"/>
-                <DatePicker fx:id="endDatePicker" styleClass="reminder-field"/>
-            </HBox>
+                        <Label styleClass="reminder-level" text="Start Date :" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <DatePicker fx:id="startDatePicker" prefHeight="66.0" prefWidth="175.0" styleClass="reminder-field" stylesheets="@../css/set_reminder.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-            <Label text="Alert Time" styleClass="reminder-section-title"/>
-            <HBox spacing="20" alignment="CENTER_LEFT">
-                <ListView fx:id="timesList" styleClass="reminder-list"
-                          prefWidth="250" prefHeight="100"/>
-                <VBox spacing="10" alignment="TOP_CENTER">
-                    <HBox alignment="CENTER" spacing="5">
-                        <Spinner fx:id="hourSpinner" editable="true" prefWidth="60"/>
-                        <Label text=":"/>
-                        <Spinner fx:id="minuteSpinner" editable="true" prefWidth="60"/>
-                        <VBox spacing="5">
-                            <RadioButton fx:id="amRadio" text="AM"/>
-                            <RadioButton fx:id="pmRadio" text="PM"/>
+                        <Label styleClass="reminder-level" text="End Date :" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <DatePicker fx:id="endDatePicker" prefHeight="38.0" prefWidth="175.0" styleClass="reminder-field" stylesheets="@../css/set_reminder.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    </children>
+                    <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                </GridPane>
+
+                <!-- Alert Time Card -->
+                <VBox alignment="TOP_LEFT" spacing="12" styleClass="reminder-mini-card" stylesheets="@../css/set_reminder.css">
+                    <padding>
+                        <Insets bottom="12" left="15" right="15" top="12" />
+                    </padding>
+                    <Label styleClass="set-reminder-title" stylesheets="@../css/set_reminder.css" text="Alert Time" />
+                    <HBox alignment="TOP_LEFT" spacing="16">
+                        <!-- Time List -->
+                        <ListView fx:id="timesList" prefHeight="70" prefWidth="143.0" styleClass="reminder-list" stylesheets="@../css/set_reminder.css" />
+                        <!-- Spinner + AM/PM -->
+                        <VBox alignment="CENTER" spacing="7">
+                            <HBox alignment="CENTER" spacing="5">
+                                <Spinner fx:id="hourSpinner" editable="true" prefHeight="23.0" prefWidth="63.0" />
+                                <Label text=":" />
+                                <Spinner fx:id="minuteSpinner" editable="true" prefHeight="23.0" prefWidth="68.0" />
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="6">
+                                <RadioButton fx:id="amRadio" prefHeight="16.0" prefWidth="62.0" styleClass="am" stylesheets="@../css/set_reminder.css" text="AM" />
+                                <RadioButton fx:id="pmRadio" prefHeight="16.0" prefWidth="60.0" styleClass="pm" stylesheets="@../css/set_reminder.css" text="PM" />
+                            </HBox>
+                        </VBox>
+                        <!-- Add/Remove Buttons -->
+                        <VBox alignment="CENTER" spacing="7">
+                            <Button fx:id="addTimeButton" onAction="#handleAddTime" prefHeight="23.0" prefWidth="72.0" styleClass="add" stylesheets="@../css/set_reminder.css" text="Add" />
+                            <Button fx:id="removeTimeButton" onAction="#handleRemoveTime" prefHeight="23.0" prefWidth="73.0" styleClass="remove" stylesheets="@../css/set_reminder.css" text="Remove" />
                         </VBox>
                     </HBox>
-                    <HBox spacing="10">
-                        <Button fx:id="removeTimeButton"
-                                text="Remove"
-                                onAction="#handleRemoveTime"
-                                styleClass="reminder-small-button"/>
-                        <Button fx:id="addTimeButton"
-                                text="Add"
-                                onAction="#handleAddTime"
-                                styleClass="reminder-small-button"/>
-                    </HBox>
                 </VBox>
-            </HBox>
 
-            <HBox spacing="10" alignment="CENTER_LEFT">
-                <Label text="Additional Information:" styleClass="reminder-label"/>
-                <TextField fx:id="noteField" styleClass="reminder-field"/>
-            </HBox>
+                <!-- Additional Info -->
+                <Label styleClass="set-reminder-title" stylesheets="@../css/set_reminder.css" text="Additional Information :" />
+                <TextField fx:id="noteField" prefHeight="35.0" prefWidth="430.0" styleClass="reminder-field" stylesheets="@../css/set_reminder.css" />
 
-            <!-- Buttons moved into center, with same padding as dashboard -->
-            <HBox spacing="10" alignment="CENTER_RIGHT">
-                <padding><Insets top="0" right="20" bottom="20" left="0"/></padding>
-                <Button text="Cancel"
-                        onAction="#handleCancel"
-                        styleClass="schedule-button"/>
-                <Button text="Set Reminder"
-                        onAction="#handleSetReminder"
-                        styleClass="schedule-button"/>
-            </HBox>
-
+                <!-- Bottom Action Buttons -->
+                <HBox alignment="CENTER" spacing="18">
+                    <padding>
+                        <Insets top="20" />
+                    </padding>
+                    <Button onAction="#handleCancel" styleClass="cancel-button" text="Cancel" />
+                    <Button onAction="#handleSetReminder" styleClass="set-reminder-button" text="Set Reminder" />
+                </HBox>
+            </VBox>
         </VBox>
     </center>
-
 </BorderPane>
