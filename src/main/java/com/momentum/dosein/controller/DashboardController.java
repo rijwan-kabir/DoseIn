@@ -13,9 +13,12 @@ import javafx.scene.*;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.util.Duration;
-
 import java.io.IOException;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -25,21 +28,30 @@ public class DashboardController {
     @FXML private Label greetingLabel;
     @FXML private Label sloganLabel;
     @FXML private Label timeLabel;
-    @FXML private VBox   scheduleContainer;
+    @FXML private VBox scheduleContainer;
 
+    private Timeline clock;
     private final ReminderService reminderService = new ReminderService();
 
     @FXML
     public void initialize() {
-        // 1. Greet user
-        User current = Session.getCurrentUser();
-        greetingLabel.setText("Hello, " +
-                (current != null ? current.getUsername() : "User") + "!");
-        sloganLabel.setText("Your Health Matters – Stay on Track!");
+        // Load Poppins font
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-Regular.ttf"), 14);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-Bold.ttf"), 14);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-Italic.ttf"), 14);
 
-        // 2. Start clock
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hh : mm : ss a");
-        Timeline clock = new Timeline(
+        // Greet user
+        User current = Session.getCurrentUser();
+        greetingLabel.setText("Hello, " + (current != null ? current.getUsername() : "User") + "!");
+        greetingLabel.setFont(Font.font("Poppins", FontWeight.BOLD, 24));
+
+        sloganLabel.setText("Your Health Matters - Stay on Track!");
+        sloganLabel.setFont(Font.font("Poppins", FontWeight.MEDIUM, 14));
+
+        // Start clock with seconds
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hh:mm:ss a");
+        timeLabel.setFont(Font.font("Poppins", FontWeight.MEDIUM, 14));
+        clock = new Timeline(
                 new KeyFrame(Duration.ZERO,
                         e -> timeLabel.setText(LocalTime.now().format(dtf))),
                 new KeyFrame(Duration.seconds(1))
@@ -47,31 +59,74 @@ public class DashboardController {
         clock.setCycleCount(Timeline.INDEFINITE);
         clock.play();
 
-        // 3. Load existing reminders
+        // Load reminders
         loadSchedule();
     }
 
     private void loadSchedule() {
         scheduleContainer.getChildren().clear();
-        List<MedicineReminder> list = reminderService.getAllReminders();
+        List<MedicineReminder> allReminders = reminderService.getAllReminders();
+
+        LocalDate today = LocalDate.now();
+        LocalTime now = LocalTime.now();
+        LocalTime cutoffTime = now.minusMinutes(30); // 30 minutes grace period
+
         DateTimeFormatter tfmt = DateTimeFormatter.ofPattern("h:mm a");
+        boolean hasReminders = false;
 
-        for (MedicineReminder r : list) {
-            HBox card = new HBox();
-            card.getStyleClass().add("schedule-card");
-            card.setSpacing(10);
+        for (MedicineReminder r : allReminders) {
+            // Check if reminder is active today (between start and end dates)
+            boolean isActiveToday = !today.isBefore(r.getStartDate()) &&
+                    !today.isAfter(r.getEndDate());
 
-            VBox texts = new VBox(5);
-            Label t = new Label(r.getTime().format(tfmt));
-            t.getStyleClass().add("schedule-time");
-            Label title = new Label(r.getMedicineName() + " " + r.getDosage());
-            title.getStyleClass().add("schedule-title");
-            Label note = new Label(r.getNote());
-            note.getStyleClass().add("schedule-note");
+            // Check if time is upcoming or within grace period
+            boolean isRelevantTime = r.getTime().isAfter(now) ||
+                    (r.getTime().isAfter(cutoffTime) &&
+                            r.getTime().isBefore(now));
 
-            texts.getChildren().addAll(t, title, note);
-            card.getChildren().add(texts);
-            scheduleContainer.getChildren().add(card);
+            if (isActiveToday && isRelevantTime) {
+                hasReminders = true;
+                VBox card = new VBox(5);
+                card.getStyleClass().add("reminder-card");
+
+                if (r.getTime().isBefore(now)) {
+                    card.getStyleClass().add("past-due-card");
+
+                    Label statusLabel = new Label("PAST DUE");
+                    statusLabel.setFont(Font.font("Poppins", FontWeight.BOLD, 10));
+                    statusLabel.getStyleClass().add("status-indicator");
+                    card.getChildren().add(statusLabel);
+                }
+
+                Label timeLabel = new Label(r.getTime().format(tfmt));
+                timeLabel.setFont(Font.font("Poppins", FontWeight.BOLD, 16));
+                timeLabel.getStyleClass().add("reminder-time");
+
+                Label medicineLabel = new Label(r.getMedicineName() + " " + r.getDosage());
+                medicineLabel.setFont(Font.font("Poppins", FontWeight.MEDIUM, 14));
+                medicineLabel.getStyleClass().add("reminder-medicine");
+
+                Label noteLabel = new Label(r.getNote());
+                noteLabel.setFont(Font.font("Poppins", FontPosture.ITALIC, 12));
+                noteLabel.getStyleClass().add("reminder-note");
+
+                card.getChildren().addAll(timeLabel, medicineLabel, noteLabel);
+                scheduleContainer.getChildren().add(card);
+            }
+        }
+
+        if (!hasReminders) {
+            Label emptyLabel = new Label("No upcoming reminders for today");
+            emptyLabel.setFont(Font.font("Poppins", FontWeight.MEDIUM, 14));
+            emptyLabel.getStyleClass().add("empty-label");
+            scheduleContainer.getChildren().add(emptyLabel);
+        }
+    }
+
+
+    public void cleanup() {
+        if (clock != null) {
+            clock.stop();
         }
     }
 
@@ -122,10 +177,6 @@ public class DashboardController {
         swapRoot("/com/momentum/dosein/fxml/login.fxml", e);
     }
 
-    /**
-     * Loads the given FXML and replaces the current scene's root
-     * so that the sidebar and window size remain intact.
-     */
     private void swapRoot(String fxmlPath, ActionEvent e) {
         try {
             Parent pane = FXMLLoader.load(

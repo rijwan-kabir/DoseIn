@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class DoseInApp extends Application {
@@ -13,6 +14,9 @@ public class DoseInApp extends Application {
                 getClass().getResource("/com/momentum/dosein/fxml/login.fxml")
         );
         primaryStage.setTitle("DoseIn");
+        primaryStage.getIcons().add(
+                new Image(getClass().getResourceAsStream("/com/momentum/dosein/images/logo.png"))
+        );
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
         primaryStage.setResizable(false);

@@ -1,7 +1,9 @@
-/* Root & fonts */
+/* Dashboard.css - Complete Updated Stylesheet */
+
+/* Root Styles */
 .dashboard-root {
-    -fx-font-family: "Segoe UI", sans-serif;
-    -fx-background-color: #E0F2E9;
+    -fx-font-family: 'Poppins';
+    -fx-background-color: #f5f5f5;
 }
 
 /* NAVIGATION BAR */
@@ -9,104 +11,194 @@
     -fx-background-color: #00594E;
     -fx-padding: 10;
 }
+
 .nav-header {
     -fx-padding: 0 0 10 0;
 }
+
 .nav-logo {
     -fx-font-size: 24px;
     -fx-text-fill: white;
+    -fx-font-weight: bold;
 }
+
 .nav-button {
     -fx-background-color: #80cbc4;
     -fx-text-fill: white;
     -fx-font-size: 14px;
     -fx-pref-width: 180px;
     -fx-background-radius: 5px;
+    -fx-font-weight: 500;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 8 15;
 }
+
+.nav-button:hover {
+    -fx-background-color: #12594C;
+    -fx-cursor: hand;
+}
+
 .nav-item {
-    -fx-background-color: #80CBC4;
+    -fx-background-color: transparent;
     -fx-text-fill: white;
     -fx-font-size: 14px;
     -fx-pref-width: 180px;
     -fx-background-radius: 5px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-weight: 500;
+    -fx-padding: 8 15;
 }
+
 .nav-item:hover {
     -fx-background-color: #4DB6AC;
+    -fx-cursor: hand;
 }
+
 .nav-signout {
     -fx-background-color: #E57373;
     -fx-text-fill: white;
     -fx-font-size: 14px;
     -fx-pref-width: 180px;
     -fx-background-radius: 5px;
+    -fx-font-weight: 500;
+    -fx-padding: 8 15;
 }
 
-/* MAIN CONTENT */
+.nav-signout:hover {
+    -fx-background-color: #EF5350;
+    -fx-cursor: hand;
+}
+
+/* MAIN CONTENT AREA */
 .main-content {
-    -fx-padding: 20;
+    -fx-spacing: 20;
 }
 
 /* WELCOME BANNER */
 .welcome-banner {
     -fx-background-color: #C4E3D4;
-    -fx-padding: 10;
-    -fx-background-radius: 5px;
-}
-.welcome-text {
-    -fx-font-size: 18px;
-    -fx-text-fill: #00594E;
-}
-.welcome-slogan {
-    -fx-font-size: 12px;
-    -fx-text-fill: #00594E;
+    -fx-spacing: 15;
+    -fx-background-radius: 8px;
+    -fx-alignment: CENTER_LEFT;
 }
 
-/* CLOCK */
-.time-label {
-    -fx-background-color: #00594E;
-    -fx-text-fill: white;
+.greeting-text {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.slogan-text {
     -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+    -fx-font-weight: 500;
+}
+
+.time-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #00594E;
+    -fx-font-weight: 500;
     -fx-padding: 5 10;
     -fx-background-radius: 5px;
+    -fx-background-color: white;
 }
 
-/* SCHEDULE HEADER */
+/* SCHEDULE SECTION */
 .schedule-header {
     -fx-font-size: 20px;
+    -fx-font-weight: bold;
     -fx-text-fill: #00594E;
 }
+
 .schedule-button {
     -fx-background-color: #00594E;
     -fx-text-fill: white;
     -fx-font-size: 14px;
-    -fx-padding: 5 10;
+    -fx-padding: 8 15;
+    -fx-background-radius: 5px;
+    -fx-font-weight: 500;
+}
+
+.schedule-button:hover {
+    -fx-background-color: #004D40;
+    -fx-cursor: hand;
+}
+
+/* REMINDER CARDS */
+.schedule-scroll {
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+    -fx-hbar-policy: never;
+}
+
+.schedule-list {
+    -fx-spacing: 15;
+}
+
+.reminder-card {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 1);
+    -fx-spacing: 5;
+}
+
+.reminder-time {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #00594E;
+}
+
+.reminder-medicine {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+    -fx-font-weight: 500;
+}
+
+.reminder-note {
+    -fx-font-size: 12px;
+    -fx-text-fill: #666666;
+    -fx-font-style: italic;
+}
+
+.empty-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+    -fx-padding: 20;
+    -fx-alignment: center;
+    -fx-font-weight: 500;
+}
+
+/* SCROLLBAR STYLING */
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #B2DFDB;
     -fx-background-radius: 5px;
 }
 
-/* SCHEDULE LIST & CARDS */
-.schedule-scroll {
-    -fx-background: transparent;
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #80CBC4;
 }
-.schedule-list {
-    -fx-padding: 10 0 0 0;
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 0;
 }
-.schedule-card {
-    -fx-background-color: #00594E;
-    -fx-background-radius: 5px;
-    -fx-padding: 10;
+
+/* MISC ELEMENTS */
+.button {
+    -fx-cursor: hand;
 }
-.schedule-time {
-    -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
-}
-.schedule-title {
-    -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
-}
-.schedule-note {
-    -fx-text-fill: white;
-    -fx-font-size: 12px;
-    -fx-font-style: italic;
+
+.label {
+    -fx-wrap-text: true;
 }
