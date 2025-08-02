@@ -1,80 +1,87 @@
-/* set_reminder.css */
-
 .reminder-root {
-    -fx-font-family: "Segoe UI", sans-serif;
     -fx-background-color: #E0F2E9;
+    -fx-effect: dropshadow( gaussian,rgba(0, 0, 0, 0.3),12, 0.2, 8 , 8);
 }
 
-/* Nav bar (copied from dashboard.css) */
-.nav-bar {
-    -fx-background-color: #00594E;
-    -fx-padding: 10;
+.reminder-card {
+    -fx-background-color: #fff;
+    -fx-padding: 35 35 35 35;
+    -fx-background-radius: 18px;
+    -fx-effect: dropshadow(gaussian, #c4e3d466, 18, 0.3, 0, 6);
+    -fx-spacing: 26;
 }
-.nav-header {
-    -fx-padding: 0 0 10 0;
+.time-date{
+    -fx-border-color: #E0F2E9;
+
 }
-.nav-logo {
-    -fx-font-size: 24px;
-    -fx-text-fill: white;
+.reminder-level{
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
 }
-.nav-button {
-    -fx-background-color: #00796B;
-    -fx-text-fill: white;
-    -fx-pref-width: 180px;
-    -fx-background-radius: 5px;
+.reminder-mini-card {
+    -fx-background-color: #E0F2E9;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow( gaussian,rgba(0, 0, 0, 0.3),12, 0.2, 8 , 8);
+    -fx-padding: 12 15 12 15;
 }
-.nav-item {
-    -fx-background-color: #80CBC4;
-    -fx-text-fill: white;
-    -fx-pref-width: 180px;
-    -fx-background-radius: 5px;
-}
-.nav-signout {
+
+.cancel-button {
     -fx-background-color: #E57373;
     -fx-text-fill: white;
-    -fx-pref-width: 180px;
-    -fx-background-radius: 5px;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 7px;
+    -fx-pref-width: 160px;
+    -fx-pref-height: 40px;
 }
 
-/* Form styling */
-.reminder-content {
-    -fx-padding: 20;
-}
-.reminder-title {
-    -fx-font-size: 20px;
-    -fx-text-fill: #00594E;
-}
-.reminder-label {
-    -fx-font-size: 14px;
-    -fx-text-fill: #00594E;
-}
-.reminder-field {
-    -fx-pref-width: 200px;
-    -fx-pref-height: 30px;
-    -fx-background-color: #C4E3D4;
-    -fx-background-radius: 5px;
-    -fx-border-radius: 5px;
-    -fx-padding: 0 5px;
-}
-.reminder-section-title {
-    -fx-font-size: 16px;
-    -fx-text-fill: #00594E;
-}
-.reminder-list {
-    -fx-background-radius: 5px;
-    -fx-border-radius: 5px;
-}
-.reminder-small-button {
+.set-reminder-button {
     -fx-background-color: #00594E;
     -fx-text-fill: white;
-    -fx-pref-width: 80px;
-    -fx-background-radius: 5px;
-}
-.reminder-button {
-    -fx-background-color: #00594E;
-    -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-pref-width: 120px;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 7px;
+    -fx-pref-width: 160px;
     -fx-pref-height: 40px;
-    -fx-background-radius: 5px;
+}
+.set-reminder-title{
+    -fx-font-size: 32;
+    -fx-font-weight: bold;
+    -fx-text-fill: #00594E;
+
+}
+.reminder-list{
+    -fx-background-color: #96CBB8;
+}
+
+.reminder-field:hover{
+    -fx-border-color: #00594E;
+}
+.remove{
+    -fx-background-color: #3D9574;
+    -fx-border-radius: 0.3;
+}
+.add{
+    -fx-background-color: #3D9574;
+    -fx-border-radius: 6px;
+}
+
+.add:hover{
+    -fx-border-color:#00594E ;
+    -fx-opacity: 0.3;
+    -fx-border-width: 1px;
+}
+.remove:hover{
+    -fx-border-color:#00594E ;
+    -fx-opacity: 0.3;
+    -fx-border-width: 1px;
+}
+.am{
+    -fx-background-color: #3D9574;
+}
+.pm{
+    -fx-background-color: #00594E;
+}
+.am,.pm:hover{
+    -fx-border-color: #DC6D67;
 }

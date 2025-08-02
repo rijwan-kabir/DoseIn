@@ -15,6 +15,7 @@ public class DoseInApp extends Application {
         primaryStage.setTitle("DoseIn");
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
+        primaryStage.setResizable(false);
     }
 
     public static void main(String[] args) {

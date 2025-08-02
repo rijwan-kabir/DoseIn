@@ -15,12 +15,14 @@
     -fx-font-size: 36px;
     -fx-text-fill: white;
     -fx-padding: 20 0 0 0;
+    -fx-font-weight: bold;
 }
 
 /* “Sign Up” heading */
 .signup-form-title {
     -fx-font-size: 28px;
     -fx-text-fill: #00594E;
+    -fx-font-weight: bold;
 }
 
 /* Input fields */
@@ -32,7 +34,10 @@
     -fx-border-radius: 5px;
     -fx-padding: 0 10px;
 }
-
+.signup-field:hover{
+    -fx-border-color: #00594E;
+    -fx-border-width: 1px;
+}
 /* Sign Up button */
 .signup-button {
     -fx-background-color: #00594E;
@@ -42,7 +47,10 @@
     -fx-pref-height: 40px;
     -fx-background-radius: 5px;
 }
-
+.signup-button:hover{
+    -fx-opacity: 0.3;
+    -fx-cursor: hand;
+}
 /* Link back to Sign In */
 .signup-link {
     -fx-text-fill: #00594E;
