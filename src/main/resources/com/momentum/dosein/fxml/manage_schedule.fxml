@@ -1,38 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:id="rootPane"
-            fx:controller="com.momentum.dosein.controller.ManageScheduleController"
-            stylesheets="@../css/dashboard.css,@../css/manage_schedule.css"
-            styleClass="dashboard-root"
-            prefWidth="800" prefHeight="600">
+<BorderPane fx:id="rootPane" prefHeight="600" prefWidth="800" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/manage_schedule.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.ManageScheduleController">
 
     <!-- LEFT NAVIGATION (exactly as dashboard.fxml) -->
     <left>
-        <VBox styleClass="nav-bar" spacing="10" prefWidth="200">
-            <HBox styleClass="nav-header"
-                  alignment="CENTER_LEFT"
-                  spacing="10"
-                  prefHeight="60"
-                  onMouseClicked="#handleDashboard">
-                <ImageView fitWidth="30" fitHeight="30" preserveRatio="true">
-                    <image><Image url="@../images/logo.png"/></image>
+        <VBox prefWidth="200" spacing="10" styleClass="nav-bar">
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#handleDashboard" prefHeight="60" spacing="10" styleClass="nav-header">
+                <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
+                    <image><Image url="@../images/logo.png" /></image>
                 </ImageView>
-                <Label text="DoseIn" styleClass="nav-logo"/>
+                <Label styleClass="nav-logo" text="DoseIn" />
             </HBox>
-            <Button text="Dashboard"        onAction="#handleDashboard"       styleClass="nav-button"/>
-            <Button text="Manage Schedule"  styleClass="nav-item"/>  <!-- active -->
-            <Button text="Doctor Contacts"  onAction="#handleDoctorContacts"  styleClass="nav-item"/>
-            <Button text="Emergency"        onAction="#handleEmergency"       styleClass="nav-item"/>
-            <Button text="About Us"         onAction="#handleAboutUs"         styleClass="nav-item"/>
-            <Region VBox.vgrow="ALWAYS"/>
-            <Button text="Sign Out"         onAction="#handleSignOut"         styleClass="nav-signout"/>
+            <Button onAction="#handleDashboard" styleClass="nav-button" text="Dashboard" />
+            <Button styleClass="nav-item" text="Manage Schedule" />  <!-- active -->
+            <Button onAction="#handleDoctorContacts" styleClass="nav-item" text="Doctor Contacts" />
+            <Button onAction="#handleEmergency" styleClass="nav-item" text="Emergency" />
+            <Button onAction="#handleAboutUs" styleClass="nav-item" text="About Us" />
+            <Region VBox.vgrow="ALWAYS" />
+            <Button onAction="#handleSignOut" styleClass="nav-signout" text="Sign Out" />
         </VBox>
     </left>
 
@@ -41,45 +30,77 @@
         <VBox spacing="20" styleClass="main-content">
 
             <!-- Header -->
-            <HBox styleClass="welcome-banner" spacing="10" alignment="CENTER_LEFT">
-                <Label text="Manage Schedule" styleClass="manage-title"/>
-                <Region HBox.hgrow="ALWAYS"/>
-                <Label text="Stay on track with your Medication" styleClass="manage-slogan"/>
-            </HBox>
 
-            <HBox spacing="20" alignment="TOP_LEFT">
+            <VBox styleClass="welcome-banner">
+                <Label styleClass="manage-title" text="Manage Schedule" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label styleClass="manage-slogan" text="Stay on track with your Medication" />
+            </VBox>
+
+            <HBox alignment="TOP_LEFT" spacing="20">
                 <!-- Active Alerts List -->
                 <VBox spacing="10" styleClass="manage-alerts-pane">
-                    <Label text="Active Alerts" styleClass="manage-section-title"/>
-                    <ListView fx:id="alertsList" styleClass="manage-listview"
-                              prefWidth="200" prefHeight="300"/>
+                    <Label styleClass="manage-section-title" text="Active Alerts" />
+                    <ListView fx:id="alertsList" prefHeight="300" prefWidth="200" styleClass="manage-listview" />
                 </VBox>
 
                 <!-- Medicine Information Panel -->
-                <VBox spacing="10" styleClass="manage-info-pane">
-                    <Label text="Medicine Information" styleClass="manage-panel-title"/>
+                <VBox spacing="10" styleClass="manage-info-pane" prefWidth="400" maxWidth="400">
+                    <Label styleClass="manage-panel-title" text="Medicine Information" />
 
                     <GridPane hgap="10" vgap="10">
-                        <Label text="Name :" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="manage-label"/>
-                        <Label fx:id="nameLabel" GridPane.rowIndex="0" GridPane.columnIndex="1" styleClass="manage-value"/>
+                        <Label styleClass="manage-label" text="Name :" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label fx:id="nameLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-                        <Label text="Start Date :" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="manage-label"/>
-                        <Label fx:id="startDateLabel" GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="manage-value"/>
+                        <Label styleClass="manage-label" text="Start Date :" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <Label fx:id="startDateLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-                        <Label text="End Date :" GridPane.rowIndex="1" GridPane.columnIndex="2" styleClass="manage-label"/>
-                        <Label fx:id="endDateLabel" GridPane.rowIndex="1" GridPane.columnIndex="3" styleClass="manage-value"/>
+                        <Label styleClass="manage-label" text="End Date :" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <Label fx:id="endDateLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-                        <Label text="Additional Information :" GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass="manage-label"/>
-                        <Label fx:id="noteLabel" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="3" styleClass="manage-value"/>
+                        <Label styleClass="manage-label" text="Additional Information :" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <Label fx:id="noteLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="3" />
 
-                        <Label text="Alert Time :" GridPane.rowIndex="3" GridPane.columnIndex="0" styleClass="manage-label"/>
+                        <Label styleClass="manage-label" text="Alert Time :" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                  <columnConstraints>
+                     <ColumnConstraints />
+                     <ColumnConstraints />
+                     <ColumnConstraints />
+                     <ColumnConstraints />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
                     </GridPane>
 
-                    <HBox fx:id="timesBox" spacing="10" styleClass="manage-times-box"/>
+                    <HBox fx:id="timesBox" spacing="10" styleClass="manage-times-box" />
 
-                    <Button text="Delete"
-                            onAction="#handleDelete"
-                            styleClass="nav-signout"/>
+                    <!-- Medicine Information Panel -->
+                    <VBox spacing="10" styleClass="manage-info-pane">
+
+                        <!-- Delete Button with Right Alignment -->
+                        <HBox alignment="CENTER"
+                              GridPane.columnIndex="1"
+                              GridPane.rowIndex="5"
+                              GridPane.columnSpan="3"
+                              styleClass="delete-button-container">
+
+                            <Button onAction="#handleDelete"
+                                    styleClass="delete-button"
+                                    text="Delete"
+                                    prefWidth="120">
+                                <graphic>
+                                    <ImageView fitWidth="16" fitHeight="16" preserveRatio="true">
+                                        <Image url="@../images/delete-icon.png" />
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                        </HBox>
+                    </VBox>
                 </VBox>
             </HBox>
         </VBox>
