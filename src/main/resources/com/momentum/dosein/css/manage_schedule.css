@@ -5,7 +5,7 @@
     -fx-font-size: 24px;
     -fx-text-fill: #00594E;
     -fx-font-weight: bold;
-    -fx-padding: 0 0 5px 0;
+    -fx-padding: 2 2px 5px 0;
 }
 .manage-slogan {
     -fx-font-size: 12px;
@@ -13,9 +13,12 @@
     -fx-background-radius: 5px;
 }
 .welcome-banner {
-    -fx-background-color: "white";
+    -fx-padding: 0 100px 0 10px;
+    -fx-background-color: white;
     -fx-spacing: "0";
     -fx-alignment:"CENTER_LEFT";
+
+
 }
 
 /* SECTION HEADER */
@@ -45,7 +48,6 @@
     -fx-padding: 15;
     -fx-spacing: 10;
     -fx-background-color: #C4E3D4;
-
 }
 
 /* PANEL TITLE */
@@ -108,6 +110,7 @@
     -fx-background-radius: 5px;
     -fx-graphic-text-gap: 8px;
     -fx-content-display: left;
+    -fx-cursor: hand;
 }
 
 .delete-button:hover {

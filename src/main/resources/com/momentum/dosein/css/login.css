@@ -1,5 +1,4 @@
 /* login.css */
-
 /* Root pane font */
 .login-root {
     -fx-font-family: "Segoe UI", sans-serif;
@@ -43,9 +42,9 @@
 
 }
 .my-hbox {
-    -fx-alignment: TOP_LEFT;       /* আপনি TOP_CENTER, TOP_RIGHT, BOTTOM_* ইত্যাদি দিতে পারেন */
-    -fx-spacing: 10px;             /* optional: চাইল্ডগুলোর মাঝে দূরত্ব */
-    -fx-padding: 0 0 0 0;          /* HBox এর চারদিকের ইনসেট (উপর, ডান, নিচ, বাম) */
+    -fx-alignment: TOP_LEFT;
+    -fx-spacing: 10px;
+    -fx-padding: 0 0 0 0;
 }
 
 

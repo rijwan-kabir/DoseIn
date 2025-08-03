@@ -1,15 +1,20 @@
 /* doctor_contacts.css */
 
 /* Header */
+.welcome-banner {
+    -fx-background-color: "white";
+    -fx-spacing: "0";
+    -fx-alignment:"CENTER_LEFT";
+}
 .contact-title {
-    -fx-font-size: 20px;
+    -fx-font-size: 24px;
     -fx-text-fill: #00594E;
+    -fx-font-weight: bold;
+    -fx-padding: 2 2px 5px 0;
 }
 .contact-slogan {
     -fx-font-size: 12px;
     -fx-text-fill: #00594E;
-    -fx-padding: 5 10;
-    -fx-background-color: #C4E3D4;
     -fx-background-radius: 5px;
 }
 
@@ -17,6 +22,8 @@
 .manage-section-title {
     -fx-font-size: 20px;
     -fx-text-fill: #00594E;
+    -fx-padding: 0 0 5 0;
+    -fx-font-weight: bold;
 }
 
 /* Saved Entries Pane */
@@ -30,15 +37,24 @@
     -fx-border-radius: 5px;
 }
 .add-button {
+    -fx-alignment: center;
     -fx-background-color: #00594E;
     -fx-text-fill: white;
-    -fx-pref-width: 80px;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 15px 8px 10px;
     -fx-background-radius: 5px;
+    -fx-graphic-text-gap: 8px;
+    -fx-content-display: left;
+    -fx-cursor: hand;
+}
+.add-button:hover {
+    -fx-background-color: #EF5350;
 }
 
 /* Info Pane */
 .contacts-info-pane {
-    -fx-background-color: #80CBC4;
+    -fx-background-color: #C4E3D4;
     -fx-background-radius: 5px;
     -fx-padding: 15;
     -fx-spacing: 10;
@@ -46,21 +62,35 @@
 .manage-panel-title {
     -fx-font-size: 18px;
     -fx-text-fill: #00594E;
+    -fx-font-weight: bold;
 }
 .manage-label {
     -fx-font-size: 14px;
     -fx-text-fill: #00594E;
+    -fx-font-weight: bold;
 }
 .manage-value {
     -fx-font-size: 14px;
     -fx-text-fill: #00594E;
 }
 
+/* Delete Button Container */
+.delete-button-container {
+    -fx-padding: 10px 0 0 0;
+}
+
 /* Delete Button */
 .delete-button {
     -fx-background-color: #E57373;
     -fx-text-fill: white;
+    -fx-font-weight: bold;
     -fx-font-size: 14px;
-    -fx-pref-width: 100px;
+    -fx-padding: 8px 15px 8px 10px;
     -fx-background-radius: 5px;
+    -fx-graphic-text-gap: 8px;
+    -fx-content-display: left;
+    -fx-cursor: hand;
+}
+.delete-button:hover {
+    -fx-background-color: #EF5350;
 }

@@ -8,6 +8,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.geometry.Insets?>
 
 <BorderPane xmlns="http://javafx.com/javafx/17"
             xmlns:fx="http://javafx.com/fxml/1"
@@ -19,70 +20,67 @@
 
     <!-- LEFT NAVIGATION -->
     <left>
-        <VBox styleClass="nav-bar" spacing="10" prefWidth="200" >
-            <!-- make the logo/header clickable -->
-            <HBox fx:id="navHeader"
-                  styleClass="nav-header"
-                  alignment="CENTER_LEFT"
-                  spacing="10"
-                  prefHeight="60"
-                  onMouseClicked="#handleDashboard">
+        <VBox styleClass="nav-bar" spacing="10" prefWidth="200">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <HBox fx:id="navHeader" styleClass="nav-header" alignment="CENTER_LEFT" spacing="10" prefHeight="60">
                 <ImageView fitWidth="30" fitHeight="30" preserveRatio="true">
-                    <image>
-                        <Image url="@../images/logo.png"/>
-                    </image>
+                    <Image url="@../images/logo.png"/>
                 </ImageView>
                 <Label text="DoseIn" styleClass="nav-logo"/>
             </HBox>
-            <Button text="Dashboard"
-                    onAction="#handleDashboard"
-                    styleClass="nav-button"/>
-            <Button text="Manage Schedule"
-                    onAction="#handleManageSchedule"
-                    styleClass="nav-item"/>
-            <Button text="Doctor Contacts"
-                    onAction="#handleDoctorContacts"
-                    styleClass="nav-item"/>
-            <Button text="Emergency"
-                    onAction="#handleEmergency"
-                    styleClass="nav-item"/>
-            <Button text="About Us"
-                    onAction="#handleAboutUs"
-                    styleClass="nav-item"/>
+
+            <Button text="Dashboard" onAction="#handleDashboard" styleClass="nav-button"/>
+            <Button text="Manage Schedule" onAction="#handleManageSchedule" styleClass="nav-item"/>
+            <Button text="Doctor Contacts" onAction="#handleDoctorContacts" styleClass="nav-item"/>
+            <Button text="Emergency" onAction="#handleEmergency" styleClass="nav-item"/>
+            <Button text="About Us" onAction="#handleAboutUs" styleClass="nav-item"/>
+
             <Region VBox.vgrow="ALWAYS"/>
-            <Button text="Sign Out"
-                    onAction="#handleSignOut"
-                    styleClass="nav-signout"/>
+
+            <Button text="Sign Out" onAction="#handleSignOut" styleClass="nav-signout"/>
         </VBox>
     </left>
 
     <!-- CENTER CONTENT -->
     <center>
-        <VBox spacing="20" styleClass="main-content">
+        <VBox styleClass="main-content" spacing="20">
+            <padding>
+                <Insets top="30" right="30" bottom="30" left="30"/>
+            </padding>
 
             <!-- Welcome Banner -->
             <HBox styleClass="welcome-banner" spacing="10" alignment="CENTER_LEFT">
+                <padding>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
+                </padding>
+
                 <VBox>
-                    <Label fx:id="greetingLabel"    styleClass="welcome-text"/>
-                    <Label fx:id="sloganLabel"      styleClass="welcome-slogan"/>
+                    <Label fx:id="greetingLabel" styleClass="greeting-text"/>
+                    <Label fx:id="sloganLabel" styleClass="slogan-text"/>
                 </VBox>
+
                 <Region HBox.hgrow="ALWAYS"/>
-                <Label fx:id="timeLabel"         styleClass="time-label"/>
+
+                <Label fx:id="timeLabel" styleClass="time-label"/>
             </HBox>
 
             <!-- Schedule Header -->
-            <HBox alignment="CENTER_LEFT" spacing="10">
+            <HBox alignment="CENTER_LEFT" spacing="10" styleClass="schedule-cont">
+                <padding>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
+                </padding>
                 <Label text="Today's Schedule" styleClass="schedule-header"/>
                 <Region HBox.hgrow="ALWAYS"/>
-                <Button text="Set Reminder"
-                        onAction="#handleSetReminder"
-                        styleClass="schedule-button"/>
+                <Button text="Set Reminder" onAction="#handleSetReminder" styleClass="schedule-button"/>
             </HBox>
 
             <!-- Scrollable Schedule List -->
-            <ScrollPane fitToWidth="true" styleClass="schedule-scroll">
+            <ScrollPane fitToWidth="true" styleClass="schedule-scroll" hbarPolicy="NEVER">
                 <content>
-                    <VBox fx:id="scheduleContainer" spacing="10" styleClass="schedule-list"/>
+                    <VBox fx:id="scheduleContainer" spacing="5" styleClass="schedule-list"/>
                 </content>
             </ScrollPane>
         </VBox>
