@@ -3,25 +3,81 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
 
-<BorderPane fx:id="rootPane" prefHeight="600" prefWidth="800" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/manage_schedule.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.ManageScheduleController">
+<BorderPane fx:id="rootPane" prefHeight="700" prefWidth="1000" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/manage_schedule.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.ManageScheduleController">
 
-    <!-- LEFT NAVIGATION (exactly as dashboard.fxml) -->
+    <!-- LEFT NAVIGATION -->
     <left>
-        <VBox prefWidth="200" spacing="10" styleClass="nav-bar">
-            <HBox alignment="CENTER_LEFT" onMouseClicked="#handleDashboard" prefHeight="60" spacing="10" styleClass="nav-header">
-                <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
-                    <image><Image url="@../images/logo.png" /></image>
-                </ImageView>
-                <Label styleClass="nav-logo" text="DoseIn" />
+        <VBox styleClass="nav-bar" spacing="15" prefWidth="200">
+            <padding>
+                <Insets top="20" right="15" bottom="20" left="15"/>
+            </padding>
+
+            <!-- Logo and App Name -->
+            <HBox styleClass="nav-header" alignment="CENTER_LEFT" spacing="12" prefHeight="70">
+                <HBox styleClass="logo-container" alignment="CENTER_LEFT" spacing="12">
+                    <ImageView fitWidth="30" fitHeight="30" preserveRatio="true">
+                        <Image url="@../images/logo.png"/>
+                    </ImageView>
+                    <Label text="Doseln" styleClass="nav-logo"/>
+                </HBox>
             </HBox>
-            <Button onAction="#handleDashboard" styleClass="nav-button" text="Dashboard" />
-            <Button styleClass="nav-item" text="Manage Schedule" />  <!-- active -->
-            <Button onAction="#handleDoctorContacts" styleClass="nav-item" text="Doctor Contacts" />
-            <Button onAction="#handleEmergency" styleClass="nav-item" text="Emergency" />
-            <Button onAction="#handleAboutUs" styleClass="nav-item" text="About Us" />
-            <Region VBox.vgrow="ALWAYS" />
-            <Button onAction="#handleSignOut" styleClass="nav-signout" text="Sign Out" />
+
+            <!-- Navigation Menu -->
+            <VBox spacing="8" styleClass="nav-menu-container">
+                <Button text="Dashboard" onAction="#handleDashboard" styleClass="nav-item">
+                    <graphic>
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/dashboard-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button text="Manage Schedule" onAction="#handleManageSchedule" styleClass="nav-button-active">
+                    <graphic>
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/calendar-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button text="Doctor Contacts" onAction="#handleDoctorContacts" styleClass="nav-item-contacts">
+                    <graphic>
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/doctor-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button text="Emergency" onAction="#handleEmergency" styleClass="nav-item">
+                    <graphic>
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/emergency-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button text="About Us" onAction="#handleAboutUs" styleClass="nav-item">
+                    <graphic>
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/about-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </VBox>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <VBox styleClass="signout-container">
+                <Button text="Sign Out" onAction="#handleSignOut" styleClass="nav-signout">
+                    <graphic>
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/signout-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </VBox>
         </VBox>
     </left>
 
@@ -62,19 +118,19 @@
                         <Label fx:id="noteLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="3" />
 
                         <Label styleClass="manage-label" text="Alert Time :" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-                  <columnConstraints>
-                     <ColumnConstraints />
-                     <ColumnConstraints />
-                     <ColumnConstraints />
-                     <ColumnConstraints />
-                  </columnConstraints>
-                  <rowConstraints>
-                     <RowConstraints />
-                     <RowConstraints />
-                     <RowConstraints />
-                     <RowConstraints />
-                     <RowConstraints />
-                  </rowConstraints>
+                        <columnConstraints>
+                            <ColumnConstraints />
+                            <ColumnConstraints />
+                            <ColumnConstraints />
+                            <ColumnConstraints />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                        </rowConstraints>
                     </GridPane>
 
                     <HBox fx:id="timesBox" spacing="10" styleClass="manage-times-box" />
