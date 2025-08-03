@@ -3,7 +3,7 @@
 /* Root Styles */
 .dashboard-root {
     -fx-font-family: 'Poppins', 'Segoe UI', sans-serif;
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: #B8E0D1;
 }
 
 /* NAVIGATION BAR */
@@ -11,10 +11,12 @@
     -fx-background-color: #4BA684;
     -fx-padding: 0;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
+    -fx-alignment: top-center;
 }
 
 .nav-header {
     -fx-padding: 0 0 20 0;
+    -fx-alignment: center;
 }
 
 .nav-logo {
@@ -25,9 +27,10 @@
 
 .logo-container {
     -fx-background-color: #12594C;
-    -fx-background-radius: 8px;
-    -fx-padding: 8 12;
-    -fx-alignment: center;
+    -fx-padding: 15 20;
+    -fx-alignment: center-left;
+    -fx-min-width: 200;
+    -fx-pref-width: 200;
 }
 
 .logo-pill-green {
@@ -45,8 +48,9 @@
     -fx-background-color: #12594C;
     -fx-text-fill: white;
     -fx-font-size: 15px;
-    -fx-pref-width: 190px;
-    -fx-background-radius: 8px;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 10px;
     -fx-font-weight: 600;
     -fx-alignment: CENTER_LEFT;
     -fx-padding: 12 18;
@@ -55,15 +59,16 @@
 }
 
 .nav-button-active:hover {
-    -fx-background-color: #0F4A3F;
+    -fx-background-color: #24675B;
 }
 
 .nav-item {
-    -fx-background-color: transparent;
+    -fx-background-color: #3D9574;
     -fx-text-fill: white;
     -fx-font-size: 15px;
-    -fx-pref-width: 190px;
-    -fx-background-radius: 8px;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 10px;
     -fx-alignment: CENTER_LEFT;
     -fx-font-weight: 600;
     -fx-padding: 12 18;
@@ -72,16 +77,23 @@
 }
 
 .nav-item:hover {
-    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-background-color: #24675B;
+}
+
+.nav-menu-container {
+    -fx-alignment: center;
+    -fx-halignment: center;
 }
 
 .nav-signout {
     -fx-background-color: #DC6D67;
     -fx-text-fill: white;
     -fx-font-size: 15px;
-    -fx-pref-width: 190px;
-    -fx-background-radius: 8px;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 10px;
     -fx-font-weight: 600;
+    -fx-alignment: CENTER_LEFT;
     -fx-padding: 12 18;
     -fx-graphic-text-gap: 12;
     -fx-cursor: hand;
@@ -94,19 +106,25 @@
 .signout-container {
     -fx-alignment: bottom-center;
     -fx-padding: 0 0 10 0;
+    -fx-halignment: center;
 }
 
 /* MAIN CONTENT AREA */
 .main-content {
     -fx-spacing: 25;
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: #B8E0D1;
 }
 
-/* WELCOME BANNER */
-.welcome-banner {
-    -fx-background-color: #B8E0D1;
+/* WELCOME CARD */
+.welcome-card {
+    -fx-background-color: white;
     -fx-background-radius: 12px;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+}
+
+.welcome-banner {
+    -fx-background-color: transparent;
+    -fx-background-radius: 12px;
     -fx-alignment: CENTER_LEFT;
     -fx-min-height: 120;
 }
@@ -134,6 +152,13 @@
     -fx-font-size: 16px;
     -fx-text-fill: white;
     -fx-font-weight: bold;
+}
+
+/* SCHEDULE CARD */
+.schedule-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
 }
 
 /* SCHEDULE SECTION */
@@ -169,6 +194,7 @@
     -fx-border-color: transparent;
     -fx-hbar-policy: never;
     -fx-vbar-policy: as-needed;
+    -fx-focus-traversable: false;
 }
 
 .schedule-scroll .viewport {

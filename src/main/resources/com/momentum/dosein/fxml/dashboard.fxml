@@ -20,23 +20,23 @@
 
     <!-- LEFT NAVIGATION -->
     <left>
-        <VBox styleClass="nav-bar" spacing="15" prefWidth="220">
+        <VBox styleClass="nav-bar" spacing="15" prefWidth="200">
             <padding>
                 <Insets top="20" right="15" bottom="20" left="15"/>
             </padding>
 
             <!-- Logo and App Name -->
             <HBox fx:id="navHeader" styleClass="nav-header" alignment="CENTER_LEFT" spacing="12" prefHeight="70">
-                <HBox styleClass="logo-container" alignment="CENTER">
+                <HBox styleClass="logo-container" alignment="CENTER_LEFT" spacing="12">
                     <ImageView fitWidth="30" fitHeight="30" preserveRatio="true">
                         <Image url="@../images/logo.png"/>
                     </ImageView>
+                    <Label text="Doseln" styleClass="nav-logo"/>
                 </HBox>
-                <Label text="Doseln" styleClass="nav-logo"/>
             </HBox>
 
             <!-- Navigation Menu -->
-            <VBox spacing="8">
+            <VBox spacing="8" styleClass="nav-menu-container">
                 <Button text="Dashboard" onAction="#handleDashboard" styleClass="nav-button-active">
                     <graphic>
                         <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
@@ -99,43 +99,52 @@
                 <Insets top="40" right="40" bottom="40" left="40"/>
             </padding>
 
-            <!-- Welcome Banner -->
-            <HBox styleClass="welcome-banner" spacing="20" alignment="CENTER_LEFT">
+            <!-- Welcome Banner Card -->
+            <VBox styleClass="welcome-card" spacing="0">
+                <HBox styleClass="welcome-banner" spacing="20" alignment="CENTER_LEFT">
+                    <padding>
+                        <Insets top="25" right="25" bottom="25" left="25"/>
+                    </padding>
+
+                    <VBox spacing="8">
+                        <Label fx:id="greetingLabel" styleClass="greeting-text"/>
+                        <Label fx:id="sloganLabel" styleClass="slogan-text"/>
+                    </VBox>
+
+                    <Region HBox.hgrow="ALWAYS"/>
+
+                    <VBox styleClass="time-container" alignment="CENTER">
+                        <Label fx:id="timeLabel" styleClass="time-label"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <!-- Schedule Section Card -->
+            <VBox styleClass="schedule-card" spacing="20">
                 <padding>
                     <Insets top="25" right="25" bottom="25" left="25"/>
                 </padding>
 
-                <VBox spacing="8">
-                    <Label fx:id="greetingLabel" styleClass="greeting-text"/>
-                    <Label fx:id="sloganLabel" styleClass="slogan-text"/>
-                </VBox>
+                <!-- Schedule Header -->
+                <HBox alignment="CENTER_LEFT" spacing="15">
+                    <Label text="Today's Schedule" styleClass="schedule-header"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="+ Set Reminder" onAction="#handleSetReminder" styleClass="schedule-button">
+                        <graphic>
+                            <ImageView fitWidth="16" fitHeight="16" preserveRatio="true">
+                                <Image url="@../images/plus-icon.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
 
-                <Region HBox.hgrow="ALWAYS"/>
-
-                <VBox styleClass="time-container" alignment="CENTER">
-                    <Label fx:id="timeLabel" styleClass="time-label"/>
-                </VBox>
-            </HBox>
-
-            <!-- Schedule Header -->
-            <HBox alignment="CENTER_LEFT" spacing="15">
-                <Label text="Today's Schedule" styleClass="schedule-header"/>
-                <Region HBox.hgrow="ALWAYS"/>
-                <Button text="+ Set Reminder" onAction="#handleSetReminder" styleClass="schedule-button">
-                    <graphic>
-                        <ImageView fitWidth="16" fitHeight="16" preserveRatio="true">
-                            <Image url="@../images/plus-icon.png"/>
-                        </ImageView>
-                    </graphic>
-                </Button>
-            </HBox>
-
-            <!-- Scrollable Schedule Cards -->
-            <ScrollPane fitToWidth="true" styleClass="schedule-scroll" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
-                <content>
-                    <VBox fx:id="scheduleContainer" spacing="15" styleClass="schedule-list"/>
-                </content>
-            </ScrollPane>
+                <!-- Scrollable Schedule Cards -->
+                <ScrollPane fitToWidth="true" styleClass="schedule-scroll" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" focusTraversable="false">
+                    <content>
+                        <VBox fx:id="scheduleContainer" spacing="15" styleClass="schedule-list"/>
+                    </content>
+                </ScrollPane>
+            </VBox>
         </VBox>
     </center>
 </BorderPane>
