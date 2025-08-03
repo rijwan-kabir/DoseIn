@@ -80,6 +80,42 @@
     -fx-background-color: #24675B;
 }
 
+.nav-item-schedule {
+    -fx-background-color: #3D9574;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 10px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-weight: 600;
+    -fx-padding: 12 18;
+    -fx-graphic-text-gap: 12;
+    -fx-cursor: hand;
+}
+
+.nav-item-schedule:hover {
+    -fx-background-color: #24675B;
+}
+
+.nav-item-contacts {
+    -fx-background-color: #3D9574;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 10px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-weight: 600;
+    -fx-padding: 12 18;
+    -fx-graphic-text-gap: 12;
+    -fx-cursor: hand;
+}
+
+.nav-item-contacts:hover {
+    -fx-background-color: #24675B;
+}
+
 .nav-menu-container {
     -fx-alignment: center;
     -fx-halignment: center;
@@ -120,13 +156,16 @@
     -fx-background-color: white;
     -fx-background-radius: 12px;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+    -fx-pref-height: 80px;
+    -fx-min-height: 80px;
 }
 
 .welcome-banner {
     -fx-background-color: transparent;
     -fx-background-radius: 12px;
     -fx-alignment: CENTER_LEFT;
-    -fx-min-height: 120;
+    -fx-min-height: 80px;
+    -fx-pref-height: 80px;
 }
 
 .greeting-text {
@@ -136,16 +175,18 @@
 }
 
 .slogan-text {
-    -fx-font-size: 16px;
+    -fx-font-size: 14px;
     -fx-text-fill: #666666;
     -fx-font-weight: 500;
+    -fx-wrap-text: true;
 }
 
 .time-container {
     -fx-background-color: #12594C;
     -fx-background-radius: 8px;
     -fx-padding: 12 20;
-    -fx-min-width: 140;
+    -fx-min-width: 180px;
+    -fx-pref-width: 180px;
 }
 
 .time-label {
@@ -177,6 +218,8 @@
     -fx-font-weight: 600;
     -fx-graphic-text-gap: 8;
     -fx-cursor: hand;
+    -fx-pref-width: 180px;
+    -fx-min-width: 180px;
 }
 
 .schedule-button:hover {
@@ -186,6 +229,13 @@
 /* SCHEDULE LIST */
 .schedule-list {
     -fx-spacing: 15;
+    -fx-focus-traversable: false;
+    -fx-focus-visible: false;
+}
+
+.schedule-list .label {
+    -fx-focus-traversable: false;
+    -fx-focus-visible: false;
 }
 
 /* SCROLLABLE AREA */
@@ -195,10 +245,30 @@
     -fx-hbar-policy: never;
     -fx-vbar-policy: as-needed;
     -fx-focus-traversable: false;
+    -fx-focus-visible: false;
+    -fx-background-color: #B8E0D1;
 }
 
 .schedule-scroll .viewport {
-    -fx-background-color: transparent;
+    -fx-background-color: #B8E0D1;
+    -fx-focus-traversable: false;
+    -fx-focus-visible: false;
+}
+
+.schedule-scroll .viewport:focused {
+    -fx-background-color: #B8E0D1;
+}
+
+.schedule-scroll .viewport:selected {
+    -fx-background-color: #B8E0D1;
+}
+
+.schedule-scroll .viewport:pressed {
+    -fx-background-color: #B8E0D1;
+}
+
+.schedule-scroll .viewport:hover {
+    -fx-background-color: #B8E0D1;
 }
 
 .schedule-scroll .scroll-bar:vertical {
@@ -225,14 +295,42 @@
     -fx-padding: 0 0 0 0;
 }
 
+.schedule-scroll .scroll-bar .increment-button,
+.schedule-scroll .scroll-bar .decrement-button {
+    -fx-focus-traversable: false;
+    -fx-focus-visible: false;
+}
+
+.schedule-scroll .scroll-bar .increment-button:hover,
+.schedule-scroll .scroll-bar .decrement-button:hover {
+    -fx-background-color: transparent;
+}
+
+.schedule-scroll .scroll-bar .increment-button:pressed,
+.schedule-scroll .scroll-bar .decrement-button:pressed {
+    -fx-background-color: transparent;
+}
+
 /* REMINDER CARDS */
 .reminder-card {
     -fx-background-color: #12594C;
     -fx-background-radius: 12px;
-    -fx-padding: 20;
+    -fx-padding: 0;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0, 0, 2);
-    -fx-min-height: 80;
+    -fx-min-height: 60px;
+    -fx-pref-height: 60px;
     -fx-alignment: CENTER_LEFT;
+}
+
+.reminder-time-box {
+    -fx-background-color: #4BA684;
+    -fx-background-radius: 8px 0 0 8px;
+    -fx-padding: 8 12;
+    -fx-alignment: center;
+    -fx-min-width: 140px;
+    -fx-pref-width: 140px;
+    -fx-min-height: 60px;
+    -fx-pref-height: 60px;
 }
 
 .reminder-card .reminder-time {
@@ -244,7 +342,7 @@
 .reminder-card .reminder-medicine {
     -fx-font-size: 16px;
     -fx-text-fill: white;
-    -fx-font-weight: 600;
+    -fx-font-weight: bold;
 }
 
 .reminder-card .reminder-note {
@@ -276,6 +374,7 @@
 }
 
 .reminder-details-container {
+    -fx-padding: 20;
     -fx-spacing: 4;
 }
 
