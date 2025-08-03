@@ -13,6 +13,7 @@ import javafx.scene.*;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
+import javafx.geometry.Pos;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
@@ -42,15 +43,15 @@ public class DashboardController {
 
         // Greet user
         User current = Session.getCurrentUser();
-        greetingLabel.setText("Hello, " + (current != null ? current.getUsername() : "User") + "!");
-        greetingLabel.setFont(Font.font("Poppins", FontWeight.BOLD, 24));
+        greetingLabel.setText("Hello, " + (current != null ? current.getUsername() : "Majharul") + "!");
+        greetingLabel.setFont(Font.font("Poppins", FontWeight.BOLD, 28));
 
         sloganLabel.setText("Your Health Matters - Stay on Track!");
-        sloganLabel.setFont(Font.font("Poppins", FontWeight.MEDIUM, 14));
+        sloganLabel.setFont(Font.font("Poppins", FontWeight.MEDIUM, 16));
 
         // Start clock with seconds
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hh:mm:ss a");
-        timeLabel.setFont(Font.font("Poppins", FontWeight.MEDIUM, 14));
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hh : mm : ss a");
+        timeLabel.setFont(Font.font("Poppins", FontWeight.BOLD, 16));
         clock = new Timeline(
                 new KeyFrame(Duration.ZERO,
                         e -> timeLabel.setText(LocalTime.now().format(dtf))),
@@ -86,38 +87,40 @@ public class DashboardController {
 
             if (isActiveToday && isRelevantTime) {
                 hasReminders = true;
-                VBox card = new VBox(5);
+                HBox card = new HBox(15);
                 card.getStyleClass().add("reminder-card");
+                card.setAlignment(Pos.CENTER_LEFT);
 
-                if (r.getTime().isBefore(now)) {
-                    card.getStyleClass().add("past-due-card");
-
-                    Label statusLabel = new Label("PAST DUE");
-                    statusLabel.setFont(Font.font("Poppins", FontWeight.BOLD, 10));
-                    statusLabel.getStyleClass().add("status-indicator");
-                    card.getChildren().add(statusLabel);
-                }
-
+                // Time container (left side)
+                VBox timeContainer = new VBox();
+                timeContainer.setAlignment(Pos.CENTER_LEFT);
                 Label timeLabel = new Label(r.getTime().format(tfmt));
-                timeLabel.setFont(Font.font("Poppins", FontWeight.BOLD, 16));
+                timeLabel.setFont(Font.font("Poppins", FontWeight.BOLD, 18));
                 timeLabel.getStyleClass().add("reminder-time");
+                timeContainer.getChildren().add(timeLabel);
+
+                // Details container (right side)
+                VBox detailsContainer = new VBox(4);
+                detailsContainer.setAlignment(Pos.CENTER_LEFT);
 
                 Label medicineLabel = new Label(r.getMedicineName() + " " + r.getDosage());
-                medicineLabel.setFont(Font.font("Poppins", FontWeight.MEDIUM, 14));
+                medicineLabel.setFont(Font.font("Poppins", FontWeight.SEMI_BOLD, 16));
                 medicineLabel.getStyleClass().add("reminder-medicine");
 
                 Label noteLabel = new Label(r.getNote());
-                noteLabel.setFont(Font.font("Poppins", FontPosture.ITALIC, 12));
+                noteLabel.setFont(Font.font("Poppins", FontPosture.ITALIC, 14));
                 noteLabel.getStyleClass().add("reminder-note");
 
-                card.getChildren().addAll(timeLabel, medicineLabel, noteLabel);
+                detailsContainer.getChildren().addAll(medicineLabel, noteLabel);
+
+                card.getChildren().addAll(timeContainer, detailsContainer);
                 scheduleContainer.getChildren().add(card);
             }
         }
 
         if (!hasReminders) {
             Label emptyLabel = new Label("No upcoming reminders for today");
-            emptyLabel.setFont(Font.font("Poppins", FontWeight.MEDIUM, 14));
+            emptyLabel.setFont(Font.font("Poppins", FontWeight.MEDIUM, 16));
             emptyLabel.getStyleClass().add("empty-label");
             scheduleContainer.getChildren().add(emptyLabel);
         }
