@@ -1,66 +1,195 @@
 /* doctor_contacts.css */
 
-/* Header */
-.contact-title {
-    -fx-font-size: 20px;
-    -fx-text-fill: #00594E;
+/* Root Styles */
+.dashboard-root {
+    -fx-font-family: 'Poppins', 'Segoe UI', sans-serif;
+    -fx-background-color: #B8E0D1;
 }
-.contact-slogan {
+
+/* NAVIGATION BAR */
+.nav-bar {
+    -fx-background-color: #4BA684;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
+    -fx-alignment: top-center;
+}
+
+.nav-header {
+    -fx-padding: 0 0 20 0;
+    -fx-alignment: center;
+}
+
+.nav-logo {
+    -fx-font-size: 28px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.logo-container {
+    -fx-background-color: #12594C;
+    -fx-padding: 15 20;
+    -fx-alignment: center-left;
+    -fx-min-width: 200;
+    -fx-pref-width: 200;
+}
+
+/* Navigation Buttons */
+.nav-button-active {
+    -fx-background-color: #12594C;
+    -fx-text-fill: white;
     -fx-font-size: 12px;
-    -fx-text-fill: #00594E;
-    -fx-padding: 5 10;
-    -fx-background-color: #C4E3D4;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 10px;
+    -fx-font-weight: 600;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 18;
+    -fx-graphic-text-gap: 12;
+    -fx-cursor: hand;
+}
+
+.nav-button-active:hover {
+    -fx-background-color: #24675B;
+}
+
+.nav-item {
+    -fx-background-color: #3D9574;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 10px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-weight: 600;
+    -fx-padding: 12 18;
+    -fx-graphic-text-gap: 12;
+    -fx-cursor: hand;
+}
+
+.nav-item:hover {
+    -fx-background-color: #24675B;
+}
+
+.nav-item-schedule {
+    -fx-background-color: #3D9574;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 10px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-weight: 600;
+    -fx-padding: 12 18;
+    -fx-graphic-text-gap: 12;
+    -fx-cursor: hand;
+}
+
+.nav-item-schedule:hover {
+    -fx-background-color: #24675B;
+}
+
+.nav-item-contacts {
+    -fx-background-color: #3D9574;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 10px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-weight: 600;
+    -fx-padding: 12 18;
+    -fx-graphic-text-gap: 12;
+    -fx-cursor: hand;
+}
+
+.nav-item-contacts:hover {
+    -fx-background-color: #24675B;
+}
+
+.nav-menu-container {
+    -fx-alignment: center;
+    -fx-halignment: center;
+}
+
+.nav-signout {
+    -fx-background-color: #DC6D67;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 10px;
+    -fx-font-weight: 600;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 18;
+    -fx-graphic-text-gap: 12;
+    -fx-cursor: hand;
+}
+
+.nav-signout:hover {
+    -fx-background-color: #C55A54;
+}
+
+.signout-container {
+    -fx-alignment: bottom-center;
+    -fx-padding: 0 0 10 0;
+    -fx-halignment: center;
+}
+
+/* MAIN CONTENT AREA */
+.main-content {
+    -fx-spacing: 25;
+    -fx-padding: 30;
+    -fx-background-color: #B8E0D1;
+}
+
+/* DOCTOR CONTACTS SPECIFIC STYLES */
+.contacts-title {
+    -fx-font-size: 24px;
+    -fx-text-fill: #12594C;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 5px 0;
+}
+
+.contacts-slogan {
+    -fx-font-size: 12px;
+    -fx-text-fill: #12594C;
     -fx-background-radius: 5px;
 }
 
-/* Pane Titles */
-.manage-section-title {
-    -fx-font-size: 20px;
-    -fx-text-fill: #00594E;
+.contacts-header {
+    -fx-background-color: white;
+    -fx-spacing: 0;
+    -fx-alignment: CENTER_LEFT;
 }
 
-/* Saved Entries Pane */
+.contacts-section-title {
+    -fx-font-size: 20px;
+    -fx-text-fill: #12594C;
+    -fx-padding: 0 0 5 0;
+    -fx-font-weight: bold;
+}
+
 .contacts-pane {
     -fx-background-color: #C4E3D4;
     -fx-background-radius: 5px;
     -fx-padding: 10;
 }
-.contacts-pane .list-view {
+
+.contacts-listview {
     -fx-background-radius: 5px;
     -fx-border-radius: 5px;
 }
-.add-button {
-    -fx-background-color: #00594E;
+
+.add-doctor-button {
+    -fx-background-color: #4BA684;
     -fx-text-fill: white;
-    -fx-pref-width: 80px;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 15px;
     -fx-background-radius: 5px;
+    -fx-cursor: hand;
 }
 
-/* Info Pane */
-.contacts-info-pane {
-    -fx-background-color: #80CBC4;
-    -fx-background-radius: 5px;
-    -fx-padding: 15;
-    -fx-spacing: 10;
-}
-.manage-panel-title {
-    -fx-font-size: 18px;
-    -fx-text-fill: #00594E;
-}
-.manage-label {
-    -fx-font-size: 14px;
-    -fx-text-fill: #00594E;
-}
-.manage-value {
-    -fx-font-size: 14px;
-    -fx-text-fill: #00594E;
-}
-
-/* Delete Button */
-.delete-button {
-    -fx-background-color: #E57373;
-    -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-pref-width: 100px;
-    -fx-background-radius: 5px;
+.add-doctor-button:hover {
+    -fx-background-color: #3D9574;
 }
