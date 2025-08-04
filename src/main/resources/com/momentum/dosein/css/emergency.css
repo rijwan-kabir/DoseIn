@@ -1,195 +1,69 @@
-/* emergency.css */
-
-/* Root Styles */
-.dashboard-root {
-    -fx-font-family: 'Poppins', 'Segoe UI', sans-serif;
-    -fx-background-color: #B8E0D1;
-}
-
-/* NAVIGATION BAR */
-.nav-bar {
-    -fx-background-color: #4BA684;
-    -fx-padding: 0;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
-    -fx-alignment: top-center;
-}
-
-.nav-header {
-    -fx-padding: 0 0 20 0;
-    -fx-alignment: center;
-}
-
-.nav-logo {
-    -fx-font-size: 28px;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-}
-
-.logo-container {
-    -fx-background-color: #12594C;
-    -fx-padding: 15 20;
-    -fx-alignment: center-left;
-    -fx-min-width: 200;
-    -fx-pref-width: 200;
-}
-
-/* Navigation Buttons */
-.nav-button-active {
-    -fx-background-color: #12594C;
-    -fx-text-fill: white;
-    -fx-font-size: 15px;
-    -fx-pref-width: 180px;
-    -fx-pref-height: 40px;
-    -fx-background-radius: 10px;
-    -fx-font-weight: 600;
-    -fx-alignment: CENTER_LEFT;
-    -fx-padding: 12 18;
-    -fx-graphic-text-gap: 12;
-    -fx-cursor: hand;
-}
-
-.nav-button-active:hover {
-    -fx-background-color: #24675B;
-}
-
-.nav-item {
-    -fx-background-color: #3D9574;
-    -fx-text-fill: white;
-    -fx-font-size: 15px;
-    -fx-pref-width: 180px;
-    -fx-pref-height: 40px;
-    -fx-background-radius: 10px;
-    -fx-alignment: CENTER_LEFT;
-    -fx-font-weight: 600;
-    -fx-padding: 12 18;
-    -fx-graphic-text-gap: 12;
-    -fx-cursor: hand;
-}
-
-.nav-item:hover {
-    -fx-background-color: #24675B;
-}
-
-.nav-item-schedule {
-    -fx-background-color: #3D9574;
-    -fx-text-fill: white;
-    -fx-font-size: 12px;
-    -fx-pref-width: 180px;
-    -fx-pref-height: 40px;
-    -fx-background-radius: 10px;
-    -fx-alignment: CENTER_LEFT;
-    -fx-font-weight: 600;
-    -fx-padding: 12 18;
-    -fx-graphic-text-gap: 12;
-    -fx-cursor: hand;
-}
-
-.nav-item-schedule:hover {
-    -fx-background-color: #24675B;
-}
-
-.nav-item-contacts {
-    -fx-background-color: #3D9574;
-    -fx-text-fill: white;
-    -fx-font-size: 12px;
-    -fx-pref-width: 180px;
-    -fx-pref-height: 40px;
-    -fx-background-radius: 10px;
-    -fx-alignment: CENTER_LEFT;
-    -fx-font-weight: 600;
-    -fx-padding: 12 18;
-    -fx-graphic-text-gap: 12;
-    -fx-cursor: hand;
-}
-
-.nav-item-contacts:hover {
-    -fx-background-color: #24675B;
-}
-
-.nav-menu-container {
-    -fx-alignment: center;
-    -fx-halignment: center;
-}
-
-.nav-signout {
-    -fx-background-color: #DC6D67;
-    -fx-text-fill: white;
-    -fx-font-size: 15px;
-    -fx-pref-width: 180px;
-    -fx-pref-height: 40px;
-    -fx-background-radius: 10px;
-    -fx-font-weight: 600;
-    -fx-alignment: CENTER_LEFT;
-    -fx-padding: 12 18;
-    -fx-graphic-text-gap: 12;
-    -fx-cursor: hand;
-}
-
-.nav-signout:hover {
-    -fx-background-color: #C55A54;
-}
-
-.signout-container {
-    -fx-alignment: bottom-center;
-    -fx-padding: 0 0 10 0;
-    -fx-halignment: center;
-}
+/* emergency.css - Ultra Compact Version */
 
 /* MAIN CONTENT AREA */
 .main-content {
-    -fx-spacing: 25;
-    -fx-padding: 30;
-    -fx-background-color: #B8E0D1;
+    -fx-spacing: 12px;  /* Further reduced */
+    -fx-padding: 30px 25px;  /* More compact */
+    -fx-background-color: #B8E0D2;  /* Slightly brighter green */
+    padding-top: 50px;
 }
 
-/* EMERGENCY SPECIFIC STYLES */
-.emergency-title {
-    -fx-font-size: 24px;
-    -fx-text-fill: #12594C;
-    -fx-font-weight: bold;
-    -fx-padding: 0 0 5px 0;
-}
-
-.emergency-slogan {
-    -fx-font-size: 12px;
-    -fx-text-fill: #12594C;
-    -fx-background-radius: 5px;
-}
-
-.emergency-header {
+/* Header Container */
+.welcome-banner {
     -fx-background-color: white;
+    -fx-background-radius: 10px;  /* Tighter radius */
+    -fx-padding: 12px 18px;  /* More compact */
     -fx-spacing: 0;
-    -fx-alignment: CENTER_LEFT;
 }
 
-.emergency-section-title {
-    -fx-font-size: 20px;
-    -fx-text-fill: #12594C;
-    -fx-padding: 0 0 5 0;
+/* Title Styles */
+.schedule-header {
+    -fx-font-size: 20px;  /* More compact */
+    -fx-text-fill: #0D4A3F;  /* Darker green for better contrast */
+    -fx-padding: 0 0 1px 0;  /* Minimal padding */
+}
+
+.welcome-slogan {
+    -fx-font-size: 12px;  /* Smaller */
+    -fx-text-fill: #555555;  /* Darker gray */
+}
+
+/* Emergency Cards */
+.emergency-card {
+    -fx-background-radius: 10px;  /* Tighter radius */
+    -fx-padding: 12px 15px;  /* More compact */
+    -fx-spacing: 4px;  /* Tighter spacing */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 6, 0, 0, 1);
+    -fx-background-color: white;
+}
+
+.emergency-card-title {
+    -fx-font-size: 15px;  /* Slightly smaller */
+    -fx-padding: 0 0 2px 0;
+    -fx-text-fill: #0D4A3F;
     -fx-font-weight: bold;
+    -fx-font-style: italic;
 }
 
-.emergency-pane {
-    -fx-background-color: #C4E3D4;
-    -fx-background-radius: 5px;
-    -fx-padding: 10;
+.emergency-region-title {
+    -fx-font-size: 13px;  /* Smaller */
+    -fx-padding: 6px 0 2px 0;  /* Reduced */
 }
 
-.emergency-listview {
-    -fx-background-radius: 5px;
-    -fx-border-radius: 5px;
+.emergency-card-item {
+    -fx-font-size: 12px;  /* More compact */
+    -fx-padding: 0 0 0 10px;  /* Tighter indent */
+    -fx-text-fill: #2A2A2A;  /* Darker for readability */
 }
 
-.emergency-button {
-    -fx-background-color: #DC6D67;
-    -fx-text-fill: white;
+/* Horizontal Line Separator */
+.separator-line {
+    -fx-border-color: #E8E8E8;  /* Lighter gray */
+    -fx-padding: 6px 0;  /* More compact */
+}
+
+/* Phone Number Emphasis */
+.phone-number {
+    -fx-text-fill: #D32F2F;  /* Emergency red */
     -fx-font-weight: bold;
-    -fx-font-size: 14px;
-    -fx-padding: 8px 15px;
-    -fx-background-radius: 5px;
-    -fx-cursor: hand;
-}
-
-.emergency-button:hover {
-    -fx-background-color: #C55A54;
 }

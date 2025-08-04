@@ -95,7 +95,7 @@
                         <Insets bottom="25" left="25" right="50" top="25" />
                     </padding>
 
-                    <VBox spacing="8">
+                    <VBox spacing="0">
                         <Label styleClass="greeting-text" text="Manage Schedule" />
                         <Label styleClass="slogan-text" text="Stay on track with your Medication" />
                     </VBox>
@@ -110,22 +110,31 @@
                     <Insets bottom="15" left="15" right="15" top="15" />
                 </padding>
 
-                <Label styleClass="section-title" style="-fx-padding: 0 0 0 10" text="Active Alerts" />
+                <Label style="-fx-padding: 0 0 0 10" styleClass="section-title" text="Active Alerts" />
                 <HBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="530.0" spacing="20">
                     <!-- Active Alerts Section -->
-                    <VBox maxWidth="230" minWidth="230" prefWidth="230" spacing="15" styleClass="active-alerts-container" alignment="TOP_CENTER">
-
-                        <!-- Dynamic Medicine Buttons Container -->
-                        <VBox fx:id="medicineButtonsContainer" spacing="8" styleClass="medicine-buttons-container">
-                            <!-- Medicine buttons will be added dynamically -->
-                        </VBox>
+                    <VBox styleClass="active-alerts-container" alignment="TOP_CENTER">
+                        <ScrollPane fitToWidth="true"
+                                    hbarPolicy="NEVER"
+                                    vbarPolicy="AS_NEEDED"
+                                    styleClass="medicine-scroll">
+                            <content>
+                                <VBox fx:id="medicineButtonsContainer"
+                                      styleClass="medicine-buttons-container"
+                                      alignment="TOP_CENTER">
+                                    <!-- Medicine buttons will be added dynamically -->
+                                </VBox>
+                            </content>
+                        </ScrollPane>
 
                         <!-- Empty State Label -->
-                        <Label fx:id="emptyStateLabel" styleClass="empty-state-label" text="No reminders set yet.\nGo to Set Reminder to add medicines." visible="false" wrapText="true" />
+                        <Label fx:id="emptyStateLabel" styleClass="empty-state-label"
+                               text="No reminders set yet.\nGo to Set Reminder to add medicines."
+                               visible="false" wrapText="true" />
                     </VBox>
 
                     <!-- Medicine Information Panel -->
-                    <VBox maxWidth="262.0" minWidth="262.0" prefWidth="262.0" spacing="0" styleClass="medicine-info-container" alignment="TOP_CENTER">
+                    <VBox alignment="TOP_CENTER" maxWidth="262.0" minWidth="262.0" prefWidth="262.0" spacing="0" styleClass="medicine-info-container">
                         <Label styleClass="section-title" text="Medicine Information" />
 
                         <VBox minWidth="219.0" prefHeight="187.0" prefWidth="219.0" spacing="12" styleClass="medicine-info-grid">
@@ -160,21 +169,15 @@
                         </VBox>
 
                         <!-- Alert Time Scrollable Container -->
-                        <ScrollPane fitToHeight="false"
-                                    hbarPolicy="AS_NEEDED"
-                                    vbarPolicy="NEVER"
-                                    styleClass="alert-times-scroll"
-                                    prefHeight="70">  <!-- Matches CSS -->
+                        <ScrollPane fitToHeight="false" hbarPolicy="AS_NEEDED" prefHeight="139.0" prefWidth="230.0" styleClass="alert-times-scroll" vbarPolicy="NEVER">  <!-- Matches CSS -->
                             <content>
-                                <HBox fx:id="timesBox"
-                                      styleClass="alert-times-container"
-                                      alignment="CENTER_LEFT"/>
+                                <HBox fx:id="timesBox" alignment="CENTER_LEFT" maxHeight="41.0" prefHeight="41.0" prefWidth="246.0" styleClass="alert-times-container" />
                             </content>
                         </ScrollPane>
 
                         <!-- Delete Button -->
                         <HBox alignment="CENTER_RIGHT" styleClass="delete-container">
-                            <Button onAction="#handleDelete" prefWidth="120" styleClass="delete-button" text="Delete">
+                            <Button onAction="#handleDelete" prefHeight="4.0" prefWidth="120" styleClass="delete-button" text="Delete">
                                 <graphic>
                                     <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
                                         <Image url="@../images/delete-icon.png" />
