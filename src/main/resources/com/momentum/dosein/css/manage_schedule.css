@@ -1,4 +1,4 @@
-/* manage_schedule.css */
+/* manage_schedule.css - Exact Design Match */
 
 /* Root Styles */
 .dashboard-root {
@@ -37,7 +37,7 @@
 .nav-button-active {
     -fx-background-color: #12594C;
     -fx-text-fill: white;
-    -fx-font-size: 12px;
+    -fx-font-size: 15px;
     -fx-pref-width: 180px;
     -fx-pref-height: 40px;
     -fx-background-radius: 10px;
@@ -70,28 +70,10 @@
     -fx-background-color: #24675B;
 }
 
-.nav-item-schedule {
-    -fx-background-color: #3D9574;
-    -fx-text-fill: white;
-    -fx-font-size: 12px;
-    -fx-pref-width: 180px;
-    -fx-pref-height: 40px;
-    -fx-background-radius: 10px;
-    -fx-alignment: CENTER_LEFT;
-    -fx-font-weight: 600;
-    -fx-padding: 12 18;
-    -fx-graphic-text-gap: 12;
-    -fx-cursor: hand;
-}
-
-.nav-item-schedule:hover {
-    -fx-background-color: #24675B;
-}
-
 .nav-item-contacts {
     -fx-background-color: #3D9574;
     -fx-text-fill: white;
-    -fx-font-size: 12px;
+    -fx-font-size: 15px;
     -fx-pref-width: 180px;
     -fx-pref-height: 40px;
     -fx-background-radius: 10px;
@@ -138,120 +120,185 @@
 /* MAIN CONTENT AREA */
 .main-content {
     -fx-spacing: 25;
-    -fx-padding: 30;
     -fx-background-color: #B8E0D1;
 }
 
-/* TITLE & SUBTITLE */
-.manage-title {
-    -fx-font-size: 24px;
-    -fx-text-fill: #12594C;
-    -fx-font-weight: bold;
-    -fx-padding: 0 0 5px 0;
-}
-.manage-slogan {
-    -fx-font-size: 12px;
-    -fx-text-fill: #12594C;
-    -fx-background-radius: 5px;
-}
-.welcome-banner {
-    -fx-background-color: "white";
-    -fx-spacing: "0";
-    -fx-alignment:"CENTER_LEFT";
-}
-
-/* SECTION HEADER */
-.manage-section-title {
-    -fx-font-size: 20px;
-    -fx-text-fill: #12594C;
-    -fx-padding: 0 0 5 0;
-    -fx-font-weight: bold;
-}
-
-/* ACTIVE ALERTS PANE */
-
-.manage-alerts-pane {
-    -fx-background-color: #C4E3D4;
-    -fx-background-radius: 5px;
-    -fx-padding: 10;
-}
-.manage-listview {
-    -fx-background-radius: 5px;
-    -fx-border-radius: 5px;
-}
-
-
-/* MEDICINE INFO PANEL */
-.manage-info-pane {
-    -fx-background-radius: 5px;
-    -fx-padding: 15;
-    -fx-spacing: 10;
-    -fx-background-color: #C4E3D4;
-
-}
-
-/* PANEL TITLE */
-.manage-panel-title {
-    -fx-font-size: 18px;
-    -fx-text-fill: #12594C;
-    -fx-font-weight: bold;
-    -fx-padding: 0 0 10 0;
-}
-
-/* LABELS & VALUES */
-.manage-label {
-    -fx-font-size: 14px;
-    -fx-text-fill: #12594C;
-    -fx-font-weight: bold;
-}
-.manage-value {
-    -fx-font-size: 14px;
-    -fx-text-fill: #12594C;
-
-}
-
-/* ALERT TIMES BOX */
-.manage-times-box {
-    -fx-background-color: #f5f5f5;
-    -fx-border-color: #e0e0e0;
-    -fx-border-width: 1px;
-    -fx-border-radius: 5px;
-    -fx-padding: 10px;
-    -fx-pref-width: 380px;
-    -fx-pref-height: 50px;
-    -fx-min-height: 50px;
-    -fx-max-height: 50px;
-}
-
-.time-label {
-    -fx-font-size: 14px;
-    -fx-text-fill: #12594C;
-    -fx-padding: 5px 10px;
+/* WELCOME CARD - Header */
+.welcome-card {
     -fx-background-color: white;
-    -fx-background-radius: 3px;
-    -fx-border-color: #e0e0e0;
-    -fx-border-width: 1px;
-    -fx-pref-width: 100px;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+    -fx-pref-height: 80px;
+    -fx-min-height: 80px;
+}
+
+.welcome-banner {
+    -fx-background-color: transparent;
+    -fx-background-radius: 12px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-min-height: 80px;
+    -fx-pref-height: 80px;
+}
+
+.greeting-text {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #12594C;
+}
+
+.slogan-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+    -fx-font-weight: 500;
+    -fx-wrap-text: true;
+}
+
+/* SCHEDULE CARD - Main Content */
+.schedule-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+}
+
+/* SECTION TITLES */
+.section-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #12594C;
+}
+
+/* ACTIVE ALERTS CONTAINER */
+.active-alerts-container {
+    -fx-background-color: #C4E3D4;
+    -fx-background-radius: 8px;
+    -fx-padding: 20;
+}
+
+.medicine-buttons-container {
+    -fx-spacing: 8;
+}
+
+/* MEDICINE BUTTONS */
+.medicine-button {
+    -fx-background-color: #12594C;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-padding: 12 15;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
     -fx-alignment: CENTER;
+    -fx-pref-height: 35px;
+    -fx-min-height: 35px;
 }
 
-/* Delete Button Container */
-.delete-button-container {
-    -fx-padding: 10px 0 0 0;
+.medicine-button:hover {
+    -fx-background-color: #0F4A3F;
 }
 
-/* Delete Button Style */
+.medicine-button:pressed {
+    -fx-background-color: #0A3A31;
+}
+
+.medicine-button-selected {
+    -fx-background-color: #0F4A3F !important;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0, 0, 1);
+}
+
+/* MEDICINE INFORMATION CONTAINER */
+.medicine-info-container {
+    -fx-background-color: #C4E3D4;
+    -fx-background-radius: 8px;
+    -fx-padding: 20;
+}
+
+.medicine-info-grid {
+    -fx-padding: 0;
+}
+
+/* INFO LABELS AND VALUES */
+.info-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #12594C;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.info-value {
+    -fx-font-size: 14px;
+    -fx-text-fill: #12594C;
+    -fx-alignment: CENTER_LEFT;
+    -fx-wrap-text: true;
+}
+
+/* ALERT TIMES CONTAINER */
+.alert-times-container {
+    -fx-spacing: 10;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 0 0 0;
+}
+
+/* TIME BUTTONS */
+.time-button {
+    -fx-background-color: #12594C;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-padding: 8 12;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER;
+    -fx-pref-width: 80px;
+    -fx-min-width: 80px;
+    -fx-pref-height: 30px;
+    -fx-min-height: 30px;
+}
+
+.time-button:hover {
+    -fx-background-color: #0F4A3F;
+}
+
+.time-button:pressed {
+    -fx-background-color: #0A3A31;
+}
+
+/* DELETE CONTAINER */
+.delete-container {
+    -fx-padding: 15 0 0 0;
+}
+
+/* DELETE BUTTON */
 .delete-button {
     -fx-background-color: #E57373;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-font-size: 14px;
-    -fx-padding: 8px 15px 8px 10px;
-    -fx-background-radius: 5px;
+    -fx-padding: 10 15;
+    -fx-background-radius: 8px;
     -fx-graphic-text-gap: 8px;
-    -fx-content-display: left;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER;
 }
 
 .delete-button:hover {
     -fx-background-color: #EF5350;
+}
+
+.delete-button:pressed {
+    -fx-background-color: #E53935;
+}
+
+/* MISC ELEMENTS */
+.button {
+    -fx-cursor: hand;
+}
+
+.label {
+    -fx-wrap-text: true;
+}
+
+/* Focus and selection styles */
+.button:focused {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
 }

@@ -83,82 +83,91 @@
 
     <!-- CENTER CONTENT -->
     <center>
-        <VBox spacing="20" styleClass="main-content">
+        <VBox spacing="25" styleClass="main-content">
+            <padding>
+                <Insets top="40" right="40" bottom="40" left="40"/>
+            </padding>
 
-            <!-- Header -->
+            <!-- Header Card -->
+            <VBox styleClass="welcome-card" spacing="0">
+                <HBox styleClass="welcome-banner" spacing="20" alignment="CENTER_LEFT">
+                    <padding>
+                        <Insets top="25" right="25" bottom="25" left="25"/>
+                    </padding>
 
-            <VBox styleClass="welcome-banner">
-                <Label styleClass="manage-title" text="Manage Schedule" />
-                <Region HBox.hgrow="ALWAYS" />
-                <Label styleClass="manage-slogan" text="Stay on track with your Medication" />
+                    <VBox spacing="8">
+                        <Label text="Manage Schedule" styleClass="greeting-text"/>
+                        <Label text="Stay on track with your Medication" styleClass="slogan-text"/>
+                    </VBox>
+
+                    <Region HBox.hgrow="ALWAYS"/>
+                </HBox>
             </VBox>
 
-            <HBox alignment="TOP_LEFT" spacing="20">
-                <!-- Active Alerts List -->
-                <VBox spacing="10" styleClass="manage-alerts-pane">
-                    <Label styleClass="manage-section-title" text="Active Alerts" />
-                    <ListView fx:id="alertsList" prefHeight="300" prefWidth="200" styleClass="manage-listview" />
-                </VBox>
+            <!-- Main Content Card -->
+            <VBox styleClass="schedule-card" spacing="20">
+                <padding>
+                    <Insets top="25" right="25" bottom="25" left="25"/>
+                </padding>
 
-                <!-- Medicine Information Panel -->
-                <VBox spacing="10" styleClass="manage-info-pane" prefWidth="400" maxWidth="400">
-                    <Label styleClass="manage-panel-title" text="Medicine Information" />
-
-                    <GridPane hgap="10" vgap="10">
-                        <Label styleClass="manage-label" text="Name :" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                        <Label fx:id="nameLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-
-                        <Label styleClass="manage-label" text="Start Date :" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                        <Label fx:id="startDateLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-
-                        <Label styleClass="manage-label" text="End Date :" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                        <Label fx:id="endDateLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-
-                        <Label styleClass="manage-label" text="Additional Information :" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                        <Label fx:id="noteLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="3" />
-
-                        <Label styleClass="manage-label" text="Alert Time :" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-                        <columnConstraints>
-                            <ColumnConstraints />
-                            <ColumnConstraints />
-                            <ColumnConstraints />
-                            <ColumnConstraints />
-                        </columnConstraints>
-                        <rowConstraints>
-                            <RowConstraints />
-                            <RowConstraints />
-                            <RowConstraints />
-                            <RowConstraints />
-                            <RowConstraints />
-                        </rowConstraints>
-                    </GridPane>
-
-                    <HBox fx:id="timesBox" spacing="10" styleClass="manage-times-box" />
+                <HBox alignment="TOP_LEFT" spacing="30">
+                    <!-- Active Alerts Section -->
+                    <VBox spacing="15" styleClass="active-alerts-container" prefWidth="250">
+                        <Label styleClass="section-title" text="Active Alerts" />
+                        
+                        <!-- Medicine Buttons -->
+                        <VBox spacing="8" styleClass="medicine-buttons-container">
+                            <Button fx:id="bilastinButton" text="Bilastin 250 mg" styleClass="medicine-button" prefWidth="220" onAction="#handleMedicineSelection"/>
+                            <Button fx:id="napaButton" text="Napa 250 mg" styleClass="medicine-button" prefWidth="220" onAction="#handleMedicineSelection"/>
+                            <Button fx:id="dopghButton" text="Dopgh 250 mg" styleClass="medicine-button" prefWidth="220" onAction="#handleMedicineSelection"/>
+                        </VBox>
+                    </VBox>
 
                     <!-- Medicine Information Panel -->
-                    <VBox spacing="10" styleClass="manage-info-pane">
+                    <VBox spacing="15" styleClass="medicine-info-container" prefWidth="450">
+                        <Label styleClass="section-title" text="Medicine Information" />
 
-                        <!-- Delete Button with Right Alignment -->
-                        <HBox alignment="CENTER"
-                              GridPane.columnIndex="1"
-                              GridPane.rowIndex="5"
-                              GridPane.columnSpan="3"
-                              styleClass="delete-button-container">
+                        <GridPane hgap="15" vgap="12" styleClass="medicine-info-grid">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="NEVER" minWidth="120" prefWidth="120"/>
+                                <ColumnConstraints hgrow="ALWAYS"/>
+                            </columnConstraints>
+                            
+                            <Label text="Name :" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                            <Label fx:id="nameLabel" text="Napa 250 mg" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
 
-                            <Button onAction="#handleDelete"
-                                    styleClass="delete-button"
-                                    text="Delete"
-                                    prefWidth="120">
+                            <Label text="Start Date :" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                            <Label fx:id="startDateLabel" text="25/07/25" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                            <Label text="End Date :" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                            <Label fx:id="endDateLabel" text="25/07/26" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                            <Label text="Additional Information :" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                            <Label fx:id="noteLabel" text="Take after eating something" styleClass="info-value" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                            <Label text="Alert Time:" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                        </GridPane>
+
+                        <!-- Alert Time Buttons -->
+                        <HBox fx:id="timesBox" spacing="10" styleClass="alert-times-container">
+                            <Button text="12:00 AM" styleClass="time-button"/>
+                            <Button text="1:00 AM" styleClass="time-button"/>
+                            <Button text="2:00 AM" styleClass="time-button"/>
+                        </HBox>
+
+                        <!-- Delete Button -->
+                        <HBox alignment="CENTER_RIGHT" styleClass="delete-container">
+                            <Button text="Delete" onAction="#handleDelete" styleClass="delete-button" prefWidth="120">
                                 <graphic>
                                     <ImageView fitWidth="16" fitHeight="16" preserveRatio="true">
-                                        <Image url="@../images/delete-icon.png" />
+                                        <Image url="@../images/delete-icon.png"/>
                                     </ImageView>
                                 </graphic>
                             </Button>
                         </HBox>
                     </VBox>
-                </VBox>
-            </HBox>
+                </HBox>
+            </VBox>
         </VBox>
     </center>
 </BorderPane>
