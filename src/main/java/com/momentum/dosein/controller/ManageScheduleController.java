@@ -69,7 +69,7 @@ public class ManageScheduleController {
         for (String medicineName : grouped.keySet()) {
             Button medicineButton = new Button(medicineName);
             medicineButton.getStyleClass().add("medicine-button");
-            medicineButton.setPrefWidth(220);
+            medicineButton.setPrefWidth(190);
             medicineButton.setOnAction(this::handleMedicineSelection);
             medicineButtonsContainer.getChildren().add(medicineButton);
         }

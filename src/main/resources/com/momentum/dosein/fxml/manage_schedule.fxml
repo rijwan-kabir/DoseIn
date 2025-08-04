@@ -112,7 +112,7 @@
 
                 <HBox alignment="TOP_LEFT" spacing="30">
                     <!-- Active Alerts Section -->
-                    <VBox spacing="15" styleClass="active-alerts-container" prefWidth="250">
+                    <VBox spacing="15" styleClass="active-alerts-container" prefWidth="230" minWidth="230" maxWidth="230">
                         <Label styleClass="section-title" text="Active Alerts" />
                         
                         <!-- Dynamic Medicine Buttons Container -->
@@ -126,13 +126,13 @@
                     </VBox>
 
                     <!-- Medicine Information Panel -->
-                    <VBox spacing="15" styleClass="medicine-info-container" prefWidth="450">
+                    <VBox spacing="15" styleClass="medicine-info-container" prefWidth="480" minWidth="480" maxWidth="480">
                         <Label styleClass="section-title" text="Medicine Information" />
 
                         <GridPane hgap="15" vgap="12" styleClass="medicine-info-grid">
                             <columnConstraints>
-                                <ColumnConstraints hgrow="NEVER" minWidth="120" prefWidth="120"/>
-                                <ColumnConstraints hgrow="ALWAYS"/>
+                                <ColumnConstraints hgrow="NEVER" minWidth="140" prefWidth="140"/>
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="300" prefWidth="300"/>
                             </columnConstraints>
                             
                             <Label text="Name :" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>

@@ -172,6 +172,11 @@
     -fx-background-color: #C4E3D4;
     -fx-background-radius: 8px;
     -fx-padding: 20;
+    -fx-pref-width: 230;
+    -fx-min-width: 230;
+    -fx-max-width: 230;
+    -fx-pref-height: 400;
+    -fx-min-height: 400;
 }
 
 .medicine-buttons-container {
@@ -190,6 +195,9 @@
     -fx-alignment: CENTER;
     -fx-pref-height: 35px;
     -fx-min-height: 35px;
+    -fx-pref-width: 190;
+    -fx-min-width: 190;
+    -fx-max-width: 190;
 }
 
 .medicine-button:hover {
@@ -210,10 +218,17 @@
     -fx-background-color: #C4E3D4;
     -fx-background-radius: 8px;
     -fx-padding: 20;
+    -fx-pref-width: 480;
+    -fx-min-width: 480;
+    -fx-max-width: 480;
+    -fx-pref-height: 400;
+    -fx-min-height: 400;
 }
 
 .medicine-info-grid {
     -fx-padding: 0;
+    -fx-pref-width: 440;
+    -fx-min-width: 440;
 }
 
 /* INFO LABELS AND VALUES */
@@ -236,6 +251,8 @@
     -fx-spacing: 10;
     -fx-alignment: CENTER_LEFT;
     -fx-padding: 10 0 0 0;
+    -fx-pref-width: 440;
+    -fx-wrap-text: true;
 }
 
 /* TIME BUTTONS */
