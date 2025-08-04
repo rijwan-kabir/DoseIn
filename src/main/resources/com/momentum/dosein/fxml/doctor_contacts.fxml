@@ -1,36 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:id="rootPane"
-            fx:controller="com.momentum.dosein.controller.DoctorContactsController"
-            stylesheets="@../css/dashboard.css,@../css/doctor_contacts.css"
-            styleClass="dashboard-root"
-            prefWidth="800" prefHeight="600">
+<BorderPane fx:id="rootPane" prefHeight="700" prefWidth="1000" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/doctor_contacts.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.DoctorContactsController">
 
-    <!-- LEFT NAVIGATION: copy from dashboard.fxml -->
+    <!-- LEFT NAVIGATION -->
     <left>
-        <VBox styleClass="nav-bar" spacing="10" prefWidth="200">
-            <HBox styleClass="nav-header"
-                  alignment="CENTER_LEFT" spacing="10" prefHeight="60"
-                  onMouseClicked="#handleDashboard">
-                <ImageView fitWidth="30" fitHeight="30" preserveRatio="true">
-                    <image><Image url="@../images/logo.png"/></image>
-                </ImageView>
-                <Label text="DoseIn" styleClass="nav-logo"/>
+        <VBox styleClass="nav-bar" spacing="15" prefWidth="200">
+            <padding>
+                <Insets top="20" right="15" bottom="20" left="15"/>
+            </padding>
+
+            <!-- Logo and App Name -->
+            <HBox styleClass="nav-header" alignment="CENTER_LEFT" spacing="12" prefHeight="70">
+                <HBox styleClass="logo-container" alignment="CENTER_LEFT" spacing="12">
+                    <ImageView fitWidth="30" fitHeight="30" preserveRatio="true">
+                        <Image url="@../images/logo.png"/>
+                    </ImageView>
+                    <Label text="Doseln" styleClass="nav-logo"/>
+                </HBox>
             </HBox>
-            <Button text="Dashboard"        onAction="#handleDashboard"       styleClass="nav-button"/>
-            <Button text="Manage Schedule"  onAction="#handleManageSchedule"  styleClass="nav-item"/>
-            <Button text="Doctor Contacts"  onAction="#handleDoctorContacts"  styleClass="nav-item"/>
-            <Button text="Emergency"        onAction="#handleEmergency"       styleClass="nav-item"/>
-            <Button text="About Us"         onAction="#handleAboutUs"         styleClass="nav-item"/>
+
+            <!-- Navigation Menu -->
+            <VBox spacing="8" styleClass="nav-menu-container">
+                <Button text="Dashboard" onAction="#handleDashboard" styleClass="nav-item">
+                    <graphic>
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/dashboard-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button text="Manage Schedule" onAction="#handleManageSchedule" styleClass="nav-item-schedule">
+                    <graphic>
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/calendar-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button text="Doctor Contacts" onAction="#handleDoctorContacts" styleClass="nav-button-active">
+                    <graphic>
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/doctor-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button text="Emergency" onAction="#handleEmergency" styleClass="nav-item">
+                    <graphic>
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/emergency-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button text="About Us" onAction="#handleAboutUs" styleClass="nav-item">
+                    <graphic>
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/about-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </VBox>
+
             <Region VBox.vgrow="ALWAYS"/>
-            <Button text="Sign Out"         onAction="#handleSignOut"         styleClass="nav-signout"/>
+
+            <VBox styleClass="signout-container">
+                <Button text="Sign Out" onAction="#handleSignOut" styleClass="nav-signout">
+                    <graphic>
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/signout-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </VBox>
         </VBox>
     </left>
 
@@ -39,29 +86,25 @@
         <VBox spacing="20" styleClass="main-content">
 
             <!-- Header -->
-            <VBox styleClass="welcome-banner" style="-fx-padding: 0 10 0 10;">
+            <HBox styleClass="welcome-banner" spacing="10" alignment="CENTER_LEFT">
                 <Label text="Doctor Contacts" styleClass="contact-title"/>
                 <Region HBox.hgrow="ALWAYS"/>
                 <Label text="Manage your personal healthcare contacts" styleClass="contact-slogan"/>
-            </VBox>
+            </HBox>
 
-            <HBox spacing="20" alignment="TOP_LEFT"  style="-fx-padding: 0 0 0 10">
+            <HBox spacing="20" alignment="TOP_LEFT">
                 <!-- Saved Entries -->
                 <VBox spacing="10" styleClass="contacts-pane">
                     <Label text="Saved Entries" styleClass="manage-section-title"/>
                     <ListView fx:id="contactsList" styleClass="manage-listview"
                               prefWidth="200" prefHeight="300"/>
-                    <HBox alignment="CENTER" spacing="10">
-                        <!-- Other content if needed -->
-                        <Button text="Add"
-                                prefWidth="120"
-                                onAction="#handleAdd"
-                                styleClass="add-button"/>
-                    </HBox>
+                    <Button text="Add"
+                            onAction="#handleAdd"
+                            styleClass="add-button"/>
                 </VBox>
 
                 <!-- Doctor Information -->
-                <VBox spacing="10" styleClass="contacts-info-pane" prefWidth="400" maxWidth="340">
+                <VBox spacing="10" styleClass="contacts-info-pane">
                     <Label text="Doctor Information" styleClass="manage-panel-title"/>
 
                     <GridPane hgap="10" vgap="10">
@@ -85,24 +128,9 @@
                     </GridPane>
 
                     <Region VBox.vgrow="ALWAYS"/>
-                    <!-- Delete Button with Right Alignment -->
-                    <HBox alignment="CENTER"
-                          GridPane.columnIndex="1"
-                          GridPane.rowIndex="5"
-                          GridPane.columnSpan="3"
-                          styleClass="delete-button-container">
-
-                        <Button onAction="#handleDelete"
-                                styleClass="delete-button"
-                                text="Delete"
-                                prefWidth="120">
-                            <graphic>
-                                <ImageView fitWidth="16" fitHeight="16" preserveRatio="true">
-                                    <Image url="@../images/delete-icon.png" />
-                                </ImageView>
-                            </graphic>
-                        </Button>
-                    </HBox>
+                    <Button text="Delete"
+                            onAction="#handleDelete"
+                            styleClass="delete-button"/>
                 </VBox>
             </HBox>
         </VBox>

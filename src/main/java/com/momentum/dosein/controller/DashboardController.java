@@ -13,6 +13,7 @@ import javafx.scene.*;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
+import javafx.geometry.Pos;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
@@ -22,6 +23,8 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.Comparator;
 
 public class DashboardController {
 
@@ -42,18 +45,21 @@ public class DashboardController {
 
         // Greet user
         User current = Session.getCurrentUser();
-        greetingLabel.setText("Hello, " + (current != null ? current.getUsername() : "User") + "!");
-        greetingLabel.setFont(Font.font("Poppins", FontWeight.BOLD, 24));
+        greetingLabel.setText("Hello, " + (current != null ? current.getUsername() : "Majharul") + "!");
+        greetingLabel.setFont(Font.font("Poppins", FontWeight.BOLD, 28));
 
-        sloganLabel.setText("Your Health Matters - Stay on Track!");
-        sloganLabel.setFont(Font.font("Poppins", FontWeight.MEDIUM, 14));
+        sloganLabel.setText("Your Health Matters-Stay on Track!");
+        sloganLabel.setFont(Font.font("Poppins", FontWeight.MEDIUM, 16));
 
         // Start clock with seconds
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hh:mm:ss a");
-        timeLabel.setFont(Font.font("Poppins", FontWeight.MEDIUM, 14));
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hh : mm : ss a");
+        timeLabel.setFont(Font.font("Poppins", FontWeight.BOLD, 16));
         clock = new Timeline(
                 new KeyFrame(Duration.ZERO,
-                        e -> timeLabel.setText(LocalTime.now().format(dtf))),
+                        e -> {
+                            timeLabel.setText(LocalTime.now().format(dtf));
+                            loadSchedule(); // Refresh reminders every second
+                        }),
                 new KeyFrame(Duration.seconds(1))
         );
         clock.setCycleCount(Timeline.INDEFINITE);
@@ -69,55 +75,68 @@ public class DashboardController {
 
         LocalDate today = LocalDate.now();
         LocalTime now = LocalTime.now();
-        LocalTime cutoffTime = now.minusMinutes(30); // 30 minutes grace period
 
         DateTimeFormatter tfmt = DateTimeFormatter.ofPattern("h:mm a");
-        boolean hasReminders = false;
+        List<MedicineReminder> validReminders = new ArrayList<>();
 
+        // Filter and collect valid reminders
         for (MedicineReminder r : allReminders) {
             // Check if reminder is active today (between start and end dates)
             boolean isActiveToday = !today.isBefore(r.getStartDate()) &&
                     !today.isAfter(r.getEndDate());
 
-            // Check if time is upcoming or within grace period
-            boolean isRelevantTime = r.getTime().isAfter(now) ||
-                    (r.getTime().isAfter(cutoffTime) &&
-                            r.getTime().isBefore(now));
+            // Check if time is upcoming (not past current time)
+            boolean isUpcoming = r.getTime().isAfter(now);
 
-            if (isActiveToday && isRelevantTime) {
-                hasReminders = true;
-                VBox card = new VBox(5);
-                card.getStyleClass().add("reminder-card");
-
-                if (r.getTime().isBefore(now)) {
-                    card.getStyleClass().add("past-due-card");
-
-                    Label statusLabel = new Label("PAST DUE");
-                    statusLabel.setFont(Font.font("Poppins", FontWeight.BOLD, 10));
-                    statusLabel.getStyleClass().add("status-indicator");
-                    card.getChildren().add(statusLabel);
-                }
-
-                Label timeLabel = new Label(r.getTime().format(tfmt));
-                timeLabel.setFont(Font.font("Poppins", FontWeight.BOLD, 16));
-                timeLabel.getStyleClass().add("reminder-time");
-
-                Label medicineLabel = new Label(r.getMedicineName() + " " + r.getDosage());
-                medicineLabel.setFont(Font.font("Poppins", FontWeight.MEDIUM, 14));
-                medicineLabel.getStyleClass().add("reminder-medicine");
-
-                Label noteLabel = new Label(r.getNote());
-                noteLabel.setFont(Font.font("Poppins", FontPosture.ITALIC, 12));
-                noteLabel.getStyleClass().add("reminder-note");
-
-                card.getChildren().addAll(timeLabel, medicineLabel, noteLabel);
-                scheduleContainer.getChildren().add(card);
+            if (isActiveToday && isUpcoming) {
+                validReminders.add(r);
             }
+        }
+
+        // Sort reminders by time (earliest first)
+        validReminders.sort(Comparator.comparing(MedicineReminder::getTime));
+
+        boolean hasReminders = false;
+
+        for (MedicineReminder r : validReminders) {
+            hasReminders = true;
+            HBox card = new HBox(15);
+            card.getStyleClass().add("reminder-card");
+            card.setAlignment(Pos.CENTER_LEFT);
+
+            // Time container with box (left side)
+            VBox timeContainer = new VBox();
+            timeContainer.setAlignment(Pos.CENTER_LEFT);
+            timeContainer.getStyleClass().add("reminder-time-box");
+
+            Label timeLabel = new Label(r.getTime().format(tfmt));
+            timeLabel.setFont(Font.font("Poppins", FontWeight.BOLD, 18));
+            timeLabel.getStyleClass().add("reminder-time");
+            timeContainer.getChildren().add(timeLabel);
+
+            // Details container (right side)
+            VBox detailsContainer = new VBox(4);
+            detailsContainer.setAlignment(Pos.CENTER_LEFT);
+            detailsContainer.getStyleClass().add("reminder-details-container");
+
+            Label medicineLabel = new Label(r.getMedicineName() + " " + r.getDosage());
+            medicineLabel.setFont(Font.font("Poppins", FontWeight.BOLD, 16));
+            medicineLabel.getStyleClass().add("reminder-medicine");
+
+            String noteText = r.getNote() != null && !r.getNote().trim().isEmpty() ? r.getNote() : "N/A";
+            Label noteLabel = new Label(noteText);
+            noteLabel.setFont(Font.font("Poppins", FontPosture.ITALIC, 14));
+            noteLabel.getStyleClass().add("reminder-note");
+
+            detailsContainer.getChildren().addAll(medicineLabel, noteLabel);
+
+            card.getChildren().addAll(timeContainer, detailsContainer);
+            scheduleContainer.getChildren().add(card);
         }
 
         if (!hasReminders) {
             Label emptyLabel = new Label("No upcoming reminders for today");
-            emptyLabel.setFont(Font.font("Poppins", FontWeight.MEDIUM, 14));
+            emptyLabel.setFont(Font.font("Poppins", FontWeight.MEDIUM, 16));
             emptyLabel.getStyleClass().add("empty-label");
             scheduleContainer.getChildren().add(emptyLabel);
         }
