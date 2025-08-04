@@ -158,6 +158,8 @@
     -fx-background-color: white;
     -fx-background-radius: 12px;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+    -fx-pref-width: 720;
+    -fx-min-width: 720;
 }
 
 /* SECTION TITLES */
@@ -177,6 +179,7 @@
     -fx-max-width: 230;
     -fx-pref-height: 400;
     -fx-min-height: 400;
+    -fx-max-height: 400;
 }
 
 .medicine-buttons-container {
@@ -218,41 +221,42 @@
     -fx-background-color: #C4E3D4;
     -fx-background-radius: 8px;
     -fx-padding: 20;
-    -fx-pref-width: 285;
-    -fx-min-width: 285;
-    -fx-max-width: 285;
+    -fx-pref-width: 400;
+    -fx-min-width: 400;
+    -fx-max-width: 400;
     -fx-pref-height: 400;
     -fx-min-height: 400;
+    -fx-max-height: 400;
 }
 
 .medicine-info-grid {
     -fx-padding: 0;
-    -fx-pref-width: 245;
-    -fx-min-width: 245;
+    -fx-pref-width: 360;
+    -fx-min-width: 360;
 }
 
 /* INFO LABELS AND VALUES */
 .info-label {
-    -fx-font-size: 13px;
+    -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-text-fill: #12594C;
     -fx-alignment: CENTER_LEFT;
 }
 
 .info-value {
-    -fx-font-size: 13px;
+    -fx-font-size: 14px;
     -fx-text-fill: #12594C;
     -fx-alignment: CENTER_LEFT;
     -fx-wrap-text: true;
-    -fx-max-width: 190;
+    -fx-max-width: 220;
 }
 
 /* ALERT TIMES CONTAINER */
 .alert-times-container {
-    -fx-spacing: 8;
+    -fx-spacing: 10;
     -fx-alignment: CENTER_LEFT;
     -fx-padding: 0;
-    -fx-pref-width: 245;
+    -fx-pref-width: 360;
     -fx-wrap-text: true;
 }
 
@@ -260,16 +264,16 @@
 .time-button {
     -fx-background-color: #12594C;
     -fx-text-fill: white;
-    -fx-font-size: 11px;
+    -fx-font-size: 13px;
     -fx-font-weight: 600;
-    -fx-padding: 6 8;
-    -fx-background-radius: 5px;
+    -fx-padding: 8 12;
+    -fx-background-radius: 6px;
     -fx-cursor: hand;
     -fx-alignment: CENTER;
-    -fx-pref-width: 75px;
-    -fx-min-width: 75px;
-    -fx-pref-height: 26px;
-    -fx-min-height: 26px;
+    -fx-pref-width: 85px;
+    -fx-min-width: 85px;
+    -fx-pref-height: 30px;
+    -fx-min-height: 30px;
 }
 
 .time-button:hover {
@@ -282,7 +286,7 @@
 
 /* DELETE CONTAINER */
 .delete-container {
-    -fx-padding: 10 0 0 0;
+    -fx-padding: 15 0 0 0;
     -fx-alignment: CENTER_RIGHT;
 }
 
@@ -291,13 +295,13 @@
     -fx-background-color: #E57373;
     -fx-text-fill: white;
     -fx-font-weight: bold;
-    -fx-font-size: 12px;
-    -fx-padding: 8 12;
-    -fx-background-radius: 6px;
-    -fx-graphic-text-gap: 6px;
+    -fx-font-size: 14px;
+    -fx-padding: 10 15;
+    -fx-background-radius: 8px;
+    -fx-graphic-text-gap: 8px;
     -fx-cursor: hand;
     -fx-alignment: CENTER;
-    -fx-pref-width: 100;
+    -fx-pref-width: 120;
 }
 
 .delete-button:hover {
