@@ -110,7 +110,7 @@
                     <Insets top="25" right="25" bottom="25" left="25"/>
                 </padding>
 
-                <HBox alignment="TOP_LEFT" spacing="30">
+                <HBox alignment="TOP_LEFT" spacing="25">
                     <!-- Active Alerts Section -->
                     <VBox spacing="15" styleClass="active-alerts-container" prefWidth="230" minWidth="230" maxWidth="230">
                         <Label styleClass="section-title" text="Active Alerts" />
@@ -126,29 +126,39 @@
                     </VBox>
 
                     <!-- Medicine Information Panel -->
-                    <VBox spacing="15" styleClass="medicine-info-container" prefWidth="480" minWidth="480" maxWidth="480">
+                    <VBox spacing="15" styleClass="medicine-info-container" prefWidth="285" minWidth="285" maxWidth="285">
                         <Label styleClass="section-title" text="Medicine Information" />
 
-                        <GridPane hgap="15" vgap="12" styleClass="medicine-info-grid">
-                            <columnConstraints>
-                                <ColumnConstraints hgrow="NEVER" minWidth="140" prefWidth="140"/>
-                                <ColumnConstraints hgrow="ALWAYS" minWidth="300" prefWidth="300"/>
-                            </columnConstraints>
+                        <VBox spacing="12" styleClass="medicine-info-grid">
+                            <!-- Name -->
+                            <HBox spacing="10">
+                                <Label text="Name :" styleClass="info-label" prefWidth="80"/>
+                                <Label fx:id="nameLabel" text="Select a medicine to view details" styleClass="info-value" wrapText="true"/>
+                            </HBox>
                             
-                            <Label text="Name :" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                            <Label fx:id="nameLabel" text="Select a medicine to view details" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-
-                            <Label text="Start Date :" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                            <Label fx:id="startDateLabel" text="-" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-
-                            <Label text="End Date :" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-                            <Label fx:id="endDateLabel" text="-" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-
-                            <Label text="Additional Information :" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-                            <Label fx:id="noteLabel" text="-" styleClass="info-value" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-
-                            <Label text="Alert Time:" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
-                        </GridPane>
+                            <!-- Start Date -->
+                            <HBox spacing="10">
+                                <Label text="Start Date :" styleClass="info-label" prefWidth="80"/>
+                                <Label fx:id="startDateLabel" text="-" styleClass="info-value"/>
+                            </HBox>
+                            
+                            <!-- End Date -->
+                            <HBox spacing="10">
+                                <Label text="End Date :" styleClass="info-label" prefWidth="80"/>
+                                <Label fx:id="endDateLabel" text="-" styleClass="info-value"/>
+                            </HBox>
+                            
+                            <!-- Additional Information -->
+                            <VBox spacing="5">
+                                <Label text="Additional Information :" styleClass="info-label"/>
+                                <Label fx:id="noteLabel" text="-" styleClass="info-value" wrapText="true"/>
+                            </VBox>
+                            
+                            <!-- Alert Time -->
+                            <VBox spacing="5">
+                                <Label text="Alert Time:" styleClass="info-label"/>
+                            </VBox>
+                        </VBox>
 
                         <!-- Alert Time Buttons -->
                         <HBox fx:id="timesBox" spacing="10" styleClass="alert-times-container">
