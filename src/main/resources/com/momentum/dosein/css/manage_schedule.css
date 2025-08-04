@@ -297,6 +297,16 @@
     -fx-wrap-text: true;
 }
 
+/* EMPTY STATE */
+.empty-state-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+    -fx-text-alignment: CENTER;
+    -fx-alignment: CENTER;
+    -fx-padding: 20;
+    -fx-font-style: italic;
+}
+
 /* Focus and selection styles */
 .button:focused {
     -fx-border-color: transparent;

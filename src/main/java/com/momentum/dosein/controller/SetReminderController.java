@@ -70,20 +70,35 @@ public class SetReminderController {
     @FXML
     private void handleSetReminder(ActionEvent e) {
         String name = nameField.getText().trim();
+        LocalDate start = startDatePicker.getValue();
+        LocalDate end = endDatePicker.getValue();
+        
         if (name.isEmpty() || timesList.getItems().isEmpty()) {
             new Alert(Alert.AlertType.WARNING,
                     "Please enter a name and at least one alert time.")
                     .showAndWait();
             return;
         }
+        
+        if (start == null || end == null) {
+            new Alert(Alert.AlertType.WARNING,
+                    "Please select both start and end dates.")
+                    .showAndWait();
+            return;
+        }
+        
+        if (end.isBefore(start)) {
+            new Alert(Alert.AlertType.WARNING,
+                    "End date cannot be before start date.")
+                    .showAndWait();
+            return;
+        }
 
         String note = noteField.getText().trim();
-        LocalDate start = startDatePicker.getValue();
-        LocalDate end   = endDatePicker.getValue();
 
         for (String ts : timesList.getItems()) {
             LocalTime lt = LocalTime.parse(ts, displayFmt);
-            MedicineReminder r = new MedicineReminder(name, "", lt, note);
+            MedicineReminder r = new MedicineReminder(name, "", start, end, lt, note);
             reminderService.addReminder(r);
         }
 
@@ -120,11 +135,37 @@ public class SetReminderController {
         }
     }
 
-    // stubs for the remaining nav buttons:
-    @FXML private void handleManageSchedule(ActionEvent e) { /* TODO */ }
-    @FXML private void handleDoctorContacts(ActionEvent e) { /* TODO */ }
-    @FXML private void handleEmergency(ActionEvent e)    { /* TODO */ }
-    @FXML private void handleAboutUs(ActionEvent e)      { /* TODO */ }
+    // Navigation methods for remaining nav buttons:
+    @FXML 
+    private void handleManageSchedule(ActionEvent e) { 
+        navigate("/com/momentum/dosein/fxml/manage_schedule.fxml", e);
+    }
+    
+    @FXML 
+    private void handleDoctorContacts(ActionEvent e) { 
+        navigate("/com/momentum/dosein/fxml/doctor_contacts.fxml", e);
+    }
+    
+    @FXML 
+    private void handleEmergency(ActionEvent e) { 
+        navigate("/com/momentum/dosein/fxml/emergency.fxml", e);
+    }
+    
+    @FXML 
+    private void handleAboutUs(ActionEvent e) { 
+        navigate("/com/momentum/dosein/fxml/about_us.fxml", e);
+    }
+
+    private void navigate(String fxmlPath, ActionEvent e) {
+        try {
+            Parent page = FXMLLoader.load(getClass().getResource(fxmlPath));
+            Scene scene = ((Node) e.getSource()).getScene();
+            scene.setRoot(page);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Could not load page.").showAndWait();
+        }
+    }
 
     @FXML
     private void handleSignOut(Event e) {

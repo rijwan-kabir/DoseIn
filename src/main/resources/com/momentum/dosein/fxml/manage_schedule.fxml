@@ -115,12 +115,14 @@
                     <VBox spacing="15" styleClass="active-alerts-container" prefWidth="250">
                         <Label styleClass="section-title" text="Active Alerts" />
                         
-                        <!-- Medicine Buttons -->
-                        <VBox spacing="8" styleClass="medicine-buttons-container">
-                            <Button fx:id="bilastinButton" text="Bilastin 250 mg" styleClass="medicine-button" prefWidth="220" onAction="#handleMedicineSelection"/>
-                            <Button fx:id="napaButton" text="Napa 250 mg" styleClass="medicine-button" prefWidth="220" onAction="#handleMedicineSelection"/>
-                            <Button fx:id="dopghButton" text="Dopgh 250 mg" styleClass="medicine-button" prefWidth="220" onAction="#handleMedicineSelection"/>
+                        <!-- Dynamic Medicine Buttons Container -->
+                        <VBox fx:id="medicineButtonsContainer" spacing="8" styleClass="medicine-buttons-container">
+                            <!-- Medicine buttons will be added dynamically -->
                         </VBox>
+                        
+                        <!-- Empty State Label -->
+                        <Label fx:id="emptyStateLabel" text="No reminders set yet.\nGo to Set Reminder to add medicines." 
+                               styleClass="empty-state-label" visible="false" wrapText="true"/>
                     </VBox>
 
                     <!-- Medicine Information Panel -->
@@ -134,25 +136,23 @@
                             </columnConstraints>
                             
                             <Label text="Name :" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                            <Label fx:id="nameLabel" text="Napa 250 mg" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                            <Label fx:id="nameLabel" text="Select a medicine to view details" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
 
                             <Label text="Start Date :" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                            <Label fx:id="startDateLabel" text="25/07/25" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                            <Label fx:id="startDateLabel" text="-" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
                             <Label text="End Date :" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-                            <Label fx:id="endDateLabel" text="25/07/26" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                            <Label fx:id="endDateLabel" text="-" styleClass="info-value" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
                             <Label text="Additional Information :" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-                            <Label fx:id="noteLabel" text="Take after eating something" styleClass="info-value" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                            <Label fx:id="noteLabel" text="-" styleClass="info-value" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
 
                             <Label text="Alert Time:" styleClass="info-label" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
                         </GridPane>
 
                         <!-- Alert Time Buttons -->
                         <HBox fx:id="timesBox" spacing="10" styleClass="alert-times-container">
-                            <Button text="12:00 AM" styleClass="time-button"/>
-                            <Button text="1:00 AM" styleClass="time-button"/>
-                            <Button text="2:00 AM" styleClass="time-button"/>
+                            <!-- Time buttons will be added dynamically -->
                         </HBox>
 
                         <!-- Delete Button -->
