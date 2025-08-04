@@ -95,9 +95,9 @@
 
             <HBox alignment="TOP_LEFT" spacing="20">
                 <!-- Active Alerts List -->
-                <VBox spacing="10" styleClass="manage-alerts-pane">
+                <VBox spacing="10" styleClass="manage-alerts-pane" prefWidth="250">
                     <Label styleClass="manage-section-title" text="Active Alerts" />
-                    <ListView fx:id="alertsList" prefHeight="300" prefWidth="200" styleClass="manage-listview" />
+                    <ListView fx:id="alertsList" prefHeight="400" prefWidth="230" styleClass="manage-listview" VBox.vgrow="ALWAYS" />
                 </VBox>
 
                 <!-- Medicine Information Panel -->

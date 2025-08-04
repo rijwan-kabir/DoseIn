@@ -173,11 +173,74 @@
 .manage-alerts-pane {
     -fx-background-color: #C4E3D4;
     -fx-background-radius: 5px;
-    -fx-padding: 10;
+    -fx-padding: 15;
+    -fx-min-width: 250px;
+    -fx-pref-width: 250px;
+    -fx-max-width: 250px;
 }
 .manage-listview {
     -fx-background-radius: 5px;
     -fx-border-radius: 5px;
+    -fx-background-color: white;
+    -fx-border-color: #4BA684;
+    -fx-border-width: 1px;
+    -fx-min-height: 300px;
+    -fx-pref-height: 400px;
+    -fx-max-height: 500px;
+}
+
+/* Scrollbar styling for ListView */
+.manage-listview .scroll-bar:vertical {
+    -fx-background-color: #E0E0E0;
+    -fx-pref-width: 12px;
+    -fx-padding: 0 2px;
+}
+
+.manage-listview .scroll-bar:vertical .thumb {
+    -fx-background-color: #4BA684;
+    -fx-background-radius: 6px;
+    -fx-pref-width: 8px;
+}
+
+.manage-listview .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #3D9574;
+}
+
+.manage-listview .scroll-bar:vertical .track {
+    -fx-background-color: #F5F5F5;
+    -fx-background-radius: 6px;
+}
+
+.manage-listview .scroll-bar:vertical .increment-button,
+.manage-listview .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-pref-height: 0px;
+    -fx-pref-width: 0px;
+}
+
+.manage-listview .scroll-bar:vertical .increment-arrow,
+.manage-listview .scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: transparent;
+    -fx-pref-height: 0px;
+    -fx-pref-width: 0px;
+}
+
+/* ListView item styling */
+.manage-listview .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 8px 12px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #12594C;
+    -fx-font-weight: 500;
+}
+
+.manage-listview .list-cell:selected {
+    -fx-background-color: #4BA684;
+    -fx-text-fill: white;
+}
+
+.manage-listview .list-cell:hover {
+    -fx-background-color: #E8F5E8;
 }
 
 
