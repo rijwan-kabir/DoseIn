@@ -1,79 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
 
-<BorderPane fx:id="rootPane" prefHeight="700" prefWidth="1000" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/manage_schedule.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.ManageScheduleController">
+<BorderPane fx:id="rootPane" prefHeight="400.0" prefWidth="600.0" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/manage_schedule.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.ManageScheduleController">
 
     <!-- LEFT NAVIGATION -->
     <left>
-        <VBox styleClass="nav-bar" spacing="15" prefWidth="200">
+        <VBox prefWidth="200" spacing="15" styleClass="nav-bar">
             <padding>
-                <Insets top="20" right="15" bottom="20" left="15"/>
+                <Insets bottom="20" left="15" right="15" top="20" />
             </padding>
 
             <!-- Logo and App Name -->
-            <HBox styleClass="nav-header" alignment="CENTER_LEFT" spacing="12" prefHeight="70">
-                <HBox styleClass="logo-container" alignment="CENTER_LEFT" spacing="12">
-                    <ImageView fitWidth="30" fitHeight="30" preserveRatio="true">
-                        <Image url="@../images/logo.png"/>
+            <HBox alignment="CENTER_LEFT" prefHeight="70" spacing="12" styleClass="nav-header">
+                <HBox alignment="CENTER_LEFT" spacing="12" styleClass="logo-container">
+                    <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
+                        <Image url="@../images/logo.png" />
                     </ImageView>
-                    <Label text="Doseln" styleClass="nav-logo"/>
+                    <Label styleClass="nav-logo" text="Doseln" />
                 </HBox>
             </HBox>
 
             <!-- Navigation Menu -->
             <VBox spacing="8" styleClass="nav-menu-container">
-                <Button text="Dashboard" onAction="#handleDashboard" styleClass="nav-item">
+                <Button onAction="#handleDashboard" styleClass="nav-item" text="Dashboard">
                     <graphic>
-                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
-                            <Image url="@../images/dashboard-icon.png"/>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/dashboard-icon.png" />
                         </ImageView>
                     </graphic>
                 </Button>
 
-                <Button text="Manage Schedule" onAction="#handleManageSchedule" styleClass="nav-button-active">
+                <Button onAction="#handleManageSchedule" styleClass="nav-button-active" text="Manage Schedule">
                     <graphic>
-                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
-                            <Image url="@../images/calendar-icon.png"/>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/calendar-icon.png" />
                         </ImageView>
                     </graphic>
                 </Button>
 
-                <Button text="Doctor Contacts" onAction="#handleDoctorContacts" styleClass="nav-item-contacts">
+                <Button onAction="#handleDoctorContacts" styleClass="nav-item-contacts" text="Doctor Contacts">
                     <graphic>
-                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
-                            <Image url="@../images/doctor-icon.png"/>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/doctor-icon.png" />
                         </ImageView>
                     </graphic>
                 </Button>
 
-                <Button text="Emergency" onAction="#handleEmergency" styleClass="nav-item">
+                <Button onAction="#handleEmergency" styleClass="nav-item" text="Emergency">
                     <graphic>
-                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
-                            <Image url="@../images/emergency-icon.png"/>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/emergency-icon.png" />
                         </ImageView>
                     </graphic>
                 </Button>
 
-                <Button text="About Us" onAction="#handleAboutUs" styleClass="nav-item">
+                <Button onAction="#handleAboutUs" styleClass="nav-item" text="About Us">
                     <graphic>
-                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
-                            <Image url="@../images/about-icon.png"/>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/about-icon.png" />
                         </ImageView>
                     </graphic>
                 </Button>
             </VBox>
 
-            <Region VBox.vgrow="ALWAYS"/>
+            <Region VBox.vgrow="ALWAYS" />
 
             <VBox styleClass="signout-container">
-                <Button text="Sign Out" onAction="#handleSignOut" styleClass="nav-signout">
+                <Button onAction="#handleSignOut" styleClass="nav-signout" text="Sign Out">
                     <graphic>
-                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
-                            <Image url="@../images/signout-icon.png"/>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/signout-icon.png" />
                         </ImageView>
                     </graphic>
                 </Button>
@@ -83,82 +83,108 @@
 
     <!-- CENTER CONTENT -->
     <center>
-        <VBox spacing="20" styleClass="main-content">
+        <VBox spacing="15" styleClass="main-content">
+            <padding>
+                <Insets bottom="30" left="40" right="40" top="30" />
+            </padding>
 
-            <!-- Header -->
+            <!-- Header Card -->
+            <VBox spacing="0" styleClass="welcome-card">
+                <HBox alignment="CENTER_LEFT" prefWidth="578.0" spacing="20" styleClass="welcome-banner">
+                    <padding>
+                        <Insets bottom="25" left="25" right="50" top="25" />
+                    </padding>
 
-            <VBox styleClass="welcome-banner">
-                <Label styleClass="manage-title" text="Manage Schedule" />
-                <Region HBox.hgrow="ALWAYS" />
-                <Label styleClass="manage-slogan" text="Stay on track with your Medication" />
+                    <VBox spacing="8">
+                        <Label styleClass="greeting-text" text="Manage Schedule" />
+                        <Label styleClass="slogan-text" text="Stay on track with your Medication" />
+                    </VBox>
+
+                    <Region HBox.hgrow="ALWAYS" />
+                </HBox>
             </VBox>
 
-            <HBox alignment="TOP_LEFT" spacing="20">
-                <!-- Active Alerts List -->
-                <VBox spacing="10" styleClass="manage-alerts-pane">
-                    <Label styleClass="manage-section-title" text="Active Alerts" />
-                    <ListView fx:id="alertsList" prefHeight="300" prefWidth="200" styleClass="manage-listview" />
-                </VBox>
+            <!-- Main Content Card -->
+            <VBox spacing="0" styleClass="schedule-card">
+                <padding>
+                    <Insets bottom="15" left="15" right="15" top="15" />
+                </padding>
 
-                <!-- Medicine Information Panel -->
-                <VBox spacing="10" styleClass="manage-info-pane" prefWidth="400" maxWidth="400">
-                    <Label styleClass="manage-panel-title" text="Medicine Information" />
+                <Label styleClass="section-title" style="-fx-padding: 0 0 0 10" text="Active Alerts" />
+                <HBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="530.0" spacing="20">
+                    <!-- Active Alerts Section -->
+                    <VBox maxWidth="230" minWidth="230" prefWidth="230" spacing="15" styleClass="active-alerts-container" alignment="TOP_CENTER">
 
-                    <GridPane hgap="10" vgap="10">
-                        <Label styleClass="manage-label" text="Name :" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                        <Label fx:id="nameLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <!-- Dynamic Medicine Buttons Container -->
+                        <VBox fx:id="medicineButtonsContainer" spacing="8" styleClass="medicine-buttons-container">
+                            <!-- Medicine buttons will be added dynamically -->
+                        </VBox>
 
-                        <Label styleClass="manage-label" text="Start Date :" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                        <Label fx:id="startDateLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-
-                        <Label styleClass="manage-label" text="End Date :" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                        <Label fx:id="endDateLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-
-                        <Label styleClass="manage-label" text="Additional Information :" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                        <Label fx:id="noteLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="3" />
-
-                        <Label styleClass="manage-label" text="Alert Time :" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-                        <columnConstraints>
-                            <ColumnConstraints />
-                            <ColumnConstraints />
-                            <ColumnConstraints />
-                            <ColumnConstraints />
-                        </columnConstraints>
-                        <rowConstraints>
-                            <RowConstraints />
-                            <RowConstraints />
-                            <RowConstraints />
-                            <RowConstraints />
-                            <RowConstraints />
-                        </rowConstraints>
-                    </GridPane>
-
-                    <HBox fx:id="timesBox" spacing="10" styleClass="manage-times-box" />
+                        <!-- Empty State Label -->
+                        <Label fx:id="emptyStateLabel" styleClass="empty-state-label" text="No reminders set yet.\nGo to Set Reminder to add medicines." visible="false" wrapText="true" />
+                    </VBox>
 
                     <!-- Medicine Information Panel -->
-                    <VBox spacing="10" styleClass="manage-info-pane">
+                    <VBox maxWidth="262.0" minWidth="262.0" prefWidth="262.0" spacing="0" styleClass="medicine-info-container" alignment="TOP_CENTER">
+                        <Label styleClass="section-title" text="Medicine Information" />
 
-                        <!-- Delete Button with Right Alignment -->
-                        <HBox alignment="CENTER"
-                              GridPane.columnIndex="1"
-                              GridPane.rowIndex="5"
-                              GridPane.columnSpan="3"
-                              styleClass="delete-button-container">
+                        <VBox minWidth="219.0" prefHeight="187.0" prefWidth="219.0" spacing="12" styleClass="medicine-info-grid">
+                            <!-- Name -->
+                            <HBox spacing="10">
+                                <Label prefWidth="80" styleClass="info-label" text="Name :" />
+                                <Label fx:id="nameLabel" styleClass="info-value" text="Select a medicine to view details" wrapText="true" />
+                            </HBox>
 
-                            <Button onAction="#handleDelete"
-                                    styleClass="delete-button"
-                                    text="Delete"
-                                    prefWidth="120">
+                            <!-- Start Date -->
+                            <HBox spacing="10">
+                                <Label prefWidth="80" styleClass="info-label" text="Start Date :" />
+                                <Label fx:id="startDateLabel" styleClass="info-value" text="-" />
+                            </HBox>
+
+                            <!-- End Date -->
+                            <HBox spacing="10">
+                                <Label prefWidth="80" styleClass="info-label" text="End Date :" />
+                                <Label fx:id="endDateLabel" styleClass="info-value" text="-" />
+                            </HBox>
+
+                            <!-- Additional Information -->
+                            <VBox spacing="5">
+                                <Label styleClass="info-label" text="Additional Information :" />
+                                <Label fx:id="noteLabel" styleClass="info-value" text="-" wrapText="true" />
+                            </VBox>
+
+                            <!-- Alert Time -->
+                            <VBox spacing="5">
+                                <Label styleClass="info-label" text="Alert Time:" />
+                            </VBox>
+                        </VBox>
+
+                        <!-- Alert Time Scrollable Container -->
+                        <ScrollPane fitToHeight="false"
+                                    hbarPolicy="AS_NEEDED"
+                                    vbarPolicy="NEVER"
+                                    styleClass="alert-times-scroll"
+                                    prefHeight="70">  <!-- Matches CSS -->
+                            <content>
+                                <HBox fx:id="timesBox"
+                                      styleClass="alert-times-container"
+                                      alignment="CENTER_LEFT"/>
+                            </content>
+                        </ScrollPane>
+
+                        <!-- Delete Button -->
+                        <HBox alignment="CENTER_RIGHT" styleClass="delete-container">
+                            <Button onAction="#handleDelete" prefWidth="120" styleClass="delete-button" text="Delete">
                                 <graphic>
-                                    <ImageView fitWidth="16" fitHeight="16" preserveRatio="true">
+                                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
                                         <Image url="@../images/delete-icon.png" />
                                     </ImageView>
                                 </graphic>
                             </Button>
                         </HBox>
                     </VBox>
-                </VBox>
-            </HBox>
+                </HBox>
+            </VBox>
         </VBox>
     </center>
 </BorderPane>
