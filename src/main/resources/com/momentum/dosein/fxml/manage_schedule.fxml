@@ -105,12 +105,12 @@
             </VBox>
 
             <!-- Main Content Card -->
-            <VBox styleClass="schedule-card" spacing="20" prefWidth="720" minWidth="720">
+            <VBox styleClass="schedule-card" spacing="20" prefWidth="560" minWidth="560" maxWidth="560">
                 <padding>
                     <Insets top="25" right="25" bottom="25" left="25"/>
                 </padding>
 
-                <HBox alignment="TOP_LEFT" spacing="40" prefWidth="670">
+                <HBox alignment="TOP_LEFT" spacing="20" prefWidth="510">
                     <!-- Active Alerts Section -->
                     <VBox spacing="15" styleClass="active-alerts-container" prefWidth="230" minWidth="230" maxWidth="230">
                         <Label styleClass="section-title" text="Active Alerts" />
@@ -126,36 +126,36 @@
                     </VBox>
 
                     <!-- Medicine Information Panel -->
-                    <VBox spacing="15" styleClass="medicine-info-container" prefWidth="400" minWidth="400" maxWidth="400">
+                    <VBox spacing="15" styleClass="medicine-info-container" prefWidth="285" minWidth="285" maxWidth="285">
                         <Label styleClass="section-title" text="Medicine Information" />
 
-                        <VBox spacing="15" styleClass="medicine-info-grid">
+                        <VBox spacing="12" styleClass="medicine-info-grid">
                             <!-- Name -->
-                            <HBox spacing="15">
-                                <Label text="Name :" styleClass="info-label" prefWidth="120"/>
+                            <HBox spacing="10">
+                                <Label text="Name :" styleClass="info-label" prefWidth="80"/>
                                 <Label fx:id="nameLabel" text="Select a medicine to view details" styleClass="info-value" wrapText="true"/>
                             </HBox>
                             
                             <!-- Start Date -->
-                            <HBox spacing="15">
-                                <Label text="Start Date :" styleClass="info-label" prefWidth="120"/>
+                            <HBox spacing="10">
+                                <Label text="Start Date :" styleClass="info-label" prefWidth="80"/>
                                 <Label fx:id="startDateLabel" text="-" styleClass="info-value"/>
                             </HBox>
                             
                             <!-- End Date -->
-                            <HBox spacing="15">
-                                <Label text="End Date :" styleClass="info-label" prefWidth="120"/>
+                            <HBox spacing="10">
+                                <Label text="End Date :" styleClass="info-label" prefWidth="80"/>
                                 <Label fx:id="endDateLabel" text="-" styleClass="info-value"/>
                             </HBox>
                             
                             <!-- Additional Information -->
-                            <VBox spacing="8">
+                            <VBox spacing="5">
                                 <Label text="Additional Information :" styleClass="info-label"/>
                                 <Label fx:id="noteLabel" text="-" styleClass="info-value" wrapText="true"/>
                             </VBox>
                             
                             <!-- Alert Time -->
-                            <VBox spacing="8">
+                            <VBox spacing="5">
                                 <Label text="Alert Time:" styleClass="info-label"/>
                             </VBox>
                         </VBox>
