@@ -177,6 +177,9 @@
     -fx-min-width: 250px;
     -fx-pref-width: 250px;
     -fx-max-width: 250px;
+    -fx-min-height: 500px;
+    -fx-pref-height: 500px;
+    -fx-max-height: 500px;
 }
 .manage-listview {
     -fx-background-radius: 5px;
@@ -184,9 +187,9 @@
     -fx-background-color: white;
     -fx-border-color: #4BA684;
     -fx-border-width: 1px;
-    -fx-min-height: 300px;
+    -fx-min-height: 400px;
     -fx-pref-height: 400px;
-    -fx-max-height: 500px;
+    -fx-max-height: 400px;
 }
 
 /* Scrollbar styling for ListView */
@@ -250,7 +253,12 @@
     -fx-padding: 15;
     -fx-spacing: 10;
     -fx-background-color: #C4E3D4;
-
+    -fx-min-width: 400px;
+    -fx-pref-width: 400px;
+    -fx-max-width: 400px;
+    -fx-min-height: 500px;
+    -fx-pref-height: 500px;
+    -fx-max-height: 500px;
 }
 
 /* PANEL TITLE */
@@ -284,6 +292,7 @@
     -fx-pref-height: 50px;
     -fx-min-height: 50px;
     -fx-max-height: 50px;
+    -fx-wrap-text: true;
 }
 
 .time-label {

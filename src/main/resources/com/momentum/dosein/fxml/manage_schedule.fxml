@@ -95,13 +95,13 @@
 
             <HBox alignment="TOP_LEFT" spacing="20">
                 <!-- Active Alerts List -->
-                <VBox spacing="10" styleClass="manage-alerts-pane" prefWidth="250">
+                <VBox spacing="10" styleClass="manage-alerts-pane" prefWidth="250" maxWidth="250" minWidth="250">
                     <Label styleClass="manage-section-title" text="Active Alerts" />
                     <ListView fx:id="alertsList" prefHeight="400" prefWidth="230" styleClass="manage-listview" VBox.vgrow="ALWAYS" />
                 </VBox>
 
                 <!-- Medicine Information Panel -->
-                <VBox spacing="10" styleClass="manage-info-pane" prefWidth="400" maxWidth="400">
+                <VBox spacing="10" styleClass="manage-info-pane" prefWidth="400" maxWidth="400" minWidth="400">
                     <Label styleClass="manage-panel-title" text="Medicine Information" />
 
                     <GridPane hgap="10" vgap="10">
@@ -135,28 +135,27 @@
 
                     <HBox fx:id="timesBox" spacing="10" styleClass="manage-times-box" />
 
-                    <!-- Medicine Information Panel -->
-                    <VBox spacing="10" styleClass="manage-info-pane">
+                    <!-- Spacer to maintain fixed height -->
+                    <Region VBox.vgrow="ALWAYS" />
 
-                        <!-- Delete Button with Right Alignment -->
-                        <HBox alignment="CENTER"
-                              GridPane.columnIndex="1"
-                              GridPane.rowIndex="5"
-                              GridPane.columnSpan="3"
-                              styleClass="delete-button-container">
+                    <!-- Delete Button with Right Alignment -->
+                    <HBox alignment="CENTER"
+                          GridPane.columnIndex="1"
+                          GridPane.rowIndex="5"
+                          GridPane.columnSpan="3"
+                          styleClass="delete-button-container">
 
-                            <Button onAction="#handleDelete"
-                                    styleClass="delete-button"
-                                    text="Delete"
-                                    prefWidth="120">
-                                <graphic>
-                                    <ImageView fitWidth="16" fitHeight="16" preserveRatio="true">
-                                        <Image url="@../images/delete-icon.png" />
-                                    </ImageView>
-                                </graphic>
-                            </Button>
-                        </HBox>
-                    </VBox>
+                        <Button onAction="#handleDelete"
+                                styleClass="delete-button"
+                                text="Delete"
+                                prefWidth="120">
+                            <graphic>
+                                <ImageView fitWidth="16" fitHeight="16" preserveRatio="true">
+                                    <Image url="@../images/delete-icon.png" />
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </HBox>
                 </VBox>
             </HBox>
         </VBox>
