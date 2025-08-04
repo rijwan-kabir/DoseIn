@@ -93,34 +93,36 @@
         <VBox spacing="20" styleClass="main-content">
 
             <!-- Header -->
-            <HBox styleClass="welcome-banner" spacing="10" alignment="CENTER_LEFT">
+            <VBox styleClass="welcome-banner" spacing="0" alignment="CENTER_LEFT">
                 <Label text="Emergency Helpline" styleClass="schedule-header"/>
                 <Region HBox.hgrow="ALWAYS"/>
                 <Label text="Quick access to critical healthcare services"
                        styleClass="welcome-slogan"/>
-            </HBox>
+            </VBox>
 
             <!-- Ambulance Services -->
             <VBox spacing="10">
-                <Label text="Ambulance Services" styleClass="schedule-header"/>
+
                 <VBox spacing="10" styleClass="emergency-card">
-                    <Label text="National Emergency Service" styleClass="emergency-card-title"/>
+                    <Label text="Ambulance Services" styleClass="schedule-header"/>
+                    <Label  text= "National Emergency Service"  styleClass="emergency-card-title"/>
                     <Label text="• 999 (Nationwide)" styleClass="emergency-card-item"/>
 
-                    <Label text="Dhaka" styleClass="emergency-region-title"/>
+                    <Label text="Dhaka" styleClass="emergency-card-title"/>
                     <Label text="• Apollo Hospitals: 10678" styleClass="emergency-card-item"/>
                     <Label text="• Square Hospitals: 01713-072072" styleClass="emergency-card-item"/>
                     <Label text="• Dhaka Medical College: 01711-503030" styleClass="emergency-card-item"/>
 
-                    <Label text="Chittagong" styleClass="emergency-region-title"/>
+                    <Label text="Chittagong" styleClass="emergency-card-title"/>
                     <Label text="• Chittagong Medical College: 031-619704" styleClass="emergency-card-item"/>
                 </VBox>
             </VBox>
 
             <!-- Blood Bank -->
             <VBox spacing="10">
-                <Label text="Blood Bank" styleClass="schedule-header"/>
+
                 <VBox spacing="10" styleClass="emergency-card">
+                    <Label text="Blood Bank" styleClass="schedule-header"/>
                     <Label text="Sandhani National Blood Center" styleClass="emergency-card-title"/>
                     <Label text="• Dhaka: 01716-302100" styleClass="emergency-card-item"/>
                 </VBox>
