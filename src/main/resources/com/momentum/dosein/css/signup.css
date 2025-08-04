@@ -1,8 +1,8 @@
 /* signup.css */
-
 /* Root pane font */
 .signup-root {
     -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #C4E3D4;
 }
 
 /* Left panel background */
@@ -18,26 +18,37 @@
     -fx-font-weight: bold;
 }
 
-/* “Sign Up” heading */
+/* "Sign Up" heading */
 .signup-form-title {
     -fx-font-size: 28px;
     -fx-text-fill: #00594E;
     -fx-font-weight: bold;
 }
 
+/* Form container */
+.vbox-two {
+    -fx-background-radius: 15;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.2, 8, 8);
+}
+
 /* Input fields */
 .signup-field {
     -fx-background-color: #C4E3D4;
-    -fx-pref-width: 300px;
-    -fx-pref-height: 40px;
-    -fx-background-radius: 5px;
-    -fx-border-radius: 5px;
-    -fx-padding: 0 10px;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 50px;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 0 10 0 10;
+    -fx-font-size: 20;
 }
-.signup-field:hover{
+
+.signup-field:hover {
+    -fx-border-width: 2px;
     -fx-border-color: #00594E;
-    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.2, 8, 8);
 }
+
 /* Sign Up button */
 .signup-button {
     -fx-background-color: #00594E;
@@ -45,13 +56,19 @@
     -fx-font-size: 16px;
     -fx-pref-width: 150px;
     -fx-pref-height: 40px;
+    -fx-border-radius: 5px;
     -fx-background-radius: 5px;
 }
-.signup-button:hover{
-    -fx-opacity: 0.3;
+
+.signup-button:hover {
+    -fx-background-color: #C4E3D4;
+    -fx-border-color: #00594E;
+    -fx-border-width: 2px;
     -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0.2, 8, 8);
 }
-/* Link back to Sign In */
+
+/* Sign In link styling */
 .signup-link {
     -fx-text-fill: #00594E;
     -fx-underline: true;
