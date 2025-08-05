@@ -14,9 +14,13 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -27,8 +31,8 @@ public class SetReminderController {
     @FXML private TextField    nameField;
     @FXML private DatePicker   startDatePicker, endDatePicker;
     @FXML private Spinner<Integer> hourSpinner, minuteSpinner;
-    @FXML private RadioButton  amRadio, pmRadio;
-    @FXML private ListView<String> timesList;
+    @FXML private ToggleButton  amRadio, pmRadio;
+    @FXML private HBox timeListContainer;
     @FXML private TextField    noteField;
 
     private final ReminderService reminderService = new ReminderService();
@@ -50,21 +54,71 @@ public class SetReminderController {
         amRadio.setToggleGroup(tg);
         pmRadio.setToggleGroup(tg);
         amRadio.setSelected(true);
+
+        // Set initial AM/PM styling
+        updateAmPmStyling();
+
+        // Add listeners for AM/PM toggle buttons
+        amRadio.selectedProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal) updateAmPmStyling();
+        });
+        pmRadio.selectedProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal) updateAmPmStyling();
+        });
     }
+
+    private void updateAmPmStyling() {
+        if (amRadio.isSelected()) {
+            amRadio.getStyleClass().add("am-selected");
+            pmRadio.getStyleClass().remove("am-selected");
+        } else {
+            pmRadio.getStyleClass().add("am-selected");
+            amRadio.getStyleClass().remove("am-selected");
+        }
+    }
+
+
 
     @FXML
     private void handleAddTime(ActionEvent e) {
         int hour = hourSpinner.getValue() % 12;
         if (pmRadio.isSelected()) hour += 12;
         LocalTime t = LocalTime.of(hour, minuteSpinner.getValue());
-        timesList.getItems().add(t.format(displayFmt));
+        String timeText = t.format(displayFmt);
+
+        // Check if time already exists
+        boolean timeExists = timeListContainer.getChildren().stream()
+                .anyMatch(node -> node instanceof Button && ((Button) node).getText().equals(timeText));
+
+        if (!timeExists) {
+            Button timeButton = new Button(timeText);
+            timeButton.getStyleClass().add("time-button");
+            timeButton.setOnAction(event -> handleTimeButtonClick(timeButton));
+            timeListContainer.getChildren().add(timeButton);
+        }
     }
 
     @FXML
     private void handleRemoveTime(ActionEvent e) {
-        var sel = timesList.getSelectionModel().getSelectedIndices();
-        sel.sorted((a, b) -> b - a)
-                .forEach(i -> timesList.getItems().remove((int) i));
+        // Remove selected time button
+        timeListContainer.getChildren().removeIf(node ->
+                node instanceof Button && node.getStyleClass().contains("selected"));
+    }
+
+    private void handleTimeButtonClick(Button timeButton) {
+        // Toggle selection
+        if (timeButton.getStyleClass().contains("selected")) {
+            timeButton.getStyleClass().remove("selected");
+        } else {
+            // Deselect all other buttons
+            timeListContainer.getChildren().forEach(node -> {
+                if (node instanceof Button) {
+                    node.getStyleClass().remove("selected");
+                }
+            });
+            // Select this button
+            timeButton.getStyleClass().add("selected");
+        }
     }
 
     @FXML
@@ -73,7 +127,7 @@ public class SetReminderController {
         LocalDate start = startDatePicker.getValue();
         LocalDate end = endDatePicker.getValue();
 
-        if (name.isEmpty() || timesList.getItems().isEmpty()) {
+        if (name.isEmpty() || timeListContainer.getChildren().isEmpty()) {
             new Alert(Alert.AlertType.WARNING,
                     "Please enter a name and at least one alert time.")
                     .showAndWait();
@@ -96,10 +150,13 @@ public class SetReminderController {
 
         String note = noteField.getText().trim();
 
-        for (String ts : timesList.getItems()) {
-            LocalTime lt = LocalTime.parse(ts, displayFmt);
-            MedicineReminder r = new MedicineReminder(name, "", start, end, lt, note);
-            reminderService.addReminder(r);
+        for (javafx.scene.Node node : timeListContainer.getChildren()) {
+            if (node instanceof Button) {
+                String ts = ((Button) node).getText();
+                LocalTime lt = LocalTime.parse(ts, displayFmt);
+                MedicineReminder r = new MedicineReminder(name, "", start, end, lt, note);
+                reminderService.addReminder(r);
+            }
         }
 
         new Alert(Alert.AlertType.INFORMATION,
