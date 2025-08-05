@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.css.PseudoClass;
 
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
@@ -31,6 +32,7 @@ public class ManageScheduleController {
     private final ReminderService service = new ReminderService();
     private final DateTimeFormatter dateFmt = DateTimeFormatter.ofPattern("dd/MM/yy");
     private final DateTimeFormatter timeFmt = DateTimeFormatter.ofPattern("h:mm a");
+    private final PseudoClass SELECTED_PSEUDO_CLASS = PseudoClass.getPseudoClass("selected");
 
     // Map medicine key → list of reminders
     private Map<String, List<MedicineReminder>> grouped;
@@ -49,7 +51,6 @@ public class ManageScheduleController {
         List<MedicineReminder> allReminders = service.getAllReminders();
 
         for (MedicineReminder r : allReminders) {
-            // Use medicine name as the key (without dosage since SetReminder doesn't set dosage)
             String key = r.getMedicineName();
             grouped.computeIfAbsent(key, k -> new ArrayList<>()).add(r);
         }
@@ -65,12 +66,18 @@ public class ManageScheduleController {
 
         emptyStateLabel.setVisible(false);
 
-        // Create a button for each unique medicine
         for (String medicineName : grouped.keySet()) {
             Button medicineButton = new Button(medicineName);
             medicineButton.getStyleClass().add("medicine-button");
             medicineButton.setPrefWidth(190);
             medicineButton.setOnAction(this::handleMedicineSelection);
+
+            // Set initial selected state if this is the currently selected medicine
+            if (medicineName.equals(selectedMedicine)) {
+                medicineButton.pseudoClassStateChanged(SELECTED_PSEUDO_CLASS, true);
+                currentSelectedButton = medicineButton;
+            }
+
             medicineButtonsContainer.getChildren().add(medicineButton);
         }
     }
@@ -94,13 +101,19 @@ public class ManageScheduleController {
     }
 
     private void showDefaultState() {
-        nameLabel.setText("Select a medicine to view details");
+        nameLabel.setText("No medicine selected");
         startDateLabel.setText("-");
         endDateLabel.setText("-");
-        noteLabel.setText("-");
+        noteLabel.setText("Select a medicine from the list");
         timesBox.getChildren().clear();
-        selectedMedicine = null;
-        currentSelectedButton = null;
+
+        // Keep the selected medicine if it still exists
+        if (selectedMedicine != null && grouped.containsKey(selectedMedicine)) {
+            showDetails(selectedMedicine);
+        } else {
+            selectedMedicine = null;
+            currentSelectedButton = null;
+        }
     }
 
     @FXML
@@ -108,18 +121,25 @@ public class ManageScheduleController {
         Button clickedButton = (Button) e.getSource();
         String medicineKey = clickedButton.getText();
 
-        // Reset previous selection
-        if (currentSelectedButton != null) {
-            currentSelectedButton.getStyleClass().removeAll("medicine-button-selected");
+        // If clicking the already selected button, do nothing
+        if (medicineKey.equals(selectedMedicine)) {
+            return;
         }
 
-        // Highlight selected button
-        clickedButton.getStyleClass().add("medicine-button-selected");
+        // Remove selection from all buttons
+        medicineButtonsContainer.getChildren().forEach(node -> {
+            if (node instanceof Button) {
+                ((Button) node).pseudoClassStateChanged(SELECTED_PSEUDO_CLASS, false);
+            }
+        });
+
+        // Set selected state for clicked button
+        clickedButton.pseudoClassStateChanged(SELECTED_PSEUDO_CLASS, true);
         currentSelectedButton = clickedButton;
+        selectedMedicine = medicineKey;
 
         // Show details for selected medicine
         showDetails(medicineKey);
-        selectedMedicine = medicineKey;
     }
 
     private void showDetails(String medicineKey) {
@@ -178,10 +198,7 @@ public class ManageScheduleController {
 
         Optional<ButtonType> result = confirmAlert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            // Delete by medicine name (since dosage is empty from SetReminder)
             service.deleteByMedicine(selectedMedicine + " ");
-
-            // Refresh the display
             initialize();
 
             new Alert(Alert.AlertType.INFORMATION,
@@ -190,6 +207,7 @@ public class ManageScheduleController {
         }
     }
 
+    // Navigation methods remain the same
     @FXML
     private void handleDashboard(ActionEvent e) {
         navigate("/com/momentum/dosein/fxml/dashboard.fxml", e);

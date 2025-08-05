@@ -174,49 +174,15 @@
     -fx-spacing: 0;
 }
 
-/* ACTIVE ALERTS CONTAINER */
-.active-alerts-container {
-    -fx-background-color: #C4E3D4;
-    -fx-background-radius: 8px;
-    -fx-padding: 10;
-    -fx-pref-width: 200;
-    -fx-min-width: 200;
-    -fx-max-width: 200;
-    -fx-pref-height: 300;
-    -fx-alignment: top-center;
-}
 
+
+
+/* MEDICINE BUTTONS */
+/* Active Alerts Container - Adjusted for wider buttons */
 .medicine-buttons-container {
     -fx-alignment: center;
     -fx-spacing: 8;
     -fx-padding: 0;
-}
-
-/* MEDICINE BUTTONS */
-/* MEDICINE BUTTONS - Wider Version */
-.medicine-button {
-    -fx-background-color: #12594C;
-    -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-font-weight: 600;
-    -fx-background-radius: 6px;
-    -fx-cursor: hand;
-    -fx-pref-width: 180px;  /* Increased width */
-    -fx-min-width: 180px;
-    -fx-max-width: 180px;
-    -fx-padding: 10px 15px;
-    -fx-wrap-text: true;
-    -fx-alignment: CENTER;
-}
-
-/* Active Alerts Container - Adjusted for wider buttons */
-.active-alerts-container {
-    -fx-background-color: #C4E3D4;
-    -fx-background-radius: 50px;
-    -fx-padding: 10px;
-    -fx-pref-width: 210px; /* Slightly wider container */
-    -fx-pref-height: 300px;
-    -fx-vbar-policy: AS_NEEDED;
 }
 
 /* Medicine Scroll Pane */
@@ -283,22 +249,12 @@
     -fx-padding: 10px;
     -fx-pref-width: 200px;
     -fx-pref-height: 300px;
-    -fx-vbar-policy: AS_NEEDED; /* Show vertical scroll when needed */
-}
 
-/* Medicine Buttons Container */
-/* Active Alerts Container with Scroll */
-.active-alerts-container {
-    -fx-background-color: #C4E3D4;
-    -fx-background-radius: 8px;
-    -fx-padding: 10px;
-    -fx-pref-width: 230px;
-    -fx-pref-height: 300px;
 }
 
 /* Medicine Scroll Pane */
 .medicine-scroll {
-    -fx-background-color: transparent;
+    -fx-background-color: #4BA684;
     -fx-fit-to-width: true;
     -fx-pref-height: 280px;
     -fx-hbar-policy: NEVER;
@@ -330,19 +286,30 @@
 
 /* Medicine Button Styling */
 .medicine-button {
-    -fx-background-color: #12594C;
+    -fx-background-color: #4BA684;
     -fx-text-fill: white;
     -fx-font-size: 14px;
     -fx-font-weight: 600;
     -fx-background-radius: 6px;
     -fx-cursor: hand;
-    -fx-pref-width: 100px;
-    -fx-min-width: 100px;
-    -fx-max-width: 100px;
-    -fx-padding: 10px 15px;
+    -fx-pref-width: 150px;
+    -fx-min-width: 150px;
+    -fx-max-width: 150px;
+    -fx-padding: 5 20 5 20;
     -fx-wrap-text: true; /* Allow text wrapping */
     -fx-alignment: CENTER;
 }
+.medicine-buttons-container .button:hover {
+    -fx-background-color: #24675B; /* Light blue on hover */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,150,0.2), 5, 0.3, 0, 1);
+    -fx-cursor: hand;
+}
+.medicine-buttons-container .button:active {
+    -fx-background-color: #24675B; /* Light blue on hover */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,150,0.2), 5, 0.3, 0, 1);
+    -fx-cursor: hand;
+}
+
 /* TIME BUTTONS */
 .time-button {
     -fx-background-color: #12594C;
@@ -403,6 +370,9 @@
 .label {
     -fx-wrap-text: true;
 }
+.noteLabel {
+    -fx-wrap-text: true;
+}
 
 /* EMPTY STATE */
 .empty-state-label {
@@ -415,10 +385,7 @@
 }
 
 /* Focus and selection styles */
-.button:focused {
-    -fx-border-color: transparent;
-    -fx-border-width: 0;
-}
+
 
 /* Alert time Scroll Bar */
 /* ALERT TIMES CONTAINER - HORIZONTAL SCROLL ONLY */
@@ -463,3 +430,6 @@
     -fx-pref-height: 80px; /* Match container height */
     -fx-alignment: CENTER;
 }
+
+
+
