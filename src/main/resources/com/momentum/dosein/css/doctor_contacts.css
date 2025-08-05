@@ -137,59 +137,192 @@
 
 /* MAIN CONTENT AREA */
 .main-content {
-    -fx-spacing: 25;
-    -fx-padding: 30;
+    -fx-spacing: 15;
     -fx-background-color: #B8E0D1;
+    -fx-padding: 30 40 30 40;
 }
 
-/* DOCTOR CONTACTS SPECIFIC STYLES */
-.contacts-title {
-    -fx-font-size: 24px;
-    -fx-text-fill: #12594C;
-    -fx-font-weight: bold;
-    -fx-padding: 0 0 5px 0;
-}
-
-.contacts-slogan {
-    -fx-font-size: 12px;
-    -fx-text-fill: #12594C;
-    -fx-background-radius: 5px;
-}
-
-.contacts-header {
+/* MAIN CONTENT CONTAINER */
+.main-content-container {
     -fx-background-color: white;
-    -fx-spacing: 0;
-    -fx-alignment: CENTER_LEFT;
+    -fx-background-radius: 10px;
+    -fx-padding: 25;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
+    -fx-pref-height: 380;
+    -fx-max-height: 380;
+    -fx-min-height: 380;
 }
 
-.contacts-section-title {
+/* TITLE & SUBTITLE */
+.manage-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #12594C;
+    -fx-padding: 0 0 0 25;
+}
+
+.manage-slogan {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+    -fx-font-weight: 500;
+    -fx-wrap-text: true;
+    -fx-padding: 0 0 0 25;
+}
+
+.welcome-banner {
+    -fx-background-color: "white";
+    -fx-spacing: "0";
+    -fx-alignment:"CENTER_LEFT";
+}
+
+/* SECTION HEADER */
+.manage-section-title {
     -fx-font-size: 20px;
     -fx-text-fill: #12594C;
     -fx-padding: 0 0 5 0;
     -fx-font-weight: bold;
 }
 
-.contacts-pane {
+/* SAVED ENTRIES PANE */
+.manage-alerts-pane {
     -fx-background-color: #C4E3D4;
-    -fx-background-radius: 5px;
-    -fx-padding: 10;
+    -fx-background-radius: 8px;
+    -fx-padding: 15;
+    -fx-border-color: #E0E0E0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-pref-height: 340;
+    -fx-min-height: 340;
+    -fx-max-height: 340;
 }
 
-.contacts-listview {
-    -fx-background-radius: 5px;
+.manage-listview {
+    -fx-background-radius: 10px;
     -fx-border-radius: 5px;
+    -fx-background-color: white;
+    -fx-pref-height: 200;
+    -fx-max-height: 200;
+    -fx-min-height: 200;
 }
 
-.add-doctor-button {
+/* DOCTOR INFO PANEL */
+.manage-info-pane {
+    -fx-background-radius: 8px;
+    -fx-padding: 20;
+    -fx-spacing: 15;
+    -fx-background-color: #C4E3D4;
+    -fx-border-color: #E0E0E0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-pref-height: 340;
+    -fx-min-height: 340;
+    -fx-max-height: 340;
+}
+
+/* PANEL TITLE */
+.manage-panel-title {
+    -fx-text-alignment: left;
+    -fx-font-size: 18px;
+    -fx-text-fill: #12594C;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 10 0;
+}
+
+/* LABELS & VALUES */
+.manage-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #12594C;
+    -fx-font-weight: bold;
+}
+
+.manage-value {
+    -fx-font-size: 13px;
+    -fx-text-fill: #12594C;
+    -fx-padding: 0 0 0 15;
+
+}
+
+/* ACTION BUTTONS CONTAINER */
+.action-buttons-container {
+    -fx-padding: 0 0 0 0;
+    -fx-alignment: center;
+}
+
+/* ADD BUTTON */
+.add-button {
     -fx-background-color: #4BA684;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-font-size: 14px;
-    -fx-padding: 8px 15px;
+    -fx-padding: 8px 15px 8px 10px;
     -fx-background-radius: 5px;
+    -fx-graphic-text-gap: 8px;
+    -fx-content-display: left;
     -fx-cursor: hand;
 }
 
-.add-doctor-button:hover {
+.add-button:hover {
     -fx-background-color: #3D9574;
+}
+
+/* DELETE BUTTON */
+.delete-button {
+    -fx-background-color: #E57373;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 15px 8px 10px;
+    -fx-background-radius: 5px;
+    -fx-graphic-text-gap: 8px;
+    -fx-content-display: left;
+    -fx-cursor: hand;
+}
+
+.delete-button:hover {
+    -fx-background-color: #EF5350;
+}
+
+
+/* For Additional Information specifically */
+.manage-listview .manage-value {
+    -fx-wrap-text: true;
+    -fx-padding: 0 0 0 15;
+    -fx-text-alignment: left;
+}
+
+/* Remove extra spacing for Additional Info */
+.grid-pane > .vbox {
+    -fx-padding: 0;
+    -fx-spacing: 0;
+}
+
+.manage-scrollpane {
+    -fx-background-color: transparent;
+}
+
+.manage-scrollpane .scroll-bar:vertical {
+    -fx-background-color: #3D9574;
+}
+
+.manage-scrollpane .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.manage-scrollpane .scroll-bar:vertical .thumb {
+    -fx-background-color: #977f7f;
+    -fx-background-radius: 5em;
+}
+
+.manage-scrollpane .scroll-bar:vertical .increment-button,
+.manage-scrollpane .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-padding: 0 10 0 0;
+}
+
+.manage-scrollpane .scroll-bar:vertical .increment-arrow,
+.manage-scrollpane .scroll-bar:vertical .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
 }

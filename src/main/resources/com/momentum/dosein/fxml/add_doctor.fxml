@@ -13,26 +13,80 @@
             styleClass="dashboard-root"
             prefWidth="800" prefHeight="600">
 
-    <!-- LEFT NAVIGATION (same as dashboard.fxml) -->
+    <!-- LEFT NAVIGATION -->
     <left>
-        <VBox styleClass="nav-bar" spacing="10" prefWidth="200">
-            <HBox styleClass="nav-header"
-                  alignment="CENTER_LEFT" spacing="10" prefHeight="60"
-                  onMouseClicked="#handleDashboard">
-                <ImageView fitWidth="30" fitHeight="30" preserveRatio="true">
-                    <image><Image url="@../images/logo.png"/></image>
-                </ImageView>
-                <Label text="DoseIn" styleClass="nav-logo"/>
+        <VBox prefWidth="200" spacing="15" styleClass="nav-bar">
+            <padding>
+                <Insets bottom="20" left="15" right="15" top="20" />
+            </padding>
+
+            <!-- Logo and App Name -->
+            <HBox alignment="CENTER_LEFT" prefHeight="70" spacing="12" styleClass="nav-header">
+                <HBox alignment="CENTER_LEFT" spacing="12" styleClass="logo-container">
+                    <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
+                        <Image url="@../images/logo.png" />
+                    </ImageView>
+                    <Label styleClass="nav-logo" text="Doseln" />
+                </HBox>
             </HBox>
-            <Button text="Dashboard"        onAction="#handleDashboard"       styleClass="nav-button"/>
-            <Button text="Manage Schedule"  onAction="#handleManageSchedule"  styleClass="nav-item"/>
-            <Button text="Doctor Contacts"  onAction="#handleDoctorContacts"  styleClass="nav-item"/>
-            <Button text="Emergency"        onAction="#handleEmergency"       styleClass="nav-item"/>
-            <Button text="About Us"         onAction="#handleAboutUs"         styleClass="nav-item"/>
-            <Region VBox.vgrow="ALWAYS"/>
-            <Button text="Sign Out"         onAction="#handleSignOut"         styleClass="nav-signout"/>
+
+            <!-- Navigation Menu -->
+            <VBox spacing="8" styleClass="nav-menu-container">
+                <Button onAction="#handleDashboard" styleClass="nav-item" text="Dashboard">
+                    <graphic>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/dashboard-icon.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#handleManageSchedule" styleClass="nav-item-schedule" text="Manage Schedule">
+                    <graphic>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/calendar-icon.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#handleDoctorContacts" styleClass="nav-button-active" text="Doctor Contacts">
+                    <graphic>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/doctor-icon.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#handleEmergency" styleClass="nav-item" text="Emergency">
+                    <graphic>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/emergency-icon.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#handleAboutUs" styleClass="nav-item" text="About Us">
+                    <graphic>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/about-icon.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </VBox>
+
+            <Region VBox.vgrow="ALWAYS" />
+
+            <VBox styleClass="signout-container">
+                <Button onAction="#handleSignOut" styleClass="nav-signout" text="Sign Out">
+                    <graphic>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/signout-icon.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </VBox>
         </VBox>
     </left>
+
 
     <!-- CENTER: Add Doctor Form -->
     <center>

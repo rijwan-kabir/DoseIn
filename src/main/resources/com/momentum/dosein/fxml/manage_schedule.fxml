@@ -134,37 +134,41 @@
                     </VBox>
 
                     <!-- Medicine Information Panel -->
-                    <VBox alignment="TOP_CENTER" maxWidth="262.0" minWidth="262.0" prefWidth="262.0" spacing="0" styleClass="medicine-info-container">
+                    <VBox alignment="TOP_CENTER" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" spacing="0" styleClass="medicine-info-container">
+                        <!-- Medicine Information Label - Now positioned above the container -->
                         <Label styleClass="section-title" text="Medicine Information" />
 
-                        <VBox minWidth="219.0" prefHeight="187.0" prefWidth="219.0" spacing="12" styleClass="medicine-info-grid">
-                            <!-- Name -->
-                            <HBox spacing="10">
-                                <Label prefWidth="80" styleClass="info-label" text="Name :" />
-                                <Label fx:id="nameLabel" styleClass="info-value" text="Select a medicine to view details" wrapText="true" />
-                            </HBox>
+                        <!-- Container for medicine info - now with proper styling -->
+                        <VBox styleClass="active-alerts-container" alignment="TOP_CENTER" spacing="0">
+                            <VBox minWidth="219.0" prefHeight="187.0" prefWidth="219.0" spacing="12" styleClass="medicine-info-grid">
+                                <!-- Name -->
+                                <HBox spacing="10">
+                                    <Label prefWidth="80" styleClass="info-label" text="Name :" />
+                                    <Label fx:id="nameLabel" styleClass="info-value" text="No medicine selected" wrapText="true" />
+                                </HBox>
 
-                            <!-- Start Date -->
-                            <HBox spacing="10">
-                                <Label prefWidth="80" styleClass="info-label" text="Start Date :" />
-                                <Label fx:id="startDateLabel" styleClass="info-value" text="-" />
-                            </HBox>
+                                <!-- Start Date -->
+                                <HBox spacing="10">
+                                    <Label prefWidth="80" styleClass="info-label" text="Start Date :" />
+                                    <Label fx:id="startDateLabel" styleClass="info-value" text="-" />
+                                </HBox>
 
-                            <!-- End Date -->
-                            <HBox spacing="10">
-                                <Label prefWidth="80" styleClass="info-label" text="End Date :" />
-                                <Label fx:id="endDateLabel" styleClass="info-value" text="-" />
-                            </HBox>
+                                <!-- End Date -->
+                                <HBox spacing="10">
+                                    <Label prefWidth="80" styleClass="info-label" text="End Date :" />
+                                    <Label fx:id="endDateLabel" styleClass="info-value" text="-" />
+                                </HBox>
 
-                            <!-- Additional Information -->
-                            <VBox spacing="5">
-                                <Label styleClass="info-label" text="Additional Information :" />
-                                <Label fx:id="noteLabel" styleClass="info-value" text="-" wrapText="true" />
-                            </VBox>
+                                <!-- Additional Information -->
+                                <VBox spacing="5">
+                                    <Label styleClass="info-label" text="Additional Information :" />
+                                    <Label fx:id="noteLabel" styleClass="info-value" text="Select a medicine from the list" wrapText="true" />
+                                </VBox>
 
-                            <!-- Alert Time -->
-                            <VBox spacing="5">
-                                <Label styleClass="info-label" text="Alert Time:" />
+                                <!-- Alert Time -->
+                                <VBox spacing="5">
+                                    <Label styleClass="info-label" text="Alert Time:" />
+                                </VBox>
                             </VBox>
                         </VBox>
 
