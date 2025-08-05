@@ -86,51 +86,84 @@
         <VBox spacing="20" styleClass="main-content">
 
             <!-- Header -->
-            <HBox styleClass="welcome-banner" spacing="10" alignment="CENTER_LEFT">
-                <Label text="Doctor Contacts" styleClass="contact-title"/>
-                <Region HBox.hgrow="ALWAYS"/>
-                <Label text="Manage your personal healthcare contacts" styleClass="contact-slogan"/>
-            </HBox>
+            <VBox styleClass="welcome-banner">
+                <Label styleClass="manage-title" text="Doctor Contacts" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label styleClass="manage-slogan" text="Manage your personal healthcare contacts" />
+            </VBox>
 
-            <HBox spacing="20" alignment="TOP_LEFT">
-                <!-- Saved Entries -->
-                <VBox spacing="10" styleClass="contacts-pane">
-                    <Label text="Saved Entries" styleClass="manage-section-title"/>
-                    <ListView fx:id="contactsList" styleClass="manage-listview"
-                              prefWidth="200" prefHeight="300"/>
-                    <Button text="Add"
-                            onAction="#handleAdd"
-                            styleClass="add-button"/>
+            <HBox alignment="TOP_LEFT" spacing="20">
+                <!-- Saved Entries List -->
+                <VBox spacing="10" styleClass="manage-alerts-pane">
+                    <Label styleClass="manage-section-title" text="Saved Entries" />
+                    <ListView fx:id="contactsList" prefHeight="300" prefWidth="200" styleClass="manage-listview" />
                 </VBox>
 
-                <!-- Doctor Information -->
-                <VBox spacing="10" styleClass="contacts-info-pane">
-                    <Label text="Doctor Information" styleClass="manage-panel-title"/>
+                <!-- Doctor Information Panel -->
+                <VBox spacing="10" styleClass="manage-info-pane" prefWidth="400" maxWidth="400">
+                    <Label styleClass="manage-panel-title" text="Doctor Information" />
 
                     <GridPane hgap="10" vgap="10">
-                        <Label text="Name :" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="manage-label"/>
-                        <Label fx:id="nameLabel" GridPane.rowIndex="0" GridPane.columnIndex="1" styleClass="manage-value"/>
+                        <Label styleClass="manage-label" text="Name :" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label fx:id="nameLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-                        <Label text="Speciality :" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="manage-label"/>
-                        <Label fx:id="specialtyLabel" GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="manage-value"/>
+                        <Label styleClass="manage-label" text="Speciality :" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <Label fx:id="specialtyLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-                        <Label text="Phone :" GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass="manage-label"/>
-                        <Label fx:id="phoneLabel" GridPane.rowIndex="2" GridPane.columnIndex="1" styleClass="manage-value"/>
+                        <Label styleClass="manage-label" text="Phone :" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <Label fx:id="phoneLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-                        <Label text="Email :" GridPane.rowIndex="3" GridPane.columnIndex="0" styleClass="manage-label"/>
-                        <Label fx:id="emailLabel" GridPane.rowIndex="3" GridPane.columnIndex="1" styleClass="manage-value"/>
+                        <Label styleClass="manage-label" text="Email :" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <Label fx:id="emailLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-                        <Label text="Location :" GridPane.rowIndex="4" GridPane.columnIndex="0" styleClass="manage-label"/>
-                        <Label fx:id="locationLabel" GridPane.rowIndex="4" GridPane.columnIndex="1" styleClass="manage-value"/>
+                        <Label styleClass="manage-label" text="Location :" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <Label fx:id="locationLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 
-                        <Label text="Additional Information :" GridPane.rowIndex="5" GridPane.columnIndex="0" styleClass="manage-label"/>
-                        <Label fx:id="noteLabel" GridPane.rowIndex="5" GridPane.columnIndex="1" styleClass="manage-value"/>
+                        <Label styleClass="manage-label" text="Additional Information :" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <Label fx:id="noteLabel" styleClass="manage-value" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="5" />
+
+                        <columnConstraints>
+                            <ColumnConstraints />
+                            <ColumnConstraints />
+                            <ColumnConstraints />
+                            <ColumnConstraints />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                        </rowConstraints>
                     </GridPane>
 
                     <Region VBox.vgrow="ALWAYS"/>
-                    <Button text="Delete"
-                            onAction="#handleDelete"
-                            styleClass="delete-button"/>
+
+                    <!-- Action Buttons -->
+                    <HBox spacing="10" alignment="CENTER" styleClass="action-buttons-container">
+                        <Button text="Add"
+                                onAction="#handleAdd"
+                                styleClass="add-button"
+                                prefWidth="120">
+                            <graphic>
+                                <ImageView fitWidth="16" fitHeight="16" preserveRatio="true">
+                                    <Image url="@../images/add-icon.png" />
+                                </ImageView>
+                            </graphic>
+                        </Button>
+
+                        <Button text="Delete"
+                                onAction="#handleDelete"
+                                styleClass="delete-button"
+                                prefWidth="120">
+                            <graphic>
+                                <ImageView fitWidth="16" fitHeight="16" preserveRatio="true">
+                                    <Image url="@../images/delete-icon.png" />
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </HBox>
                 </VBox>
             </HBox>
         </VBox>

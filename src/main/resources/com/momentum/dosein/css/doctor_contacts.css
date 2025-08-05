@@ -142,54 +142,110 @@
     -fx-background-color: #B8E0D1;
 }
 
-/* DOCTOR CONTACTS SPECIFIC STYLES */
-.contacts-title {
+/* TITLE & SUBTITLE */
+.manage-title {
     -fx-font-size: 24px;
     -fx-text-fill: #12594C;
     -fx-font-weight: bold;
     -fx-padding: 0 0 5px 0;
 }
 
-.contacts-slogan {
+.manage-slogan {
     -fx-font-size: 12px;
     -fx-text-fill: #12594C;
     -fx-background-radius: 5px;
 }
 
-.contacts-header {
-    -fx-background-color: white;
-    -fx-spacing: 0;
-    -fx-alignment: CENTER_LEFT;
+.welcome-banner {
+    -fx-background-color: "white";
+    -fx-spacing: "0";
+    -fx-alignment:"CENTER_LEFT";
 }
 
-.contacts-section-title {
+/* SECTION HEADER */
+.manage-section-title {
     -fx-font-size: 20px;
     -fx-text-fill: #12594C;
     -fx-padding: 0 0 5 0;
     -fx-font-weight: bold;
 }
 
-.contacts-pane {
+/* SAVED ENTRIES PANE */
+.manage-alerts-pane {
     -fx-background-color: #C4E3D4;
     -fx-background-radius: 5px;
     -fx-padding: 10;
 }
 
-.contacts-listview {
+.manage-listview {
     -fx-background-radius: 5px;
     -fx-border-radius: 5px;
 }
 
-.add-doctor-button {
+/* DOCTOR INFO PANEL */
+.manage-info-pane {
+    -fx-background-radius: 5px;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+    -fx-background-color: #C4E3D4;
+}
+
+/* PANEL TITLE */
+.manage-panel-title {
+    -fx-font-size: 18px;
+    -fx-text-fill: #12594C;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 10 0;
+}
+
+/* LABELS & VALUES */
+.manage-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #12594C;
+    -fx-font-weight: bold;
+}
+
+.manage-value {
+    -fx-font-size: 14px;
+    -fx-text-fill: #12594C;
+}
+
+/* ACTION BUTTONS CONTAINER */
+.action-buttons-container {
+    -fx-padding: 10px 0 0 0;
+    -fx-alignment: center;
+}
+
+/* ADD BUTTON */
+.add-button {
     -fx-background-color: #4BA684;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-font-size: 14px;
-    -fx-padding: 8px 15px;
+    -fx-padding: 8px 15px 8px 10px;
     -fx-background-radius: 5px;
+    -fx-graphic-text-gap: 8px;
+    -fx-content-display: left;
     -fx-cursor: hand;
 }
 
-.add-doctor-button:hover {
+.add-button:hover {
     -fx-background-color: #3D9574;
+}
+
+/* DELETE BUTTON */
+.delete-button {
+    -fx-background-color: #E57373;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 15px 8px 10px;
+    -fx-background-radius: 5px;
+    -fx-graphic-text-gap: 8px;
+    -fx-content-display: left;
+    -fx-cursor: hand;
+}
+
+.delete-button:hover {
+    -fx-background-color: #EF5350;
 }
