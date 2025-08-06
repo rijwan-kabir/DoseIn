@@ -174,9 +174,6 @@
     -fx-spacing: 0;
 }
 
-
-
-
 /* MEDICINE BUTTONS */
 /* Active Alerts Container - Adjusted for wider buttons */
 .medicine-buttons-container {
@@ -215,6 +212,7 @@
     -fx-min-width: 270;
     -fx-max-width: 270;
     -fx-pref-height: 300;
+    -fx-min-height: 300;
     -fx-alignment: top-center;
 }
 
@@ -249,7 +247,7 @@
     -fx-padding: 10px;
     -fx-pref-width: 200px;
     -fx-pref-height: 300px;
-
+    -fx-min-height: 300px;
 }
 
 /* Medicine Scroll Pane */
@@ -299,15 +297,23 @@
     -fx-wrap-text: true; /* Allow text wrapping */
     -fx-alignment: CENTER;
 }
-.medicine-buttons-container .button:hover {
+
+.medicine-button:hover {
     -fx-background-color: #24675B; /* Light blue on hover */
     -fx-effect: dropshadow(gaussian, rgba(0,0,150,0.2), 5, 0.3, 0, 1);
     -fx-cursor: hand;
 }
-.medicine-buttons-container .button:active {
+
+.medicine-button:active {
     -fx-background-color: #24675B; /* Light blue on hover */
     -fx-effect: dropshadow(gaussian, rgba(0,0,150,0.2), 5, 0.3, 0, 1);
     -fx-cursor: hand;
+}
+
+.medicine-button.selected {
+    -fx-background-color: #12594C;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 3, 0, 0, 1);
 }
 
 /* TIME BUTTONS */
@@ -334,10 +340,39 @@
     -fx-background-color: #0A3A31;
 }
 
-/* DELETE CONTAINER */
-.delete-container {
+/* ACTION BUTTONS CONTAINER */
+.action-buttons-container {
     -fx-padding: 10 0 0 0;
-    -fx-alignment: CENTER_RIGHT;
+    -fx-alignment: CENTER;
+    -fx-spacing: 8;
+}
+
+/* CLEAR BUTTON */
+.clear-button {
+    -fx-background-color: #FFA726;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 8 12;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER;
+    -fx-pref-width: 120;
+    -fx-opacity: 0.6;
+}
+
+.clear-button:hover {
+    -fx-background-color: #FF9800;
+    -fx-opacity: 1.0;
+}
+
+.clear-button:pressed {
+    -fx-background-color: #F57C00;
+}
+
+.clear-button:disabled {
+    -fx-opacity: 0.3;
+    -fx-cursor: default;
 }
 
 /* DELETE BUTTON */
@@ -348,18 +383,24 @@
     -fx-font-size: 12px;
     -fx-padding: 8 12;
     -fx-background-radius: 6px;
-    -fx-graphic-text-gap: 6px;
     -fx-cursor: hand;
     -fx-alignment: CENTER;
-    -fx-pref-width: 100;
+    -fx-pref-width: 120;
+    -fx-opacity: 0.6;
 }
 
 .delete-button:hover {
     -fx-background-color: #EF5350;
+    -fx-opacity: 1.0;
 }
 
 .delete-button:pressed {
     -fx-background-color: #E53935;
+}
+
+.delete-button:disabled {
+    -fx-opacity: 0.3;
+    -fx-cursor: default;
 }
 
 /* MISC ELEMENTS */
@@ -386,7 +427,6 @@
 
 /* Focus and selection styles */
 
-
 /* Alert time Scroll Bar */
 /* ALERT TIMES CONTAINER - HORIZONTAL SCROLL ONLY */
 .alert-times-container {
@@ -410,8 +450,6 @@
     -fx-vbar-policy: NEVER;
     -fx-pannable: false; /* Crucial - prevents all touch/mouse panning */
 }
-
-
 
 /* Completely disable vertical scrolling behavior */
 .alert-times-scroll .scroll-bar:vertical {

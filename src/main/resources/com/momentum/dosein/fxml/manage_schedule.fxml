@@ -113,7 +113,7 @@
                 <Label style="-fx-padding: 0 0 0 10" styleClass="section-title" text="Active Alerts" />
                 <HBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="530.0" spacing="20">
                     <!-- Active Alerts Section -->
-                    <VBox styleClass="active-alerts-container" alignment="TOP_CENTER">
+                    <VBox styleClass="active-alerts-container" alignment="TOP_CENTER" prefHeight="300.0">
                         <ScrollPane fitToWidth="true"
                                     hbarPolicy="NEVER"
                                     vbarPolicy="AS_NEEDED"
@@ -134,7 +134,7 @@
                     </VBox>
 
                     <!-- Medicine Information Panel -->
-                    <VBox alignment="TOP_CENTER" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" spacing="0" styleClass="medicine-info-container">
+                    <VBox alignment="TOP_CENTER" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" spacing="0" styleClass="medicine-info-container" prefHeight="300.0">
                         <!-- Medicine Information Label - Now positioned above the container -->
                         <Label styleClass="section-title" text="Medicine Information" />
 
@@ -179,16 +179,14 @@
                             </content>
                         </ScrollPane>
 
-                        <!-- Delete Button -->
-                        <HBox alignment="CENTER_RIGHT" styleClass="delete-container">
-                            <Button onAction="#handleDelete" prefHeight="4.0" prefWidth="120" styleClass="delete-button" text="Delete">
-                                <graphic>
-                                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
-                                        <Image url="@../images/delete-icon.png" />
-                                    </ImageView>
-                                </graphic>
-                            </Button>
-                        </HBox>
+                        <!-- Action Buttons Container -->
+                        <VBox fx:id="actionButtonsContainer" alignment="CENTER" spacing="8" styleClass="action-buttons-container">
+                            <!-- Clear Button -->
+                            <Button fx:id="clearButton" onAction="#handleClear" prefHeight="32.0" prefWidth="120.0" styleClass="clear-button" text="Clear Selection" />
+                            
+                            <!-- Delete Button -->
+                            <Button fx:id="deleteButton" onAction="#handleDelete" prefHeight="32.0" prefWidth="120.0" styleClass="delete-button" text="Delete Medicine" />
+                        </VBox>
                     </VBox>
                 </HBox>
             </VBox>

@@ -28,6 +28,12 @@ public class ManageScheduleController {
     private Label nameLabel, startDateLabel, endDateLabel, noteLabel;
     @FXML
     private HBox timesBox;
+    @FXML
+    private VBox actionButtonsContainer;
+    @FXML
+    private Button clearButton;
+    @FXML
+    private Button deleteButton;
 
     private final ReminderService service = new ReminderService();
     private final DateTimeFormatter dateFmt = DateTimeFormatter.ofPattern("dd/MM/yy");
@@ -44,6 +50,7 @@ public class ManageScheduleController {
         loadReminders();
         createMedicineButtons();
         updateDisplay();
+        updateButtonVisibility();
     }
 
     private void loadReminders() {
@@ -90,6 +97,23 @@ public class ManageScheduleController {
         }
     }
 
+    private void updateButtonVisibility() {
+        boolean hasMedicineSelected = selectedMedicine != null && !selectedMedicine.isEmpty();
+        
+        // Enable/disable buttons based on selection
+        clearButton.setDisable(!hasMedicineSelected);
+        deleteButton.setDisable(!hasMedicineSelected);
+        
+        // Update button opacity for visual feedback
+        if (hasMedicineSelected) {
+            clearButton.setOpacity(1.0);
+            deleteButton.setOpacity(1.0);
+        } else {
+            clearButton.setOpacity(0.6);
+            deleteButton.setOpacity(0.6);
+        }
+    }
+
     private void showEmptyState() {
         nameLabel.setText("No reminders set");
         startDateLabel.setText("-");
@@ -98,6 +122,7 @@ public class ManageScheduleController {
         timesBox.getChildren().clear();
         selectedMedicine = null;
         currentSelectedButton = null;
+        updateButtonVisibility();
     }
 
     private void showDefaultState() {
@@ -114,6 +139,7 @@ public class ManageScheduleController {
             selectedMedicine = null;
             currentSelectedButton = null;
         }
+        updateButtonVisibility();
     }
 
     @FXML
@@ -140,6 +166,38 @@ public class ManageScheduleController {
 
         // Show details for selected medicine
         showDetails(medicineKey);
+        updateButtonVisibility();
+    }
+
+    @FXML
+    private void handleClear(ActionEvent e) {
+        if (selectedMedicine == null) {
+            new Alert(Alert.AlertType.WARNING, "No medicine selected to clear.")
+                    .showAndWait();
+            return;
+        }
+
+        Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmAlert.setTitle("Clear Selection");
+        confirmAlert.setHeaderText("Clear Medicine Selection");
+        confirmAlert.setContentText("Are you sure you want to clear the selection for " + selectedMedicine + "?");
+
+        Optional<ButtonType> result = confirmAlert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            // Clear selection
+            if (currentSelectedButton != null) {
+                currentSelectedButton.pseudoClassStateChanged(SELECTED_PSEUDO_CLASS, false);
+            }
+            selectedMedicine = null;
+            currentSelectedButton = null;
+            
+            // Reset display
+            showDefaultState();
+            
+            new Alert(Alert.AlertType.INFORMATION,
+                    "Selection cleared successfully.")
+                    .showAndWait();
+        }
     }
 
     private void showDetails(String medicineKey) {
