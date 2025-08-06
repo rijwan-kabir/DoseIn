@@ -35,7 +35,7 @@ public class CartItem implements Serializable {
 
     @Override
     public String toString() {
-        return medicine.getName() + " x" + quantity + " - $" + String.format("%.2f", getTotalPrice());
+        return medicine.getName() + " x" + quantity + " - ৳" + String.format("%.2f", getTotalPrice());
     }
 
     @Override

@@ -69,7 +69,7 @@ public class CostEstimatorController {
                 if (empty || price == null) {
                     setText(null);
                 } else {
-                    setText("$" + String.format("%.2f", price));
+                    setText("৳" + String.format("%.2f", price));
                 }
             }
         });
@@ -81,7 +81,7 @@ public class CostEstimatorController {
                 if (empty || total == null) {
                     setText(null);
                 } else {
-                    setText("$" + String.format("%.2f", total));
+                    setText("৳" + String.format("%.2f", total));
                 }
             }
         });
@@ -95,7 +95,7 @@ public class CostEstimatorController {
                 if (empty || medicine == null) {
                     setText(null);
                 } else {
-                    setText(medicine.getName() + " - $" + String.format("%.2f", medicine.getPrice()));
+                    setText(medicine.getName() + " - ৳" + String.format("%.2f", medicine.getPrice()));
                 }
             }
         });
@@ -215,8 +215,8 @@ public class CostEstimatorController {
         double total = cartItems.stream()
                 .mapToDouble(CartItem::getTotalPrice)
                 .sum();
-        totalCostLabel.setText("Total: $" + String.format("%.2f", total));
-        totalCostLabel.setFont(Font.font("Poppins", FontWeight.BOLD, 18));
+        totalCostLabel.setText("Total: ৳" + String.format("%.2f", total));
+        totalCostLabel.setFont(Font.font("Poppins", FontWeight.BOLD, 16));
     }
 
     private void updateButtonStates() {

@@ -20,11 +20,11 @@
             fx:controller="com.momentum.dosein.controller.CostEstimatorController"
             stylesheets="@../css/dashboard.css"
             styleClass="dashboard-root"
-            prefWidth="1000" prefHeight="700">
+            prefWidth="800" prefHeight="600">
 
     <!-- LEFT NAVIGATION -->
     <left>
-        <VBox styleClass="nav-bar" spacing="15" prefWidth="200">
+        <VBox styleClass="nav-bar" spacing="12" prefWidth="160">
             <padding>
                 <Insets top="20" right="15" bottom="20" left="15"/>
             </padding>
@@ -106,9 +106,9 @@
 
     <!-- CENTER CONTENT -->
     <center>
-        <VBox styleClass="main-content" spacing="25">
+        <VBox styleClass="main-content" spacing="15">
             <padding>
-                <Insets top="40" right="40" bottom="40" left="40"/>
+                <Insets top="20" right="20" bottom="20" left="20"/>
             </padding>
 
             <!-- Header -->
@@ -118,57 +118,57 @@
             </VBox>
 
             <!-- Main Content Area -->
-            <HBox spacing="30" VBox.vgrow="ALWAYS">
+            <HBox spacing="15" VBox.vgrow="ALWAYS">
                 <!-- Left Side - Medicine Search -->
-                <VBox spacing="15" prefWidth="350" HBox.hgrow="NEVER">
-                    <VBox spacing="10" styleClass="content-card">
+                <VBox spacing="10" prefWidth="280" HBox.hgrow="NEVER">
+                    <VBox spacing="8" styleClass="content-card">
                         <padding>
-                            <Insets top="20" right="20" bottom="20" left="20"/>
+                            <Insets top="15" right="15" bottom="15" left="15"/>
                         </padding>
 
                         <Label text="Search Medicines" styleClass="card-title"/>
                         
                         <TextField fx:id="searchField" promptText="Search by medicine name..." styleClass="search-field"/>
                         
-                        <VBox spacing="8">
+                        <VBox spacing="5">
                             <Label text="Available Medicines" styleClass="section-label"/>
-                            <ListView fx:id="medicineListView" prefHeight="250" styleClass="medicine-list"/>
+                            <ListView fx:id="medicineListView" prefHeight="180" styleClass="medicine-list"/>
                         </VBox>
 
-                        <HBox spacing="10" alignment="CENTER_LEFT">
-                            <Label text="Quantity:" styleClass="field-label"/>
-                            <Spinner fx:id="quantitySpinner" prefWidth="80" styleClass="quantity-spinner"/>
+                        <HBox spacing="8" alignment="CENTER_LEFT">
+                            <Label text="Qty:" styleClass="field-label"/>
+                            <Spinner fx:id="quantitySpinner" prefWidth="60" styleClass="quantity-spinner"/>
                             <Button fx:id="addToCartButton" text="Add to Cart" onAction="#handleAddToCart" 
-                                    styleClass="add-button" prefWidth="100"/>
+                                    styleClass="add-button" prefWidth="85"/>
                         </HBox>
                     </VBox>
                 </VBox>
 
                 <!-- Right Side - Shopping Cart -->
-                <VBox spacing="15" HBox.hgrow="ALWAYS">
-                    <VBox spacing="10" styleClass="content-card" VBox.vgrow="ALWAYS">
+                <VBox spacing="10" HBox.hgrow="ALWAYS">
+                    <VBox spacing="8" styleClass="content-card" VBox.vgrow="ALWAYS">
                         <padding>
-                            <Insets top="20" right="20" bottom="20" left="20"/>
+                            <Insets top="15" right="15" bottom="15" left="15"/>
                         </padding>
 
                         <Label text="Shopping Cart" styleClass="card-title"/>
 
                         <TableView fx:id="cartTableView" VBox.vgrow="ALWAYS" styleClass="cart-table">
                             <columns>
-                                <TableColumn fx:id="medicineNameColumn" text="Medicine" prefWidth="150"/>
-                                <TableColumn fx:id="quantityColumn" text="Qty" prefWidth="60"/>
-                                <TableColumn fx:id="priceColumn" text="Price" prefWidth="80"/>
-                                <TableColumn fx:id="totalColumn" text="Total" prefWidth="80"/>
+                                <TableColumn fx:id="medicineNameColumn" text="Medicine" prefWidth="120"/>
+                                <TableColumn fx:id="quantityColumn" text="Qty" prefWidth="40"/>
+                                <TableColumn fx:id="priceColumn" text="Price" prefWidth="70"/>
+                                <TableColumn fx:id="totalColumn" text="Total" prefWidth="70"/>
                             </columns>
                         </TableView>
 
-                        <HBox spacing="10" alignment="CENTER_LEFT">
-                            <Button fx:id="removeFromCartButton" text="Remove Selected" onAction="#handleRemoveFromCart" 
-                                    styleClass="remove-button"/>
-                            <Button fx:id="clearCartButton" text="Clear Cart" onAction="#handleClearCart" 
-                                    styleClass="clear-button"/>
+                        <HBox spacing="8" alignment="CENTER_LEFT">
+                            <Button fx:id="removeFromCartButton" text="Remove" onAction="#handleRemoveFromCart" 
+                                    styleClass="remove-button" prefWidth="70"/>
+                            <Button fx:id="clearCartButton" text="Clear" onAction="#handleClearCart" 
+                                    styleClass="clear-button" prefWidth="60"/>
                             <Region HBox.hgrow="ALWAYS"/>
-                            <Label fx:id="totalCostLabel" text="Total: $0.00" styleClass="total-label"/>
+                            <Label fx:id="totalCostLabel" text="Total: ৳0.00" styleClass="total-label"/>
                         </HBox>
                     </VBox>
                 </VBox>

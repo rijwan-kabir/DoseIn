@@ -477,12 +477,12 @@
 .add-button {
     -fx-background-color: #10b981;
     -fx-text-fill: white;
-    -fx-border-radius: 6px;
-    -fx-background-radius: 6px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
     -fx-font-family: "Poppins";
     -fx-font-weight: 600;
-    -fx-font-size: 13px;
-    -fx-padding: 8px 16px;
+    -fx-font-size: 12px;
+    -fx-padding: 6px 12px;
 }
 
 .add-button:hover {
@@ -497,12 +497,12 @@
 .remove-button {
     -fx-background-color: #ef4444;
     -fx-text-fill: white;
-    -fx-border-radius: 6px;
-    -fx-background-radius: 6px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
     -fx-font-family: "Poppins";
     -fx-font-weight: 600;
-    -fx-font-size: 13px;
-    -fx-padding: 8px 16px;
+    -fx-font-size: 12px;
+    -fx-padding: 6px 10px;
 }
 
 .remove-button:hover {
@@ -517,12 +517,12 @@
 .clear-button {
     -fx-background-color: #f59e0b;
     -fx-text-fill: white;
-    -fx-border-radius: 6px;
-    -fx-background-radius: 6px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
     -fx-font-family: "Poppins";
     -fx-font-weight: 600;
-    -fx-font-size: 13px;
-    -fx-padding: 8px 16px;
+    -fx-font-size: 12px;
+    -fx-padding: 6px 10px;
 }
 
 .clear-button:hover {
@@ -537,12 +537,12 @@
 .total-label {
     -fx-font-family: "Poppins";
     -fx-font-weight: bold;
-    -fx-font-size: 18px;
+    -fx-font-size: 16px;
     -fx-text-fill: #1f2937;
     -fx-background-color: #f3f4f6;
-    -fx-padding: 12px 20px;
-    -fx-border-radius: 8px;
-    -fx-background-radius: 8px;
+    -fx-padding: 8px 15px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
 }
 
 .section-label {

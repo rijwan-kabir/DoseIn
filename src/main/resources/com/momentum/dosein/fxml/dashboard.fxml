@@ -16,7 +16,7 @@
             fx:controller="com.momentum.dosein.controller.DashboardController"
             stylesheets="@../css/dashboard.css"
             styleClass="dashboard-root"
-            prefWidth="1000" prefHeight="700">
+            prefWidth="800" prefHeight="600">
 
     <!-- LEFT NAVIGATION -->
     <left>
