@@ -1,79 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="rootPane" prefHeight="700" prefWidth="1000" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/about_us.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.AboutUsController">
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600" prefWidth="800" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/about_us.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.AboutUsController">
 
-    <!-- LEFT NAVIGATION (same as before) -->
+    <!-- LEFT NAVIGATION -->
     <left>
-        <VBox styleClass="nav-bar" spacing="15" prefWidth="200">
+        <VBox prefWidth="200" spacing="15" styleClass="nav-bar">
             <padding>
-                <Insets top="20" right="15" bottom="20" left="15"/>
+                <Insets bottom="20" left="15" right="15" top="20" />
             </padding>
 
             <!-- Logo and App Name -->
-            <HBox styleClass="nav-header" alignment="CENTER_LEFT" spacing="12" prefHeight="70">
-                <HBox styleClass="logo-container" alignment="CENTER_LEFT" spacing="12">
-                    <ImageView fitWidth="30" fitHeight="30" preserveRatio="true">
-                        <Image url="@../images/logo.png"/>
+            <HBox alignment="CENTER_LEFT" prefHeight="70" spacing="12" styleClass="nav-header">
+                <HBox alignment="CENTER_LEFT" spacing="12" styleClass="logo-container">
+                    <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
+                        <Image url="@../images/logo.png" />
                     </ImageView>
-                    <Label text="Doseln" styleClass="nav-logo"/>
+                    <Label styleClass="nav-logo" text="DoseIn" />
                 </HBox>
             </HBox>
 
             <!-- Navigation Menu -->
             <VBox spacing="8" styleClass="nav-menu-container">
-                <Button text="Dashboard" onAction="#handleDashboard" styleClass="nav-item">
+                <Button onAction="#handleDashboard" styleClass="nav-item" text="Dashboard">
                     <graphic>
-                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
-                            <Image url="@../images/dashboard-icon.png"/>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/dashboard-icon.png" />
                         </ImageView>
                     </graphic>
                 </Button>
 
-                <Button text="Manage Schedule" onAction="#handleManageSchedule" styleClass="nav-item-schedule">
+                <Button onAction="#handleManageSchedule" styleClass="nav-item-schedule" text="Manage Schedule">
                     <graphic>
-                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
-                            <Image url="@../images/calendar-icon.png"/>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/calendar-icon.png" />
                         </ImageView>
                     </graphic>
                 </Button>
 
-                <Button text="Doctor Contacts" onAction="#handleDoctorContacts" styleClass="nav-item-contacts">
+                <Button onAction="#handleDoctorContacts" styleClass="nav-item-contacts" text="Doctor Contacts">
                     <graphic>
-                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
-                            <Image url="@../images/doctor-icon.png"/>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/doctor-icon.png" />
                         </ImageView>
                     </graphic>
                 </Button>
 
-                <Button text="Emergency" onAction="#handleEmergency" styleClass="nav-item">
+                <Button onAction="#handleEmergency" styleClass="nav-item" text="Emergency">
                     <graphic>
-                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
-                            <Image url="@../images/emergency-icon.png"/>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/emergency-icon.png" />
                         </ImageView>
                     </graphic>
                 </Button>
 
-                <Button text="About Us" onAction="#handleAboutUs" styleClass="nav-button-active">
+                <Button onAction="#handleAboutUs" styleClass="nav-button-active" text="About Us">
                     <graphic>
-                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
-                            <Image url="@../images/about-icon.png"/>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/about-icon.png" />
                         </ImageView>
                     </graphic>
                 </Button>
             </VBox>
 
-            <Region VBox.vgrow="ALWAYS"/>
+            <Region VBox.vgrow="ALWAYS" />
 
             <VBox styleClass="signout-container">
-                <Button text="Sign Out" onAction="#handleSignOut" styleClass="nav-signout">
+                <Button onAction="#handleSignOut" styleClass="nav-signout" text="Sign Out">
                     <graphic>
-                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
-                            <Image url="@../images/signout-icon.png"/>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/signout-icon.png" />
                         </ImageView>
                     </graphic>
                 </Button>
@@ -81,39 +87,34 @@
         </VBox>
     </left>
 
-    <!-- CENTER CONTENT (updated with images) -->
     <center>
-        <VBox alignment="TOP_CENTER" spacing="0" styleClass="main-content">
-            <!-- Title Banner -->
-            <HBox alignment="CENTER_LEFT" spacing="0" styleClass="about-header">
-                <Label styleClass="about-title" text="About Us" />
-            </HBox>
+        <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" spacing="15" styleClass="about-root">
+         <AnchorPane prefHeight="38.0" prefWidth="520.0" />
+            <!-- About Us Card -->
+            <VBox fx:id="aboutCard" alignment="CENTER" prefHeight="468.0" prefWidth="520.0" spacing="15.0" styleClass="about-card">
+                <padding>
+                    <Insets bottom="18.0" left="30.0" right="30.0" top="50.0" />
+                </padding>
 
-            <!-- Team Card -->
-            <VBox alignment="CENTER" spacing="0" styleClass="about-content">
+                <!-- Team Heading -->
+                <Label prefHeight="3.0" prefWidth="183.0" styleClass="team-heading" text="TEAM MOMENTUM" />
 
-                <!-- Image Container for both images -->
-                <HBox alignment="CENTER" spacing="0" styleClass="image-container">
-                    <!-- Team Photo with ID -->
-                    <ImageView styleClass="teamPhoto" fitWidth="245" fitHeight="300" preserveRatio="true">
-                        <Image url="@../images/team.png"/>
-                    </ImageView>
+                <!-- Team Image -->
+                <ImageView fitWidth="300" preserveRatio="true" styleClass="team-image">
+                    <Image url="@../images/team.png" />
+                </ImageView>
 
-                    <!-- DIU Photo with ID -->
-                    <ImageView styleClass="diuPhoto" fitWidth="270" fitHeight="300" preserveRatio="true">
-                        <Image url="@../images/diu.png"/>
-                    </ImageView>
-                </HBox>
-                <!-- Team Information Container -->
-                <VBox styleClass="info_container" alignment="CENTER_LEFT" spacing="0">
-                    <Label styleClass="team-title" text="TEAM MOMENTUM" />
-                    <Region prefHeight="8" />
-                    <Label styleClass="about-text" text="Md. Majharul Islam || Md. Rijwan Kabir || Md. Obeduzzaman || Banna Rani Sarkar || Md. A. Barik Sarkar" />
-                    <Region prefHeight="6" />
-                    <Label styleClass="about-text" text="Contact us at: teammomentum@gmail.com" />
-                    <Label styleClass="about-text" text="Department of Computer Science &amp; Engineering" />
-                    <Label styleClass="about-text" text="Daffodil International University, Bangladesh" />
+                <!-- Team Members -->
+                <Label alignment="CENTER" maxWidth="500" styleClass="team-members" text="Md. Majharul Islam || Md. Rijwan Kabir || Md. Obeduzzaman || Banna Rani Sarkar || Md. A. Barik Sarkar" textAlignment="CENTER" wrapText="true" />
+
+                <!-- Contact Section -->
+                <VBox spacing="5" styleClass="contact-section">
+                    <Label styleClass="contact-label" text="Contact us at:" />
+                    <Label styleClass="contact-email" text="teammomentum@gmail.com" />
                 </VBox>
+
+                <!-- Department and University -->
+                <Label alignment="CENTER" maxWidth="500" styleClass="department-info" text="Department of Computer Science &amp; Engineering&#10;Daffodil International University, Bangladesh" textAlignment="CENTER" wrapText="true" />
             </VBox>
         </VBox>
     </center>
