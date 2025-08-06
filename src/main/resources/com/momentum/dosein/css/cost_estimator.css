@@ -174,17 +174,18 @@
     -fx-spacing: 0;
 }
 
-/* SEARCH CONTAINER */
+/* SEARCH CONTAINER - Updated to match doctor contacts design */
 .search-container {
-    -fx-background-color: #E8F5E8;
-    -fx-background-radius: 8px;
-    -fx-padding: 20;
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
     -fx-pref-width: 270;
     -fx-min-width: 270;
     -fx-max-width: 270;
     -fx-pref-height: 400;
     -fx-min-height: 400;
     -fx-alignment: top-center;
+    -fx-padding: 20;
 }
 
 /* SEARCH INPUT */
@@ -224,45 +225,88 @@
     -fx-background-color: #24675B;
 }
 
-/* SEARCH RESULTS */
+/* SEARCH RESULTS - Updated to match doctor contacts design */
 .search-results-scroll {
     -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
     -fx-fit-to-width: true;
     -fx-pref-height: 280px;
     -fx-hbar-policy: NEVER;
     -fx-vbar-policy: AS_NEEDED;
 }
 
+.search-results-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+.search-results-scroll .scroll-bar:vertical {
+    -fx-background-color: #3D9574;
+    -fx-pref-width: 12;
+    -fx-background-radius: 6;
+}
+
+.search-results-scroll .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.search-results-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: #12594C;
+    -fx-background-radius: 6;
+}
+
+.search-results-scroll .scroll-bar:vertical .increment-button,
+.search-results-scroll .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-padding: 0;
+}
+
+.search-results-scroll .scroll-bar:vertical .increment-arrow,
+.search-results-scroll .scroll-bar:vertical .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+}
+
 .search-results-container {
-    -fx-spacing: 8;
-    -fx-padding: 5px;
+    -fx-background-color: #B8E0D1;
+    -fx-background-radius: 8px;
+    -fx-border-color: #E0E0E0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-spacing: 10;
+    -fx-padding: 15;
     -fx-alignment: top-center;
 }
 
-/* Medicine Item Button */
+/* Medicine Item Button - Updated to match doctor contacts design */
 .medicine-item-button {
     -fx-background-color: #4BA684;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
     -fx-text-fill: white;
     -fx-font-size: 13px;
     -fx-font-weight: 600;
-    -fx-background-radius: 6px;
     -fx-cursor: hand;
     -fx-pref-width: 230px;
     -fx-min-width: 230px;
     -fx-max-width: 230px;
+    -fx-min-height: 50;
+    -fx-pref-height: 50;
+    -fx-max-height: 50;
     -fx-padding: 8 15;
     -fx-wrap-text: true;
-    -fx-alignment: CENTER;
+    -fx-alignment: CENTER_LEFT;
 }
 
 .medicine-item-button:hover {
-    -fx-background-color: #24675B;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,150,0.2), 5, 0.3, 0, 1);
+    -fx-background-color: #3D9574;
 }
 
 .medicine-item-button:active {
     -fx-background-color: #24675B;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,150,0.2), 5, 0.3, 0, 1);
 }
 
 /* CART CONTAINER */
@@ -438,20 +482,4 @@
 
 .label {
     -fx-wrap-text: true;
-}
-
-/* Scroll Bar Styling */
-.search-results-scroll .scroll-bar:vertical {
-    -fx-background-color: #C4E3D4;
-    -fx-pref-width: 10px;
-}
-
-.search-results-scroll .scroll-bar:vertical .thumb {
-    -fx-background-color: #00594E;
-    -fx-background-radius: 5px;
-    -fx-opacity: 0.7;
-}
-
-.search-results-scroll .scroll-bar:vertical .thumb:hover {
-    -fx-opacity: 1;
 }
