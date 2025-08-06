@@ -2,10 +2,9 @@
 
 /* MAIN CONTENT AREA */
 .main-content {
-    -fx-spacing: 12px;  /* Further reduced */
-    -fx-padding: 30px 25px;  /* More compact */
-    -fx-background-color: #B8E0D2;  /* Slightly brighter green */
-    padding-top: 50px;
+    -fx-spacing: 15;
+    -fx-background-color: #B8E0D1;
+    -fx-padding: 30 40 30 40;
 }
 
 /* Header Container */
