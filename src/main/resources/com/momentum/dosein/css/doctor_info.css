@@ -1,4 +1,4 @@
-/* add_doctor.css */
+/* doctor_info.css */
 
 /* Root Styles */
 .dashboard-root {
@@ -136,7 +136,7 @@
 }
 
 /* MAIN CONTENT AREA */
-.doctor-root {
+.doctor-info-root {
     -fx-background-color: #B4E8D4;
     -fx-alignment: top-center;
     -fx-padding: 20 40;
@@ -158,46 +158,25 @@
     -fx-alignment: center-left;
 }
 
-/* FORM FIELDS */
+/* INFO FIELDS CONTAINER */
+.info-fields-container {
+    -fx-spacing: 12;
+}
+
+/* FIELD LABELS */
 .field-label {
     -fx-font-size: 12px;
     -fx-text-fill: #12594C;
     -fx-font-weight: bold;
 }
 
-.doctor-field {
+/* INFO VALUES - Plain text on white background */
+.info-value {
     -fx-font-size: 13px;
     -fx-text-fill: #12594C;
-    -fx-background-color: #B4E8D4;
-    -fx-background-radius: 8px;
-    -fx-border-color: transparent;
-    -fx-padding: 8px;
-    -fx-prompt-text-fill: derive(#12594C, 70%);
-}
-
-.doctor-field:focused {
-    -fx-border-color: #12594C;
-    -fx-border-width: 1px;
-}
-
-/* TextArea styling - matching other fields */
-.text-area {
-    -fx-font-size: 13px;
-    -fx-text-fill: #12594C;
-    -fx-background-color: #B4E8D4;
-    -fx-background-radius: 8px;
-    -fx-border-color: transparent;
-    -fx-padding: 8px;
-    -fx-prompt-text-fill: derive(#12594C, 70%);
-}
-
-.text-area .content {
     -fx-background-color: transparent;
-}
-
-.text-area:focused {
-    -fx-border-color: #12594C;
-    -fx-border-width: 1px;
+    -fx-border-color: transparent;
+    -fx-padding: 8px 0px 8px 0px;
 }
 
 /* ACTION BUTTONS */
@@ -207,7 +186,7 @@
     -fx-padding: 5px 0 10px 0;
 }
 
-.cancel-button {
+.go-back-button {
     -fx-background-color: #DC6D67;
     -fx-text-fill: #FFFFFF;
     -fx-font-size: 13px;
@@ -217,11 +196,11 @@
     -fx-cursor: hand;
 }
 
-.cancel-button:hover {
+.go-back-button:hover {
     -fx-background-color: #C55A54;
 }
 
-.add-doctor-button {
+.delete-button {
     -fx-background-color: #12594C;
     -fx-text-fill: #FFFFFF;
     -fx-font-size: 13px;
@@ -231,6 +210,6 @@
     -fx-cursor: hand;
 }
 
-.add-doctor-button:hover {
+.delete-button:hover {
     -fx-background-color: #0F4A3F;
 }
