@@ -29,8 +29,8 @@
     -fx-background-color: #12594C;
     -fx-padding: 15 20;
     -fx-alignment: center-left;
-    -fx-min-width: 160;
-    -fx-pref-width: 160;
+    -fx-min-width: 200;
+    -fx-pref-width: 200;
 }
 
 .logo-pill-green {
@@ -48,7 +48,7 @@
     -fx-background-color: #12594C;
     -fx-text-fill: white;
     -fx-font-size: 15px;
-    -fx-pref-width: 140px;
+    -fx-pref-width: 180px;
     -fx-pref-height: 40px;
     -fx-background-radius: 10px;
     -fx-font-weight: 600;
@@ -66,7 +66,7 @@
     -fx-background-color: #3D9574;
     -fx-text-fill: white;
     -fx-font-size: 15px;
-    -fx-pref-width: 140px;
+    -fx-pref-width: 180px;
     -fx-pref-height: 40px;
     -fx-background-radius: 10px;
     -fx-alignment: CENTER_LEFT;
@@ -84,7 +84,7 @@
     -fx-background-color: #3D9574;
     -fx-text-fill: white;
     -fx-font-size: 12px;
-    -fx-pref-width: 140px;
+    -fx-pref-width: 180px;
     -fx-pref-height: 40px;
     -fx-background-radius: 10px;
     -fx-alignment: CENTER_LEFT;
@@ -102,7 +102,7 @@
     -fx-background-color: #3D9574;
     -fx-text-fill: white;
     -fx-font-size: 12px;
-    -fx-pref-width: 140px;
+    -fx-pref-width: 180px;
     -fx-pref-height: 40px;
     -fx-background-radius: 10px;
     -fx-alignment: CENTER_LEFT;
@@ -125,7 +125,7 @@
     -fx-background-color: #DC6D67;
     -fx-text-fill: white;
     -fx-font-size: 15px;
-    -fx-pref-width: 140px;
+    -fx-pref-width: 180px;
     -fx-pref-height: 40px;
     -fx-background-radius: 10px;
     -fx-font-weight: 600;

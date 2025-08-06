@@ -24,7 +24,7 @@
 
     <!-- LEFT NAVIGATION -->
     <left>
-        <VBox styleClass="nav-bar" spacing="12" prefWidth="160">
+        <VBox styleClass="nav-bar" spacing="15" prefWidth="200">
             <padding>
                 <Insets top="20" right="15" bottom="20" left="15"/>
             </padding>
@@ -120,7 +120,7 @@
             <!-- Main Content Area -->
             <HBox spacing="15" VBox.vgrow="ALWAYS">
                 <!-- Left Side - Medicine Search -->
-                <VBox spacing="10" prefWidth="280" HBox.hgrow="NEVER">
+                <VBox spacing="10" prefWidth="260" HBox.hgrow="NEVER">
                     <VBox spacing="8" styleClass="content-card">
                         <padding>
                             <Insets top="15" right="15" bottom="15" left="15"/>
