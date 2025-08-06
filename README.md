@@ -49,3 +49,18 @@ The Cost Estimator allows you to:
 - Maven
 - FXML for UI design
 - CSS for styling
+
+## Project Structure
+
+### CSS Files
+- `dashboard.css` - Styles for Dashboard and other main screens
+- `cost_estimator.css` - Dedicated styles for Cost Estimator feature
+- `manage_schedule.css` - Styles for Schedule Management
+- `set_reminder.css` - Styles for Reminder functionality
+- Other feature-specific CSS files
+
+### Key Features
+- **Modular CSS Architecture**: Each major feature has its own stylesheet
+- **Responsive Design**: Optimized for 800x600 screen resolution
+- **Consistent Theming**: Unified color scheme and typography across all features
+- **BDT Currency Support**: All prices displayed in Bangladeshi Taka (৳)
