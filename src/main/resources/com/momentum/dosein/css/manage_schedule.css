@@ -7,6 +7,11 @@
 }
 
 /* NAVIGATION - Using dashboard.css completely */
+.nav-bar {
+    -fx-pref-width: 200px;
+    -fx-min-width: 200px;
+    -fx-max-width: 200px;
+}
 
 /* MAIN CONTENT AREA */
 .main-content {
@@ -50,10 +55,6 @@
     -fx-background-color: white;
     -fx-background-radius: 12px;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
-    -fx-min-width: 530;
-    -fx-max-width: 530;
-    -fx-pref-height: 450;
-    -fx-min-height: 450;
     -fx-padding: 15;
 }
 
@@ -287,5 +288,16 @@
     -fx-cursor: hand;
 }
 
-
-
+.nav-button-active {
+    -fx-background-color: #12594C;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 10px;
+    -fx-font-weight: 600;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 18;
+    -fx-graphic-text-gap: 12;
+    -fx-cursor: hand;
+}
