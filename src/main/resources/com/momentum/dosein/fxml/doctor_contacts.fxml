@@ -157,7 +157,7 @@
                             <Button onAction="#handleAdd" prefWidth="120" styleClass="add-button" text="Add">
                                 <graphic>
                                     <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
-
+                                        <Image url="@../images/plus-icon.png" />
                                     </ImageView>
                                 </graphic>
                             </Button>
