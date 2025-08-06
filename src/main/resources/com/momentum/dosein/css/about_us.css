@@ -136,41 +136,89 @@
 }
 
 /* MAIN CONTENT AREA */
-.main-content {
-    -fx-spacing: 25;
-    -fx-padding: 30;
-    -fx-background-color: #B8E0D1;
+/* Add these to your existing about_us.css */
+
+/* ABOUT US CONTENT STYLES */
+.about-card {
+    -fx-background-color: #C4E3D4;
+    -fx-background-radius: 10px;
+    -fx-padding: 20;
+    -fx-spacing: 15;
+    -fx-alignment: center;
 }
 
-/* ABOUT US SPECIFIC STYLES */
+.about-heading {
+    -fx-font-size: 24px;
+    -fx-text-fill: #12594C;
+    -fx-font-weight: bold;
+}
+
+.about-email {
+    -fx-font-size: 14px;
+    -fx-text-fill: #12594C;
+    -fx-font-weight: bold;
+}
+
+/* Updated styles to match the image */
+.main-content {
+    -fx-spacing: 10;
+    -fx-background-color: #B8E0D1;
+    -fx-padding: 30 40 30 30;
+}
+.about-header {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 0;
+}
+.teamPhoto {
+    -fx-padding: 0;
+}
+.diuPhoto {
+    -fx-padding:0 ;
+}
+
+.about-content {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-padding: 25;
+    -fx-spacing: 10;
+    -fx-alignment: center;
+    -fx-pref-width: 540;
+    -fx-max-width: 540;
+    -fx-min-width: 540;
+    -fx-padding: 10;
+}
+
 .about-title {
     -fx-font-size: 24px;
     -fx-text-fill: #12594C;
     -fx-font-weight: bold;
-    -fx-padding: 0 0 5px 0;
 }
-
-.about-slogan {
-    -fx-font-size: 12px;
+.team-title {
     -fx-text-fill: #12594C;
-    -fx-background-radius: 5px;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-alignment: Left;
+    -fx-padding: 0 10 0 10;
 }
-
-.about-header {
-    -fx-background-color: white;
-    -fx-spacing: 0;
-    -fx-alignment: CENTER_LEFT;
-}
-
-.about-content {
-    -fx-background-color: #C4E3D4;
-    -fx-background-radius: 5px;
-    -fx-padding: 15;
-    -fx-spacing: 10;
-}
-
 .about-text {
     -fx-font-size: 14px;
     -fx-text-fill: #12594C;
-    -fx-line-spacing: 5px;
+    -fx-alignment: Left;
+    -fx-font-weight: bold;
+    -fx-padding: 0 10 0 10;
+}
+
+. info_container {
+    -fx-background-color: #C4E3D4;
+    -fx-pref-width: 520;
+    -fx-max-width: 520;
+    -fx-min-width: 520;
+    -fx-pref-height: 200;
+    -fx-max-heigt:200;
+    -fx-min-height: 200;
+    -fx-padding: 0 0 0 0;
+}
+
+.image-container {
+    -fx-padding: 0;
 }
