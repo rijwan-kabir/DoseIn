@@ -66,7 +66,8 @@ public class AddDoctorController {
     // sidebar navigation stub methods, same as before...
     @FXML private void handleDashboard(ActionEvent e)       { navigate("/com/momentum/dosein/fxml/dashboard.fxml", e); }
     @FXML private void handleManageSchedule(ActionEvent e)  { navigate("/com/momentum/dosein/fxml/manage_schedule.fxml", e); }
-    @FXML private void handleDoctorContacts(ActionEvent e)  { navigate("/com/momentum/dosein/fxml/doctor_contacts.fxml", e); }
+    @FXML private void handleCostEstimator(ActionEvent e)  { navigate("/com/momentum/dosein/fxml/cost_estimator.fxml", e); }
+    @FXML private void handleDoctorContacts(ActionEvent e) { navigate("/com/momentum/dosein/fxml/doctor_contacts.fxml", e); }
     @FXML private void handleEmergency(ActionEvent e)       { navigate("/com/momentum/dosein/fxml/emergency.fxml", e); }
     @FXML private void handleAboutUs(ActionEvent e)         { navigate("/com/momentum/dosein/fxml/about_us.fxml", e); }
     @FXML private void handleSignOut(ActionEvent e)         {

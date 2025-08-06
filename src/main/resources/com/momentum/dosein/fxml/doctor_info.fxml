@@ -47,6 +47,14 @@
                     </graphic>
                 </Button>
 
+                <Button onAction="#handleCostEstimator" styleClass="nav-item" text="Cost Estimator">
+                    <graphic>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/calculator-icon.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+
                 <Button onAction="#handleDoctorContacts" styleClass="nav-item-contacts" text="Doctor Contacts">
                     <graphic>
                         <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">

@@ -17,6 +17,9 @@ public class AboutUsController {
     @FXML private void handleManageSchedule(ActionEvent e) {
         swapRoot("/com/momentum/dosein/fxml/manage_schedule.fxml", e);
     }
+    @FXML private void handleCostEstimator(ActionEvent e) {
+        swapRoot("/com/momentum/dosein/fxml/cost_estimator.fxml", e);
+    }
     @FXML private void handleDoctorContacts(ActionEvent e) {
         swapRoot("/com/momentum/dosein/fxml/doctor_contacts.fxml", e);
     }

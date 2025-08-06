@@ -217,6 +217,11 @@ public class ManageScheduleController {
     private void handleManageSchedule(ActionEvent e) { /* noop */ }
 
     @FXML
+    private void handleCostEstimator(ActionEvent e) {
+        navigate("/com/momentum/dosein/fxml/cost_estimator.fxml", e);
+    }
+
+    @FXML
     private void handleDoctorContacts(ActionEvent e) {
         navigate("/com/momentum/dosein/fxml/doctor_contacts.fxml", e);
     }
