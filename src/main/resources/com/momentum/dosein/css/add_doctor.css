@@ -135,46 +135,144 @@
 }
 
 /* Form container */
+/* Ensure consistent styling for text fields and labels */
+.main-content {
+    -fx-spacing: 15;
+    -fx-background-color: #B8E0D1;
+    -fx-padding: 30 40 30 40;
+}
 .reminder-content {
-    -fx-padding: 20;
+    -fx-spacing: 15;
+    -fx-background-color: #B8E0D1;
+    -fx-padding: 30 40 30 40;
 }
-
-/* Title */
-.reminder-title {
-    -fx-font-size: 20px;
-    -fx-text-fill: #00594E;
-}
-
-/* Labels */
-.reminder-label {
-    -fx-font-size: 14px;
-    -fx-text-fill: #00594E;
-}
-
-/* Text fields & textarea */
 .reminder-field {
-    -fx-pref-width: 200px;
-    -fx-pref-height: 30px;
+    -fx-pref-width: 400px;  /* Uniform width for fields */
+    -fx-max-width: 400px;
+    -fx-min-width: 400px;
+    -fx-pref-height: 35px;  /* Slightly taller for better UX */
     -fx-background-color: #C4E3D4;
     -fx-background-radius: 5px;
     -fx-border-radius: 5px;
-    -fx-padding: 0 5px;
+
+    -fx-font-size: 13px;
 }
 
-/* Cancel button */
+/* TextArea styling */
+TextArea.reminder-field {
+    -fx-pref-height: 100px;
+    -fx-font-size: 13px;
+    -fx-padding: 0 0 0 50;
+}
+
+/* Button spacing and alignment */
+.add-button, .delete-button {
+    -fx-pref-width: 120px;  /* Wider buttons */
+    -fx-font-weight: bold;
+}
+
+/* Title and label consistency */
+.reminder-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 10px 0;
+}
+
+.reminder-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-alignment: CENTER_LEFT;
+    /*-fx-background-color: red;*/
+    -fx-pref-width: 80;
+    -fx-max-width: 80;
+    -fx-min-width: 80;
+}
+
+
+/* White background container */
+.form-container {
+    -fx-pref-height: 400;
+    -fx-max-height: 400;
+    -fx-min-height: 340;
+    -fx-pref-width: 520;
+    -fx-max-width: 520;
+    -fx-min-width: 520;
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+    -fx-padding: 20px;
+}
+
+/* Title Styling (Above Container) */
+.section-title {
+    -fx-font-size: 22px;
+    -fx-text-fill: #00594E;
+    -fx-font-weight: bold;
+    /*-fx-background-color: white;*/
+    /*-fx-padding: 0 0 15px 20px; /* Left-align with container */
+}
+
+/* Form Elements */
+.form-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #00594E;
+    -fx-font-weight: bold;
+    -fx-min-width: 120px;
+}
+
+.form-field {
+    -fx-pref-width: 400px;
+    -fx-pref-height: 35px;
+    -fx-background-color: #f8f8f8;
+    -fx-border-color: #ddd;
+    -fx-background-radius: 4px;
+    -fx-border-color: #b3aeae;
+    -fx-border-radius: 8px;
+    -fx-padding: 5px 10px;
+}
+
+.additional-field {
+    -fx-pref-width: 520px;
+    -fx-pref-height: 100px;
+    -fx-border-radius: 8px;
+    -fx-background-color: #f8f8f8;
+    -fx-border-color: #ddd;
+}
+
+/* ADD BUTTON */
+.add-button {
+    -fx-background-color: #4BA684;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 0px 8px 10px;
+    -fx-background-radius: 5px;
+    -fx-graphic-text-gap: 8px;
+    -fx-content-display: left;
+    -fx-cursor: hand;
+}
+
+.add-button:hover {
+    -fx-background-color: #3D9574;
+}
+
+/* DELETE BUTTON */
 .delete-button {
     -fx-background-color: #E57373;
     -fx-text-fill: white;
-    -fx-pref-width: 100px;
-    -fx-pref-height: 40px;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 0px 8px 10px;
     -fx-background-radius: 5px;
+    -fx-graphic-text-gap: 8px;
+    -fx-content-display: left;
+    -fx-cursor: hand;
 }
 
-/* Add Entry button */
-.add-button {
-    -fx-background-color: #00594E;
-    -fx-text-fill: white;
-    -fx-pref-width: 100px;
-    -fx-pref-height: 40px;
-    -fx-background-radius: 5px;
+.delete-button:hover {
+    -fx-background-color: #EF5350;
+}
+.action-buttons-container {
+    -fx-padding: 10 0 0 0;
+    -fx-alignment: right;
 }
