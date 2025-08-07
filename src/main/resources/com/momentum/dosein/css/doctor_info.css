@@ -213,3 +213,9 @@
 .delete-button:hover {
     -fx-background-color: #0F4A3F;
 }
+
+/* Fix for .button:pressed */
+.button:pressed {
+    /* -fx-background-color: derive(-fx-background-color, -10%); */
+    -fx-background-color: #27705a;
+}

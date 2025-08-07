@@ -394,7 +394,7 @@
 }
 
 .button:pressed {
-    -fx-background-color: derive(-fx-background-color, -10%);
+    -fx-background-color: #27705a;
 }
 
 /* Cost Estimator specific styles */

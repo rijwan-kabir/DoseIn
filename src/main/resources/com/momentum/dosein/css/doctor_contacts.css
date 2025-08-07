@@ -302,3 +302,9 @@
     -fx-shape: " ";
     -fx-padding: 0;
 }
+
+/* Fix for .button:pressed */
+.button:pressed {
+    /* -fx-background-color: derive(-fx-background-color, -10%); */
+    -fx-background-color: #27705a;
+}
