@@ -75,6 +75,7 @@ public class DoctorContactsController {
             DoctorInfoController controller = loader.getController();
             controller.setDoctor(doctor);
 
+            // Set the new root after setting the doctor
             Scene scene = contactsVBox.getScene();
             scene.setRoot(root);
         } catch (IOException ex) {
