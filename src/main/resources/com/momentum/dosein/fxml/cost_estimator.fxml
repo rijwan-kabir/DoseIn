@@ -142,15 +142,15 @@
                 </VBox>
 
                 <!-- Right Side - Shopping Cart -->
-                <VBox maxHeight="455.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="263.0" spacing="10" styleClass="shopping-card" HBox.hgrow="ALWAYS">
-                    <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="394.0" prefWidth="262.0" spacing="8" style="-fx-background-color: #C4E3D4" styleClass="content-card" VBox.vgrow="ALWAYS">
+                <VBox maxHeight="415.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="263.0" styleClass="shopping-card" HBox.hgrow="ALWAYS">
+                    <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="434.0" prefWidth="262.0" spacing="8" style="-fx-background-color: #C4E3D4" styleClass="content-card" VBox.vgrow="ALWAYS">
                         <padding>
                             <Insets bottom="15" left="15" right="15" top="15" />
                         </padding>
 
                         <Label styleClass="card-title" text="Medicine List" />
 
-                        <TableView fx:id="cartTableView" prefHeight="222.0" prefWidth="248.0" styleClass="cart-table" VBox.vgrow="ALWAYS">
+                        <TableView fx:id="cartTableView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="222.0" prefWidth="248.0" styleClass="cart-table" VBox.vgrow="ALWAYS">
                             <columns>
                                 <TableColumn fx:id="medicineNameColumn" prefWidth="120" text="Medicine" />
                                 <TableColumn fx:id="quantityColumn" prefWidth="40" text="Qty" />
@@ -159,12 +159,27 @@
                             </columns>
                         </TableView>
 
-                        <HBox alignment="CENTER_LEFT" spacing="8">
-                            <Button fx:id="removeFromCartButton" onAction="#handleRemoveFromCart" prefWidth="70" styleClass="remove-button" text="Remove" />
-                            <Button fx:id="clearCartButton" onAction="#handleClearCart" prefWidth="60" styleClass="clear-button" text="Clear" />
+                        <HBox alignment="CENTER_LEFT">
                             <Region HBox.hgrow="ALWAYS" />
-                            <Label fx:id="totalCostLabel" styleClass="total-label" text="Total: ৳0.00" />
+                            <Label fx:id="totalCostLabel" prefHeight="39.0" prefWidth="270.0" styleClass="total-label" text="Total: ৳0.00" />
                         </HBox>
+                  <HBox prefHeight="100.0" prefWidth="232.0">
+                     <children>
+                               <Button fx:id="removeFromCartButton" onAction="#handleRemoveFromCart" prefHeight="30.0" prefWidth="90.0" styleClass="remove-button" text="Remove">
+                           <padding>
+                              <Insets right="20.0" />
+                           </padding>
+                           <opaqueInsets>
+                              <Insets right="20.0" />
+                           </opaqueInsets>
+                        </Button>
+                               <Button fx:id="clearCartButton" onAction="#handleClearCart" prefHeight="30.0" prefWidth="101.0" styleClass="clear-button" text="Clear">
+                           <padding>
+                              <Insets left="80.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </HBox>
                     </VBox>
                 </VBox>
             </HBox>
