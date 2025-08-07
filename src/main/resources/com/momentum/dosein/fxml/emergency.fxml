@@ -47,6 +47,13 @@
                         </ImageView>
                     </graphic>
                 </Button>
+                <Button onAction="#handleCostEstimator" styleClass="nav-item" text="Cost Estimator">
+                    <graphic>
+                        <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
+                            <Image url="@../images/calculator-icon.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
 
                 <Button onAction="#handleDoctorContacts" styleClass="nav-item-contacts" text="Doctor Contacts">
                     <graphic>
@@ -90,7 +97,7 @@
     <!-- CENTER CONTENT -->
     <center>
         <VBox spacing="20" styleClass="main-content">
-         <AnchorPane prefHeight="25.0" prefWidth="520.0" />
+            <AnchorPane prefHeight="25.0" prefWidth="520.0" />
 
             <!-- Header -->
             <VBox alignment="CENTER_LEFT" spacing="0" styleClass="welcome-banner">

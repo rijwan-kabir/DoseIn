@@ -236,6 +236,11 @@ public class SetReminderController {
     }
 
     @FXML
+    private void handleCostEstimator(ActionEvent e) {
+        navigate("/com/momentum/dosein/fxml/cost_estimator.fxml", e);
+    }
+
+    @FXML
     private void handleDoctorContacts(ActionEvent e) {
         navigate("/com/momentum/dosein/fxml/doctor_contacts.fxml", e);
     }

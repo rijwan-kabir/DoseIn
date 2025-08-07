@@ -160,6 +160,11 @@ public class DashboardController {
     }
 
     @FXML
+    private void handleCostEstimator(ActionEvent e) {
+        swapRoot("/com/momentum/dosein/fxml/cost_estimator.fxml", e);
+    }
+
+    @FXML
     private void handleDoctorContacts(ActionEvent e) {
         try {
             Parent contacts = FXMLLoader.load(

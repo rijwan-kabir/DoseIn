@@ -16,7 +16,7 @@
             fx:controller="com.momentum.dosein.controller.DashboardController"
             stylesheets="@../css/dashboard.css"
             styleClass="dashboard-root"
-            prefWidth="1000" prefHeight="700">
+            prefWidth="800" prefHeight="600">
 
     <!-- LEFT NAVIGATION -->
     <left>
@@ -49,6 +49,14 @@
                     <graphic>
                         <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
                             <Image url="@../images/calendar-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button text="Cost Estimator" onAction="#handleCostEstimator" styleClass="nav-item">
+                    <graphic>
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                            <Image url="@../images/calculator-icon.png"/>
                         </ImageView>
                     </graphic>
                 </Button>

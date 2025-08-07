@@ -102,7 +102,8 @@ public class DoctorContactsController {
     // sidebar navigation stubs:
     @FXML private void handleDashboard(ActionEvent e)       { navigate("/com/momentum/dosein/fxml/dashboard.fxml", e); }
     @FXML private void handleManageSchedule(ActionEvent e)  { navigate("/com/momentum/dosein/fxml/manage_schedule.fxml", e); }
-    @FXML private void handleDoctorContacts(ActionEvent e)  { /* noop */ }
+    @FXML private void handleCostEstimator(ActionEvent e)  { navigate("/com/momentum/dosein/fxml/cost_estimator.fxml", e); }
+    @FXML private void handleDoctorContacts(ActionEvent e) { /* noop */ }
     @FXML private void handleEmergency(ActionEvent e)       { navigate("/com/momentum/dosein/fxml/emergency.fxml", e); }
     @FXML private void handleAboutUs(ActionEvent e)         { navigate("/com/momentum/dosein/fxml/about_us.fxml", e); }
     @FXML private void handleSignOut(ActionEvent e)         {

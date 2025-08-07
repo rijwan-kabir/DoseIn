@@ -3,6 +3,7 @@
   <component name="CopilotDiffPersistence">
     <option name="pendingDiffs">
       <map>
+
         <entry key="$PROJECT_DIR$/src/main/resources/com/momentum/dosein/css/manage_schedule.css">
           <value>
             <PendingDiffInfo>
@@ -12,6 +13,7 @@
             </PendingDiffInfo>
           </value>
         </entry>
+        
         <entry key="$PROJECT_DIR$/src/main/resources/com/momentum/dosein/fxml/about_us.fxml">
           <value>
             <PendingDiffInfo>
@@ -21,6 +23,7 @@
             </PendingDiffInfo>
           </value>
         </entry>
+
         <entry key="$PROJECT_DIR$/src/main/resources/com/momentum/dosein/fxml/manage_schedule.fxml">
           <value>
             <PendingDiffInfo>
@@ -30,6 +33,7 @@
             </PendingDiffInfo>
           </value>
         </entry>
+
       </map>
     </option>
   </component>
