@@ -22,6 +22,11 @@ public class EmergencyController {
     }
 
     @FXML
+    private void handleCostEstimator(ActionEvent e) {
+        swapRoot("/com/momentum/dosein/fxml/cost_estimator.fxml", e);
+    }
+
+    @FXML
     private void handleDoctorContacts(ActionEvent e) {
         swapRoot("/com/momentum/dosein/fxml/doctor_contacts.fxml", e);
     }

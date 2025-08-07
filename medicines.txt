@@ -1,0 +1,326 @@
+Napa,1.50
+Etizolam,2.50
+Zimax,40.00
+Antacid,1.80
+Maxpro,1.70
+Losectil,2.20
+Ace,2.50
+Seclo,2.00
+Alacot,2.30
+Tufnil,2.80
+Histacin,1.20
+Neoceptin,2.20
+Monas,2.80
+Filwel,2.50
+Fexo,1.80
+Entacyd,1.20
+Lopamid,1.10
+Aristovit,2.80
+Ambrox,1.80
+Fenadin,2.50
+Amdocal,2.50
+Ranidil,2.00
+Esoral,2.20
+Maxon,3.00
+Napa Extra,1.70
+Napa Extend,2.20
+Zolax,2.50
+Afix,2.00
+Azithrocin,2.20
+Ceevit,3.00
+Finix,2.00
+Xpa,2.50
+Deslor,1.80
+Histazin,1.50
+Teldipin,1.50
+Azimax,2.20
+Amdocal Plus,2.80
+Paracetamol,3.00
+Ibuprofen,2.20
+Aspirin,1.80
+Amoxicillin,2.20
+Cetirizine,2.20
+Omeprazole,2.00
+Metformin,2.00
+Atorvastatin,2.50
+Amlodipine,2.00
+Losartan,1.80
+Simvastatin,2.00
+Lisinopril,2.20
+Hydrochlorothiazide,3.00
+Metoprolol,1.80
+Warfarin,2.20
+Digoxin,2.20
+Furosemide,1.50
+Spironolactone,2.20
+Prednisone,2.50
+Dexamethasone,3.00
+Insulin,2.80
+Levothyroxine,2.50
+Albuterol,2.50
+Montelukast,2.20
+Fluticasone,2.50
+Loratadine,1.80
+Diphenhydramine,1.50
+Ranitidine,3.00
+Famotidine,3.00
+Pantoprazole,1.80
+Clopidogrel,2.50
+Rivaroxaban,2.00
+Apixaban,1.50
+Dabigatran,2.00
+Gabapentin,3.00
+Pregabalin,3.00
+Tramadol,2.50
+Codeine,2.80
+Morphine,3.00
+Oxycodone,2.80
+Sertraline,2.50
+Escitalopram,2.00
+Fluoxetine,1.80
+Paroxetine,2.20
+Venlafaxine,2.80
+Duloxetine,2.00
+Bupropion,2.00
+Trazodone,2.20
+Zolpidem,2.80
+Lorazepam,2.00
+Napa Plus,1.80
+Ibuprofen Plus,2.50
+Aspirin Plus,2.00
+Amoxiclav,2.80
+Cefixime,2.50
+Ceftriaxone,3.00
+Doxycycline,2.20
+Levofloxacin,2.50
+Ciprofloxacin,2.20
+Azithromycin,2.50
+Clarithromycin,2.50
+Erythromycin,2.00
+Metronidazole,1.80
+Tinidazole,2.00
+Fluconazole,2.50
+Itraconazole,2.80
+Acyclovir,2.20
+Valacyclovir,2.50
+Oseltamivir,3.00
+Chloroquine,2.00
+Hydroxychloroquine,2.50
+Artemether,3.00
+Albendazole,1.80
+Mebendazole,1.50
+Praziquantel,2.50
+Ivermectin,2.00
+Diazepam,2.20
+Clonazepam,2.50
+Alprazolam,2.80
+Bromazepam,2.00
+Nitrazepam,2.00
+Phenobarbital,2.50
+Carbamazepine,2.20
+Phenytoin,2.00
+Valproate,2.50
+Lamotrigine,2.80
+Topiramate,3.00
+Levetiracetam,3.00
+Propranolol,2.00
+Atenolol,2.00
+Carvedilol,2.50
+Nebivolol,2.80
+Verapamil,2.50
+Diltiazem,2.20
+Amlodipine Plus,2.50
+Losartan Plus,2.50
+Telmisartan,2.80
+Valsartan,3.00
+Olmesartan,3.00
+Enalapril,2.20
+Ramipril,2.50
+Perindopril,2.80
+Captopril,2.00
+Furosemide Plus,2.20
+Spironolactone Plus,2.50
+Hydrochlorothiazide Plus,3.00
+Metformin Plus,2.50
+Glibenclamide,2.00
+Gliclazide,2.20
+Glimepiride,2.50
+Pioglitazone,2.80
+Sitagliptin,3.00
+Vildagliptin,3.00
+Linagliptin,3.00
+Insulin Glargine,3.00
+Insulin Aspart,3.00
+Insulin Lispro,3.00
+Glimepiride Plus,2.80
+Metformin SR,2.50
+Atorvastatin Plus,3.00
+Rosuvastatin,3.00
+Simvastatin Plus,2.50
+Pravastatin,2.80
+Ezetimibe,3.00
+Fenofibrate,2.50
+Gemfibrozil,2.20
+Warfarin Plus,2.80
+Clopidogrel Plus,3.00
+Aspirin Plus,2.50
+Ticagrelor,3.00
+Prasugrel,3.00
+Dipyridamole,2.50
+Allopurinol,2.00
+Colchicine,2.50
+Febuxostat,3.00
+Probenecid,2.20
+Methotrexate,2.50
+Leflunomide,2.80
+Sulfasalazine,2.50
+Hydroxychloroquine Plus,3.00
+Prednisolone,2.50
+Methylprednisolone,2.80
+Betamethasone,3.00
+Triamcinolone,3.00
+Dexamethasone Plus,3.00
+Thyroxine,2.50
+Propylthiouracil,2.20
+Carbimazole,2.00
+Testosterone,3.00
+Finasteride,2.50
+Dutasteride,2.80
+Tamsulosin,2.50
+Silodosin,2.80
+Alfuzosin,2.20
+Terazosin,2.00
+Doxazosin,2.20
+Prazosin,1.80
+Furosemide SR,2.50
+Bumetanide,2.20
+Torsemide,2.50
+Mannitol,2.00
+Desmopressin,2.80
+Oxytocin,3.00
+Misoprostol,2.50
+Mifepristone,3.00
+Ulipristal,3.00
+Levonorgestrel,2.50
+Ethinylestradiol,2.20
+Drospirenone,2.50
+Medroxyprogesterone,2.80
+Clomiphene,3.00
+Tamoxifen,3.00
+Letrozole,3.00
+Anastrozole,3.00
+Exemestane,3.00
+Bicalutamide,3.00
+Flutamide,2.80
+Cyproterone,3.00
+Goserelin,3.00
+Leuprolide,3.00
+Octreotide,3.00
+Lanreotide,3.00
+Bromocriptine,2.50
+Cabergoline,2.80
+Pergolide,2.50
+Domperidone,2.00
+Metoclopramide,1.80
+Itopride,2.20
+Mosapride,2.50
+Pantoprazole Plus,2.80
+Rabeprazole,3.00
+Esomeprazole,3.00
+Lansoprazole,2.50
+Ranitidine Plus,2.80
+Famotidine Plus,3.00
+Cimetidine,2.00
+Sucralfate,2.20
+Magaldrate,1.80
+Simethicone,1.50
+Lactulose,2.00
+Bisacodyl,1.50
+Senna,1.20
+Psyllium,1.80
+Loperamide,2.00
+Racecadotril,2.50
+Rifaximin,3.00
+Metronidazole Plus,2.50
+Norfloxacin,2.20
+Ofloxacin,2.00
+Ciprofloxacin Plus,2.50
+Levofloxacin Plus,2.80
+Moxifloxacin,3.00
+Gatifloxacin,3.00
+Sparfloxacin,3.00
+Cefuroxime,2.50
+Cefpodoxime,2.80
+Cefdinir,3.00
+Cefadroxil,2.00
+Cephalexin,2.00
+Cefixime Plus,2.50
+Ceftriaxone Plus,3.00
+Ceftazidime,3.00
+Cefepime,3.00
+Meropenem,3.00
+Imipenem,3.00
+Ertapenem,3.00
+Azithromycin Plus,2.80
+Clarithromycin Plus,3.00
+Erythromycin Plus,2.50
+Roxithromycin,2.80
+Telithromycin,3.00
+Clindamycin,2.50
+Vancomycin,3.00
+Teicoplanin,3.00
+Linezolid,3.00
+Daptomycin,3.00
+Colistin,3.00
+Polymyxin B,3.00
+Tigecycline,3.00
+Doxycycline Plus,2.80
+Minocycline,3.00
+Tetracycline,2.00
+Chloramphenicol,2.20
+Trimethoprim,1.80
+Sulfamethoxazole,2.00
+Cotrimoxazole,2.20
+Nitrofurantoin,2.00
+Fosfomycin,2.50
+Nalidixic Acid,1.50
+Ciprofloxacin SR,2.80
+Levofloxacin SR,3.00
+Moxifloxacin SR,3.00
+Gatifloxacin SR,3.00
+Sparfloxacin SR,3.00
+Cefuroxime SR,2.80
+Cefpodoxime SR,3.00
+Cefdinir SR,3.00
+Cefadroxil SR,2.50
+Cephalexin SR,2.20
+Cefixime SR,3.00
+Ceftriaxone SR,3.00
+Ceftazidime SR,3.00
+Cefepime SR,3.00
+Meropenem SR,3.00
+Imipenem SR,3.00
+Ertapenem SR,3.00
+Azithromycin SR,3.00
+Clarithromycin SR,3.00
+Erythromycin SR,2.80
+Roxithromycin SR,3.00
+Telithromycin SR,3.00
+Clindamycin SR,3.00
+Vancomycin SR,3.00
+Teicoplanin SR,3.00
+Linezolid SR,3.00
+Daptomycin SR,3.00
+Colistin SR,3.00
+Polymyxin B SR,3.00
+Tigecycline SR,3.00
+Doxycycline SR,3.00
+Minocycline SR,3.00
+Tetracycline SR,2.50
+Chloramphenicol SR,2.80
+Trimethoprim SR,2.20
+Sulfamethoxazole SR,2.50
+Cotrimoxazole SR,2.80
+Nitrofurantoin SR,2.50
+Fosfomycin SR,3.00
+Nalidixic Acid SR,2.00

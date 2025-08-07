@@ -136,89 +136,75 @@
 }
 
 /* MAIN CONTENT AREA */
-/* Add these to your existing about_us.css */
+.about-root {
+    -fx-background-color: #B4E8D4;
+    -fx-alignment: top-center;
+    -fx-padding: 20 40;
+}
 
-/* ABOUT US CONTENT STYLES */
+/* CARD STYLES */
 .about-card {
-    -fx-background-color: #C4E3D4;
-    -fx-background-radius: 10px;
-    -fx-padding: 20;
-    -fx-spacing: 15;
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 2, 0);
+    -fx-alignment: top-center;
+}
+
+/* CARD TITLES */
+.card-title {
+    -fx-font-size: 24px;
+    -fx-text-fill: #12594C;
+    -fx-font-weight: bold;
     -fx-alignment: center;
 }
 
-.about-heading {
-    -fx-font-size: 24px;
+/* TEAM HEADING */
+.team-heading {
+    -fx-font-size: 20px;
     -fx-text-fill: #12594C;
     -fx-font-weight: bold;
-}
-
-.about-email {
-    -fx-font-size: 14px;
-    -fx-text-fill: #12594C;
-    -fx-font-weight: bold;
-}
-
-/* Updated styles to match the image */
-.main-content {
-    -fx-spacing: 10;
-    -fx-background-color: #B8E0D1;
-    -fx-padding: 30 40 30 30;
-}
-.about-header {
-    -fx-background-color: transparent;
-    -fx-padding: 0 0 0 0;
-}
-.teamPhoto {
-    -fx-padding: 0;
-}
-.diuPhoto {
-    -fx-padding:0 ;
-}
-
-.about-content {
-    -fx-background-color: white;
-    -fx-background-radius: 10px;
-    -fx-padding: 25;
-    -fx-spacing: 10;
     -fx-alignment: center;
-    -fx-pref-width: 540;
-    -fx-max-width: 540;
-    -fx-min-width: 540;
-    -fx-padding: 10;
 }
 
-.about-title {
-    -fx-font-size: 24px;
-    -fx-text-fill: #12594C;
-    -fx-font-weight: bold;
+/* TEAM IMAGE */
+.team-image {
+    -fx-alignment: center;
 }
-.team-title {
-    -fx-text-fill: #12594C;
-    -fx-font-size: 24px;
-    -fx-font-weight: bold;
-    -fx-alignment: Left;
-    -fx-padding: 0 10 0 10;
-}
-.about-text {
+
+/* TEAM MEMBERS */
+.team-members {
     -fx-font-size: 14px;
     -fx-text-fill: #12594C;
-    -fx-alignment: Left;
+    -fx-font-weight: 600;
+    -fx-alignment: center;
+    -fx-line-spacing: 5px;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    -fx-alignment: center;
+    -fx-spacing: 5;
+}
+
+.contact-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #12594C;
     -fx-font-weight: bold;
-    -fx-padding: 0 10 0 10;
+    -fx-alignment: center;
 }
 
-. info_container {
-    -fx-background-color: #C4E3D4;
-    -fx-pref-width: 520;
-    -fx-max-width: 520;
-    -fx-min-width: 520;
-    -fx-pref-height: 200;
-    -fx-max-heigt:200;
-    -fx-min-height: 200;
-    -fx-padding: 0 0 0 0;
+.contact-email {
+    -fx-font-size: 14px;
+    -fx-text-fill: #4BA684;
+    -fx-font-weight: 600;
+    -fx-alignment: center;
 }
 
-.image-container {
-    -fx-padding: 0;
+/* DEPARTMENT INFO */
+.department-info {
+    -fx-font-size: 13px;
+    -fx-text-fill: #12594C;
+    -fx-font-weight: 500;
+    -fx-alignment: center;
+    -fx-line-spacing: 3px;
 }

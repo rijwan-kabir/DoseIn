@@ -1,6 +1,6 @@
-/* Dashboard.css - Exact Design Match */
+/* Cost Estimator CSS Styles */
 
-/* Root Styles */
+/* Root container */
 .dashboard-root {
     -fx-font-family: 'Poppins', 'Segoe UI', sans-serif;
     -fx-background-color: #B8E0D1;
@@ -146,258 +146,58 @@
 }
 
 /* MAIN CONTENT AREA */
-.main-content {
-    -fx-spacing: 25;
-    -fx-background-color: #B8E0D1;
-}
-
-/* WELCOME CARD */
-.welcome-card {
+.header {
     -fx-background-color: white;
     -fx-background-radius: 12px;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
     -fx-pref-height: 80px;
     -fx-min-height: 80px;
 }
-
-.welcome-banner {
-    -fx-background-color: transparent;
-    -fx-background-radius: 12px;
-    -fx-alignment: CENTER_LEFT;
-    -fx-min-height: 80px;
-    -fx-pref-height: 80px;
+.main-content {
+    -fx-spacing: 15;
+    -fx-background-color: #B8E0D1;
+    -fx-padding: 30 40 30 40;
 }
 
-.greeting-text {
+/* Page headers */
+.page-title {
     -fx-font-size: 28px;
     -fx-font-weight: bold;
     -fx-text-fill: #12594C;
 }
 
-.slogan-text {
+.page-subtitle {
     -fx-font-size: 14px;
     -fx-text-fill: #666666;
     -fx-font-weight: 500;
     -fx-wrap-text: true;
 }
 
-.time-container {
-    -fx-background-color: #12594C;
-    -fx-background-radius: 8px;
-    -fx-padding: 12 20;
-    -fx-min-width: 180px;
-    -fx-pref-width: 180px;
-}
-
-.time-label {
-    -fx-font-size: 16px;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-}
-
-/* SCHEDULE CARD */
-.schedule-card {
+/* Content cards */
+.content-card {
     -fx-background-color: white;
     -fx-background-radius: 12px;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
 }
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+    -fx-min-width: 530;
+    -fx-max-width: 530;
+    -fx-pref-height: 350;
+    -fx-padding: 15;
+}
+.card-content {
 
-/* SCHEDULE SECTION */
-.schedule-header {
-    -fx-font-size: 24px;
+}
+.card-title {
     -fx-font-weight: bold;
+    -fx-font-size: 18px;
     -fx-text-fill: #12594C;
 }
 
-.schedule-button {
-    -fx-background-color: #12594C;
-    -fx-text-fill: white;
-    -fx-font-size: 15px;
-    -fx-padding: 12 20;
-    -fx-background-radius: 8px;
-    -fx-font-weight: 600;
-    -fx-graphic-text-gap: 8;
-    -fx-cursor: hand;
-    -fx-pref-width: 180px;
-    -fx-min-width: 180px;
-}
-
-.schedule-button:hover {
-    -fx-background-color: #0F4A3F;
-}
-
-/* SCHEDULE LIST */
-.schedule-list {
-    -fx-spacing: 15;
-    -fx-focus-traversable: false;
-    -fx-focus-visible: false;
-}
-
-.schedule-list .label {
-    -fx-focus-traversable: false;
-    -fx-focus-visible: false;
-}
-
-/* SCROLLABLE AREA */
-.schedule-scroll {
-    -fx-background: transparent;
-    -fx-border-color: transparent;
-    -fx-hbar-policy: never;
-    -fx-vbar-policy: as-needed;
-    -fx-focus-traversable: false;
-    -fx-focus-visible: false;
-    -fx-background-color: #B8E0D1;
-}
-
-.schedule-scroll .viewport {
-    -fx-background-color: #B8E0D1;
-    -fx-focus-traversable: false;
-    -fx-focus-visible: false;
-}
-
-.schedule-scroll .viewport:focused {
-    -fx-background-color: #B8E0D1;
-}
-
-.schedule-scroll .viewport:selected {
-    -fx-background-color: #B8E0D1;
-}
-
-.schedule-scroll .viewport:pressed {
-    -fx-background-color: #B8E0D1;
-}
-
-.schedule-scroll .viewport:hover {
-    -fx-background-color: #B8E0D1;
-}
-
-.schedule-scroll .scroll-bar:vertical {
-    -fx-background-color: transparent;
-}
-
-.schedule-scroll .scroll-bar:vertical .track {
-    -fx-background-color: transparent;
-    -fx-border-color: transparent;
-}
-
-.schedule-scroll .scroll-bar:vertical .thumb {
-    -fx-background-color: #B8E0D1;
-    -fx-background-radius: 5px;
-}
-
-.schedule-scroll .scroll-bar:vertical .thumb:hover {
-    -fx-background-color: #4BA684;
-}
-
-.schedule-scroll .scroll-bar .increment-button,
-.schedule-scroll .scroll-bar .decrement-button {
-    -fx-background-color: transparent;
-    -fx-padding: 0 0 0 0;
-}
-
-.schedule-scroll .scroll-bar .increment-button,
-.schedule-scroll .scroll-bar .decrement-button {
-    -fx-focus-traversable: false;
-    -fx-focus-visible: false;
-}
-
-.schedule-scroll .scroll-bar .increment-button:hover,
-.schedule-scroll .scroll-bar .decrement-button:hover {
-    -fx-background-color: transparent;
-}
-
-.schedule-scroll .scroll-bar .increment-button:pressed,
-.schedule-scroll .scroll-bar .decrement-button:pressed {
-    -fx-background-color: transparent;
-}
-
-/* REMINDER CARDS */
-.reminder-card {
-    -fx-background-color: #12594C;
-    -fx-background-radius: 12px;
-    -fx-padding: 0;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0, 0, 2);
-    -fx-min-height: 60px;
-    -fx-pref-height: 60px;
-    -fx-alignment: CENTER_LEFT;
-}
-
-.reminder-time-box {
-    -fx-background-color: #4BA684;
-    -fx-background-radius: 8px 0 0 8px;
-    -fx-padding: 8 12;
-    -fx-alignment: center;
-    -fx-min-width: 140px;
-    -fx-pref-width: 140px;
-    -fx-min-height: 60px;
-    -fx-pref-height: 60px;
-}
-
-.reminder-card .reminder-time {
-    -fx-font-size: 18px;
-    -fx-font-weight: bold;
-    -fx-text-fill: white;
-}
-
-.reminder-card .reminder-medicine {
-    -fx-font-size: 16px;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-}
-
-.reminder-card .reminder-note {
-    -fx-font-size: 14px;
-    -fx-text-fill: rgba(255,255,255,0.9);
-    -fx-font-style: italic;
-}
-
-.empty-label {
-    -fx-font-size: 16px;
-    -fx-text-fill: #666666;
-    -fx-padding: 40;
-    -fx-alignment: center;
-    -fx-font-weight: 500;
-}
-
-/* CARD LAYOUT */
-.reminder-card {
-    -fx-spacing: 8;
-}
-
-.reminder-card HBox {
-    -fx-spacing: 15;
-    -fx-alignment: CENTER_LEFT;
-}
-
-.reminder-time-container {
-    -fx-alignment: CENTER_LEFT;
-}
-
-.reminder-details-container {
-    -fx-padding: 20;
-    -fx-spacing: 4;
-}
-
-/* MISC ELEMENTS */
-.button {
-    -fx-cursor: hand;
-}
-
-.label {
-    -fx-wrap-text: true;
-}
-
-/* Focus and selection styles */
-.button:focused {
-    -fx-border-color: transparent;
-    -fx-border-width: 0;
-}
-
-.button:pressed {
-    -fx-background-color: derive(-fx-background-color, -10%);
-}
-
-/* Cost Estimator specific styles */
+/* Search field */
 .search-field {
     -fx-background-color: #f8f9fa;
     -fx-border-color: #e9ecef;
@@ -414,6 +214,7 @@
     -fx-border-width: 2px;
 }
 
+/* Medicine list */
 .medicine-list {
     -fx-background-color: #ffffff;
     -fx-border-color: #e9ecef;
@@ -439,6 +240,13 @@
     -fx-background-color: #f8f9fa;
 }
 
+/* Shopping cart table */
+.shopping-card {
+    -fx-pref-height: 330;
+    -fx-max-height: 300;
+    -fx-min-height: 330;
+    -fx-background-color: #C4E3D4;
+}
 .cart-table {
     -fx-background-color: #ffffff;
     -fx-border-color: #e9ecef;
@@ -459,6 +267,15 @@
     -fx-background-color: #eef2ff;
 }
 
+.cart-table .column-header {
+    -fx-font-family: "Poppins";
+    -fx-font-weight: 600;
+    -fx-font-size: 12px;
+    -fx-text-fill: #374151;
+    -fx-background-color: #f9fafb;
+}
+
+/* Quantity spinner */
 .quantity-spinner {
     -fx-background-color: #f8f9fa;
     -fx-border-color: #e9ecef;
@@ -474,8 +291,9 @@
     -fx-alignment: center;
 }
 
+/* Action buttons */
 .add-button {
-    -fx-background-color: #10b981;
+    -fx-background-color: #4BA684;
     -fx-text-fill: white;
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
@@ -483,15 +301,17 @@
     -fx-font-weight: 600;
     -fx-font-size: 12px;
     -fx-padding: 6px 12px;
+    -fx-cursor: hand;
 }
 
 .add-button:hover {
-    -fx-background-color: #059669;
+    -fx-background-color: #3D9574;
 }
 
 .add-button:disabled {
     -fx-background-color: #d1d5db;
     -fx-text-fill: #9ca3af;
+    -fx-cursor: default;
 }
 
 .remove-button {
@@ -503,6 +323,7 @@
     -fx-font-weight: 600;
     -fx-font-size: 12px;
     -fx-padding: 6px 10px;
+    -fx-cursor: hand;
 }
 
 .remove-button:hover {
@@ -512,6 +333,7 @@
 .remove-button:disabled {
     -fx-background-color: #d1d5db;
     -fx-text-fill: #9ca3af;
+    -fx-cursor: default;
 }
 
 .clear-button {
@@ -523,6 +345,7 @@
     -fx-font-weight: 600;
     -fx-font-size: 12px;
     -fx-padding: 6px 10px;
+    -fx-cursor: hand;
 }
 
 .clear-button:hover {
@@ -532,8 +355,10 @@
 .clear-button:disabled {
     -fx-background-color: #d1d5db;
     -fx-text-fill: #9ca3af;
+    -fx-cursor: default;
 }
 
+/* Total cost display */
 .total-label {
     -fx-font-family: "Poppins";
     -fx-font-weight: bold;
@@ -545,6 +370,7 @@
     -fx-background-radius: 6px;
 }
 
+/* Labels */
 .section-label {
     -fx-font-family: "Poppins";
     -fx-font-weight: 600;
@@ -557,4 +383,84 @@
     -fx-font-weight: 500;
     -fx-font-size: 13px;
     -fx-text-fill: #4b5563;
+}
+
+/* Focus and selection styles */
+.button:focused {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.button:pressed {
+    -fx-background-color: derive(-fx-background-color, -10%);
+}
+
+/* Scrollbar styling */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #f1f3f4;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #d1d5db;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #9ca3af;
+}
+
+/* Table header styling */
+.table-view .column-header-background {
+    -fx-background-color: #f9fafb;
+    -fx-border-color: transparent transparent #e5e7eb transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-font-family: "Poppins";
+    -fx-font-weight: 600;
+    -fx-font-size: 12px;
+    -fx-text-fill: #374151;
+}
+
+/* Empty table placeholder */
+.table-view .placeholder {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 14px;
+    -fx-text-fill: #6b7280;
+}
+
+/* List view empty placeholder */
+.list-view .placeholder {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 14px;
+    -fx-text-fill: #6b7280;
+}
+
+/* Animation effects */
+.content-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 12, 0, 0, 3);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 800px) {
+    .page-title {
+        -fx-font-size: 24px;
+    }
+
+    .page-subtitle {
+        -fx-font-size: 14px;
+    }
+
+    .card-title {
+        -fx-font-size: 16px;
+    }
 }
