@@ -118,8 +118,8 @@
             <!-- Main Content Area -->
             <HBox maxWidth="570.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="570.0" spacing="15" styleClass="card" VBox.vgrow="ALWAYS">
                 <!-- Left Side - Medicine Search -->
-                <VBox prefHeight="414.0" prefWidth="222.0" spacing="10" styleClass="card-content" HBox.hgrow="NEVER">
-                    <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="414.0" prefWidth="220.0" spacing="8" style="-fx-background-color: #C4E3D4" styleClass="content-card">
+                <VBox maxWidth="-Infinity" prefHeight="414.0" prefWidth="279.0" spacing="10" styleClass="card-content" HBox.hgrow="ALWAYS">
+                    <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="414.0" prefWidth="218.0" spacing="8" style="-fx-background-color: #C4E3D4" styleClass="content-card">
                         <padding>
                             <Insets bottom="15" left="15" right="15" top="15" />
                         </padding>
@@ -142,15 +142,15 @@
                 </VBox>
 
                 <!-- Right Side - Shopping Cart -->
-                <VBox maxHeight="415.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="263.0" styleClass="shopping-card" HBox.hgrow="ALWAYS">
-                    <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="434.0" prefWidth="262.0" spacing="8" style="-fx-background-color: #C4E3D4" styleClass="content-card" VBox.vgrow="ALWAYS">
+                <VBox maxHeight="421.0" prefHeight="421.0" prefWidth="322.0" styleClass="shopping-card" HBox.hgrow="NEVER">
+                    <VBox maxHeight="600.0" minHeight="380.0" prefHeight="419.0" prefWidth="264.0" spacing="8" style="-fx-background-color: #C4E3D4" styleClass="content-card" VBox.vgrow="ALWAYS">
                         <padding>
                             <Insets bottom="15" left="15" right="15" top="15" />
                         </padding>
 
                         <Label styleClass="card-title" text="Medicine List" />
 
-                        <TableView fx:id="cartTableView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="222.0" prefWidth="248.0" styleClass="cart-table" VBox.vgrow="ALWAYS">
+                           <TableView fx:id="cartTableView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="274.0" prefWidth="234.0" styleClass="cart-table" VBox.vgrow="ALWAYS">
                             <columns>
                                 <TableColumn fx:id="medicineNameColumn" prefWidth="120" text="Medicine" />
                                 <TableColumn fx:id="quantityColumn" prefWidth="40" text="Qty" />
@@ -161,25 +161,12 @@
 
                         <HBox alignment="CENTER_LEFT">
                             <Region HBox.hgrow="ALWAYS" />
-                            <Label fx:id="totalCostLabel" prefHeight="39.0" prefWidth="270.0" styleClass="total-label" text="Total: ৳0.00" />
+                            <Label fx:id="totalCostLabel" prefHeight="0.0" prefWidth="234.0" styleClass="total-label" text="Total: ৳0.00" />
                         </HBox>
-                  <HBox prefHeight="100.0" prefWidth="232.0">
-                     <children>
-                               <Button fx:id="removeFromCartButton" onAction="#handleRemoveFromCart" prefHeight="30.0" prefWidth="90.0" styleClass="remove-button" text="Remove">
-                           <padding>
-                              <Insets right="20.0" />
-                           </padding>
-                           <opaqueInsets>
-                              <Insets right="20.0" />
-                           </opaqueInsets>
-                        </Button>
-                               <Button fx:id="clearCartButton" onAction="#handleClearCart" prefHeight="30.0" prefWidth="101.0" styleClass="clear-button" text="Clear">
-                           <padding>
-                              <Insets left="80.0" />
-                           </padding>
-                        </Button>
-                     </children>
-                  </HBox>
+                        <HBox alignment="CENTER" prefHeight="45.0" prefWidth="234.0" spacing="10">
+                            <Button fx:id="removeFromCartButton" onAction="#handleRemoveFromCart" prefHeight="30.0" prefWidth="80.0" styleClass="remove-button" text="Remove" />
+                            <Button fx:id="clearCartButton" onAction="#handleClearCart" prefHeight="30.0" prefWidth="80.0" styleClass="clear-button" text="Clear" />
+                        </HBox>
                     </VBox>
                 </VBox>
             </HBox>

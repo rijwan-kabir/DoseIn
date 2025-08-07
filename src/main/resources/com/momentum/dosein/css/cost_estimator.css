@@ -210,7 +210,7 @@
 }
 
 .search-field:focused {
-    -fx-border-color: #4f46e5;
+    -fx-border-color: #12594C;
     -fx-border-width: 2px;
 }
 
@@ -232,8 +232,8 @@
 }
 
 .medicine-list .list-cell:selected {
-    -fx-background-color: #eef2ff;
-    -fx-text-fill: #4f46e5;
+    -fx-background-color: #B8E0D1;
+    -fx-text-fill: #12594C;
 }
 
 .medicine-list .list-cell:hover {
@@ -242,9 +242,6 @@
 
 /* Shopping cart table */
 .shopping-card {
-    -fx-pref-height: 330;
-    -fx-max-height: 300;
-    -fx-min-height: 330;
     -fx-background-color: #C4E3D4;
 }
 .cart-table {
@@ -264,7 +261,7 @@
 }
 
 .cart-table .table-row-cell:selected {
-    -fx-background-color: #eef2ff;
+    -fx-background-color: #12594c;
 }
 
 .cart-table .column-header {
@@ -315,7 +312,7 @@
 }
 
 .remove-button {
-    -fx-background-color: #ef4444;
+    -fx-background-color: #3D9574;
     -fx-text-fill: white;
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
@@ -327,7 +324,7 @@
 }
 
 .remove-button:hover {
-    -fx-background-color: #dc2626;
+    -fx-background-color: #337a5e;
 }
 
 .remove-button:disabled {
@@ -337,7 +334,7 @@
 }
 
 .clear-button {
-    -fx-background-color: #f59e0b;
+    -fx-background-color: #DC6D67;
     -fx-text-fill: white;
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
@@ -349,7 +346,7 @@
 }
 
 .clear-button:hover {
-    -fx-background-color: #d97706;
+    -fx-background-color: #b94e48;
 }
 
 .clear-button:disabled {
