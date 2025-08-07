@@ -288,6 +288,11 @@
     -fx-cursor: hand;
 }
 
+.medicine-button:selected, .medicine-buttons-container .button:selected {
+    -fx-background-color: #12594C;
+    -fx-text-fill: white;
+}
+
 .nav-button-active {
     -fx-background-color: #12594C;
     -fx-text-fill: white;
